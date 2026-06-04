@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  /* BYU brand colors */
+  --color-byu-navy: #002e5d;
+  --color-byu-royal: #0047ba;
+  --color-byu-dark-gray: #141414;
+  --color-byu-medium-gray: #666666;
+  --color-byu-white: #ffffff;
+  --color-byu-red-bright: #e61744;
+  --color-byu-red-dark: #a3082a;
+  --color-byu-yellow-bright: #ffb700;
+  --color-byu-brown: #8c3a00;
+  --color-byu-green-bright: #10a170;
+  --color-byu-green-dark: #006141;
+  --color-byu-info-blue-bright: #1fb3d1;
+  --color-byu-info-blue-dark: #006073;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Styling for hovering on the nav bar */
+.nav-link-hover {
+  position: relative;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #002e5d; /* BYU navy */
+  display: none;
+}
+
+/* show line on hover OR when marked active */
+.nav-link-hover:hover::after,
+.nav-link-hover.nav-link-active::after {
+  display: block;
+}
