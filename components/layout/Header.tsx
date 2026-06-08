@@ -4,6 +4,7 @@ import { useState } from 'react';
 import NavBar from './NavBar';
 import Link from 'next/link';
 import Image from 'next/image';
+import NavBarv2 from './NavBarv2';
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,7 +43,8 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      <NavBar navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      {/* <NavBar navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} /> */}
+      <NavBarv2 navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
     </div>
   );
 };
