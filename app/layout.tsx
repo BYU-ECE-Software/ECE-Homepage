@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import SubFooter from '@/components/layout/SubFooter';
+import { contactBlock, socialLinks, subfooterColumns } from '@/components/layout/SubFooterConfig';
 
 export const metadata: Metadata = {
   title: 'Electrical and Computer Engineering',
@@ -26,6 +28,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
+          <SubFooter columns={subfooterColumns} contactBlock={contactBlock} socialLinks={socialLinks} />
           <Footer />
       </body>
     </html>
