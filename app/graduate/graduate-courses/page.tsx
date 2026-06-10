@@ -2,31 +2,33 @@
 
 import React, { useState, useMemo } from "react";
 import { courses, sectionMeta } from "@/data/courses/gradCourses";
-import { Course, CourseSection, Semester } from "@/types/course";
+import { Course, CourseSection, Semester, YearCycle } from "@/types/course";
 import { SectionTabs } from "@/components/general/SectionTabs";
 import { SemesterFilter } from "@/components/general/SemesterFilter";
 import { CourseGrid } from "@/components/general/CourseGrid";
-import PageTitle from "@/components/layout/PageTitle";
 
 export default function GraduateCoursesPage() {
   const [activeSection, setActiveSection] = useState<CourseSection>("regular");
   const [activeSemesters, setActiveSemesters] = useState<Semester[]>([]);
+  const [activeCycle, setActiveCycle] = useState<YearCycle | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   // Count courses per section (unfiltered)
   const sectionCounts = useMemo(() => {
     const counts = {} as Record<CourseSection, number>;
-    const sections: CourseSection[] = [
-      "regular",
-      "special-topics",
-      "unscheduled",
-      "retired",
-    ];
+    const sections: CourseSection[] = ["regular", "special-topics", "unscheduled", "retired"];
     sections.forEach((s) => {
       counts[s] = courses.filter((c) => c.section === s).length;
     });
     return counts;
   }, []);
+
+  // Whether ANY course in the current section has non-"every" cycles
+  const showCycleFilter = useMemo(() => {
+    return courses
+      .filter((c) => c.section === activeSection)
+      .some((c) => c.semesters.some((o) => o.cycle !== "every"));
+  }, [activeSection]);
 
   // Filtered courses for current section
   const filteredCourses = useMemo(() => {
@@ -41,15 +43,17 @@ export default function GraduateCoursesPage() {
 
       const matchesSemester =
         activeSemesters.length === 0 ||
-        course.semesters.some((s) => activeSemesters.includes(s));
+        course.semesters.some((o) => activeSemesters.includes(o.semester));
 
-      return matchesSearch && matchesSemester;
+      const matchesCycle =
+        activeCycle === null ||
+        course.semesters.some((o) => o.cycle === activeCycle);
+
+      return matchesSearch && matchesSemester && matchesCycle;
     });
-  }, [activeSection, activeSemesters, searchQuery]);
+  }, [activeSection, activeSemesters, activeCycle, searchQuery]);
 
   return (
-    <>
-    <PageTitle title="Graduate Courses" />
     <div className="min-h-screen bg-slate-50">
       {/* Page header */}
       <header className="bg-[#002E5D] text-white">
@@ -57,9 +61,7 @@ export default function GraduateCoursesPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-sky-300 mb-2">
             Electrical &amp; Computer Engineering
           </p>
-          <h1 className="text-3xl font-bold tracking-tight">
-            Graduate Courses
-          </h1>
+          <h1 className="text-3xl font-bold tracking-tight">Graduate Courses</h1>
           <p className="mt-2 text-slate-300 text-sm max-w-xl">
             Browse and filter ECE graduate course offerings by semester
             availability. Schedules are subject to change — verify with the
@@ -70,29 +72,30 @@ export default function GraduateCoursesPage() {
 
       {/* Main content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Section tabs */}
         <SectionTabs
           active={activeSection}
           counts={sectionCounts}
           onChange={(s) => {
             setActiveSection(s);
             setActiveSemesters([]);
+            setActiveCycle(null);
             setSearchQuery("");
           }}
         />
 
-        {/* Filter bar */}
         <div className="mt-4">
           <SemesterFilter
             active={activeSemesters}
             onChange={setActiveSemesters}
+            activeCycle={activeCycle}
+            onCycleChange={setActiveCycle}
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
             resultCount={filteredCourses.length}
+            showCycleFilter={showCycleFilter}
           />
         </div>
 
-        {/* Course grid */}
         <div className="mt-6">
           <CourseGrid
             courses={filteredCourses}
@@ -102,6 +105,5 @@ export default function GraduateCoursesPage() {
         </div>
       </main>
     </div>
-    </>
   );
 }

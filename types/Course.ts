@@ -1,4 +1,11 @@
-export type Semester = "fall" | "winter" | "spring";
+export type YearCycle = "every" | "odd" | "even";
+
+export type Semester = "fall" | "winter" | "spring" | "summer";
+
+export interface SemesterOffering {
+  semester: Semester;
+  cycle: YearCycle;
+}
 
 export type CourseSection =
   | "regular"
@@ -11,7 +18,10 @@ export interface Course {
   number: string;
   title: string;
   instructor?: string;
-  semesters: Semester[];
+  semesters: SemesterOffering[];
   notes?: string;
   section: CourseSection;
+  //Special Topics only
+  lastOffered?: string;
+  nextOffered?: string;
 }

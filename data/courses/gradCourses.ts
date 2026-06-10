@@ -7,7 +7,10 @@ export const courses: Course[] = [
     number: "ECE 501",
     title: "Linear Systems",
     instructor: "Dr. Warnick",
-    semesters: ["fall", "winter"],
+    semesters: [
+      { semester: "fall", cycle: "every" },
+      { semester: "winter", cycle: "every" },
+    ],
     section: "regular",
   },
   {
@@ -15,7 +18,7 @@ export const courses: Course[] = [
     number: "ECE 511",
     title: "Electromagnetic Field Theory",
     instructor: "Dr. Christiansen",
-    semesters: ["fall"],
+    semesters: [{ semester: "fall", cycle: "every" }],
     section: "regular",
   },
   {
@@ -23,7 +26,7 @@ export const courses: Course[] = [
     number: "ECE 521",
     title: "Digital Signal Processing",
     instructor: "Dr. Nelson",
-    semesters: ["winter"],
+    semesters: [{ semester: "winter", cycle: "odd" }],
     section: "regular",
   },
   {
@@ -31,7 +34,10 @@ export const courses: Course[] = [
     number: "ECE 530",
     title: "Power Systems Analysis",
     instructor: "Dr. Oren",
-    semesters: ["fall", "spring"],
+    semesters: [
+      { semester: "fall", cycle: "even" },
+      { semester: "spring", cycle: "even" },
+    ],
     section: "regular",
   },
   {
@@ -39,7 +45,10 @@ export const courses: Course[] = [
     number: "ECE 545",
     title: "Computer Architecture",
     instructor: "Dr. Mangelson",
-    semesters: ["winter", "spring"],
+    semesters: [
+      { semester: "winter", cycle: "every" },
+      { semester: "spring", cycle: "odd" },
+    ],
     section: "regular",
   },
   {
@@ -47,7 +56,11 @@ export const courses: Course[] = [
     number: "ECE 551",
     title: "Machine Learning for Engineers",
     instructor: "Dr. Redd",
-    semesters: ["fall", "winter", "spring"],
+    semesters: [
+      { semester: "fall", cycle: "every" },
+      { semester: "winter", cycle: "every" },
+      { semester: "spring", cycle: "every" },
+    ],
     section: "regular",
   },
   {
@@ -55,7 +68,7 @@ export const courses: Course[] = [
     number: "ECE 560",
     title: "Control System Design",
     instructor: "Dr. Beard",
-    semesters: ["fall"],
+    semesters: [{ semester: "fall", cycle: "every" }],
     section: "regular",
   },
   {
@@ -63,7 +76,7 @@ export const courses: Course[] = [
     number: "ECE 575",
     title: "VLSI Design",
     instructor: "Dr. Hutchings",
-    semesters: ["winter"],
+    semesters: [{ semester: "winter", cycle: "even" }],
     section: "regular",
   },
   {
@@ -71,14 +84,21 @@ export const courses: Course[] = [
     number: "ECE 580",
     title: "Wireless Communications",
     instructor: "Dr. Rice",
-    semesters: ["fall", "winter"],
+    semesters: [
+      { semester: "fall", cycle: "every" },
+      { semester: "winter", cycle: "every" },
+    ],
     section: "regular",
   },
   {
     id: "ece-590r",
     number: "ECE 590R",
     title: "Graduate Seminar",
-    semesters: ["fall", "winter", "spring"],
+    semesters: [
+      { semester: "fall", cycle: "every" },
+      { semester: "winter", cycle: "every" },
+      { semester: "spring", cycle: "every" },
+    ],
     section: "regular",
   },
 
@@ -88,45 +108,50 @@ export const courses: Course[] = [
     number: "ECE 5120",
     title: "Advanced Topics in Deep Learning",
     instructor: "Dr. Barrett",
-    semesters: ["fall"],
-    notes: "Special topics — offered irregularly",
+    semesters: [{ semester: "fall", cycle: "odd" }],
     section: "special-topics",
+    lastTaught: "Fall 2023",
+    nextTaught: "Fall 2025",
   },
   {
     id: "ece-5220",
     number: "ECE 5220",
     title: "Quantum Computing Fundamentals",
     instructor: "Dr. Lee",
-    semesters: ["winter"],
-    notes: "Special topics — offered irregularly",
+    semesters: [{ semester: "winter", cycle: "even" }],
     section: "special-topics",
+    lastTaught: "Winter 2024",
+    nextTaught: "Winter 2026",
   },
   {
     id: "ece-5320",
     number: "ECE 5320",
     title: "Neuromorphic Engineering",
     instructor: "Dr. Cambou",
-    semesters: ["spring"],
-    notes: "Special topics — offered irregularly",
+    semesters: [{ semester: "spring", cycle: "every" }],
     section: "special-topics",
+    lastTaught: "Spring 2024",
+    nextTaught: "Spring 2025",
   },
   {
     id: "ece-5420",
     number: "ECE 5420",
     title: "Photonics and Laser Systems",
     instructor: "Dr. Millet",
-    semesters: ["fall"],
-    notes: "Special topics — offered irregularly",
+    semesters: [{ semester: "fall", cycle: "even" }],
     section: "special-topics",
+    lastTaught: "Fall 2022",
+    nextTaught: "Fall 2024",
   },
   {
     id: "ece-6620",
     number: "ECE 6620",
     title: "Convex Optimization Methods",
     instructor: "Dr. Beard",
-    semesters: ["winter"],
-    notes: "Special topics — offered irregularly",
+    semesters: [{ semester: "winter", cycle: "odd" }],
     section: "special-topics",
+    lastTaught: "Winter 2023",
+    nextTaught: "Winter 2025",
   },
 
   // Unscheduled
@@ -158,7 +183,7 @@ export const courses: Course[] = [
     number: "ECE 499",
     title: "Introduction to Graduate Study",
     semesters: [],
-    notes: "Retired — see ECE 590R",
+    notes: "Replaced by ECE 590R",
     section: "retired",
   },
   {
@@ -166,7 +191,6 @@ export const courses: Course[] = [
     number: "ECE 502",
     title: "Analog Circuit Analysis",
     semesters: [],
-    notes: "Retired",
     section: "retired",
   },
 ];
@@ -182,7 +206,7 @@ export const sectionMeta: Record<
   "special-topics": {
     label: "Special topics",
     description:
-      "Courses listed under ECE 5120, 5220, 5320, 6620. Offerings vary by semester.",
+      "Courses listed under ECE 5120, 5220, 5320, 6620. Offerings vary by semester and year.",
   },
   unscheduled: {
     label: "Catalog only",

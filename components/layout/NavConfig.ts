@@ -46,6 +46,7 @@ const navConfig: NavItem[] = [
     children: [
       { label: 'Current Graduate Students', href: '/graduate/current-graduate-students' },
       { label: 'Prospective Graduate Students', href: '/graduate/prospective-graduate-students' },
+      { label: 'Graduate Courses', href: '/graduate/graduate-courses' },
     ],
   },
   {
