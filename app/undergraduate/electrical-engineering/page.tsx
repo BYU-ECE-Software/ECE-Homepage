@@ -75,7 +75,7 @@ const sections = [
 export default function ElectricalEngineeringPage() {
   return (
     <>
-      <section className="bg-byu-navy py-20 text-white">
+      <section className="bg-byu-navy py-10 text-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <h1 className="text-4xl font-semibold tracking-wide md:text-5xl">
             ELECTRICAL ENGINEERING
