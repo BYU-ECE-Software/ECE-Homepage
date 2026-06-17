@@ -14,7 +14,7 @@ export default function ContentLayout({
     <div className="bg-white">
       <section className="bg-byu-navy py-4 text-white">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h1 className="text-4xl font-semibold tracking-wide md:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-wide md:text-3xl">
             ELECTRICAL ENGINEERING
           </h1>
 

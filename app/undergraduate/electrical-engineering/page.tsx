@@ -1,6 +1,6 @@
 import ContentLayout from "./ContentLayout";
 import ResourceCard from "./ResourceCard";
-import { content } from "./content";
+import { content } from "@/data/undergrad/electrical-engineering/content";
 
 export default function ElectricalEngineeringPage() {
   const page = content.home;

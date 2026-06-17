@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 
 import ContentLayout from "../ContentLayout";
 import ResourceCard from "../ResourceCard";
-import { content } from "../content";
+import { content } from "@/data/undergrad/electrical-engineering/content";
 
 interface Props {
   params: Promise<{

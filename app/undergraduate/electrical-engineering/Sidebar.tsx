@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navigation } from "./navigation";
+import { navigation } from "../../../data/undergrad/electrical-engineering/navigation";
 
 interface SidebarProps {
   currentSlug?: string;
