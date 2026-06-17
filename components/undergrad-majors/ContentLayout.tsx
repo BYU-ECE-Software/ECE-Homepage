@@ -15,13 +15,15 @@ export default function ContentLayout({
 }: ContentLayoutProps) {
   return (
     <div className="bg-white">
-      <section className="bg-byu-navy py-10 text-white">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h1 className="text-4xl font-semibold tracking-wide md:text-5xl">
+      <section className="bg-byu-navy py-4 text-white">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-center gap-x-3 px-6 text-center">
+          <h1 className="text-xl font-semibold tracking-wide md:text-2xl">
             {major.displayName}
           </h1>
-
-          <p className="mt-4 text-xl">{major.tagline}</p>
+        
+          <span className="text-white/40">|</span>
+        
+          <p className="text-sm text-white/80 md:text-base">{major.tagline}</p>
         </div>
       </section>
 
