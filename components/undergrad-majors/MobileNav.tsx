@@ -2,17 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { navigation } from "@/data/undergrad/electrical-engineering/navigation";
+import { NavSection } from "@/data/undergrad-majors/types";
 
 interface MobileNavProps {
+  majorSlug: string;
+  navigation: NavSection[];
   currentSlug?: string;
 }
 
 export default function MobileNav({
+  majorSlug,
+  navigation,
   currentSlug,
 }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const basePath = `/undergraduate/${majorSlug}`;
 
   const currentTitle = currentSlug
     ? navigation
@@ -67,7 +72,7 @@ export default function MobileNav({
           <ul className="mb-4 space-y-1 border-b border-gray-100 pb-4">
             <li>
               <Link
-                href="/undergraduate/electrical-engineering"
+                href={basePath}
                 onClick={() => setOpen(false)}
                 className={`block rounded px-3 py-2 text-sm transition ${
                   !currentSlug
@@ -96,7 +101,7 @@ export default function MobileNav({
                   return (
                     <li key={item.slug}>
                       <Link
-                        href={`/undergraduate/electrical-engineering/${item.slug}`}
+                        href={`${basePath}/${item.slug}`}
                         onClick={() => setOpen(false)}
                         className={`block rounded px-3 py-2 text-sm transition ${
                           active

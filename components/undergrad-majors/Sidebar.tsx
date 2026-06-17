@@ -1,20 +1,26 @@
 import Link from "next/link";
-import { navigation } from "../../../data/undergrad/electrical-engineering/navigation";
+import { NavSection } from "@/data/undergrad-majors/types";
 
 interface SidebarProps {
+  majorSlug: string;
+  navigation: NavSection[];
   currentSlug?: string;
 }
 
 export default function Sidebar({
+  majorSlug,
+  navigation,
   currentSlug,
 }: SidebarProps) {
+  const basePath = `/undergraduate/${majorSlug}`;
+
   return (
     <aside className="sticky top-8">
       <div className="mb-8">
         <ul className="space-y-1">
           <li>
             <Link
-              href="/undergraduate/electrical-engineering"
+              href={basePath}
               className={`block rounded px-3 py-2 text-sm transition ${
                 !currentSlug
                   ? "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy"
@@ -40,7 +46,7 @@ export default function Sidebar({
               return (
                 <li key={item.slug}>
                   <Link
-                    href={`/undergraduate/electrical-engineering/${item.slug}`}
+                    href={`${basePath}/${item.slug}`}
                     className={`block rounded px-3 py-2 text-sm transition ${
                       active
                         ? "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy"

@@ -26,13 +26,9 @@ export default function ResourceCard({
       </div>
 
       <div className="p-6">
-        <h3 className="text-lg font-semibold text-byu-navy">
-          {title}
-        </h3>
+        <h3 className="text-lg font-semibold text-byu-navy">{title}</h3>
 
-        <p className="mt-2 text-sm text-byu-medium-gray">
-          {description}
-        </p>
+        <p className="mt-2 text-sm text-byu-medium-gray">{description}</p>
 
         <span className="mt-4 inline-block font-medium text-byu-royal">
           Learn More →
