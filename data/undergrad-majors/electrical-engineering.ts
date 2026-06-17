@@ -93,10 +93,46 @@ export const electricalEngineering: MajorConfig = {
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
       description:
-        "Visual roadmaps showing the recommended course sequence to graduate on time.",
+        "View the course requirements to complete a degree in Electrical Engineering.",
       overview:
-        "Placeholder content for graduation flowcharts. Replace with downloadable PDFs or images of the degree flowcharts for each track or catalog year.",
-      cards: [],
+        "Choose a flowchart based on the year you started the program. (See your advisor if you have questions about the flowchart).",
+      cards: [
+        {
+          title: "EE Flowchart 26-27",
+          description:
+            "View the 2026-27 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2026-27.",
+          href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-26-27.pdf",
+          image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/26-27.png",
+        },
+        {
+          title: "EE Flowchart 25-26",
+          description:
+            "View the 2025-26 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2025-26.",
+          href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-25-26.pdf",
+          image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/25-26.png",
+        },
+        {
+          title: "EE Flowchart 24-25",
+          description:
+            "View the 2024-25 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2024-25.",
+          href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-24-25.pdf",
+          image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/24-25.png",
+        },
+        {
+          title: "EE Flowchart 23-24",
+          description:
+            "View the 2023-24 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2023-24.",
+          href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-23-24.pdf",
+          image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/23-24.png",
+        },
+        {
+          title: "EE Flowchart 22-23",
+          description:
+            "View the 2022-23 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2022-23.",
+          href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-22-23.pdf",
+          image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/22-23.png",
+        },
+      ],
     },
 
     internships: {

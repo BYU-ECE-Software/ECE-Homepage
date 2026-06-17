@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface ResourceCardProps {
@@ -18,11 +19,14 @@ export default function ResourceCard({
       href={href}
       className="overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-md"
     >
-      <div className="h-48 bg-gray-200">
-        {/* Replace with next/image later */}
-        <div className="flex h-full items-center justify-center text-byu-medium-gray">
-          Image Placeholder
-        </div>
+      <div className="relative h-48 bg-gray-200">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          unoptimized
+          className="object-cover"
+        />
       </div>
 
       <div className="p-6">

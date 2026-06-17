@@ -40,7 +40,7 @@ export default async function MajorSubsectionPage({ params }: Props) {
 
       <p className="mt-4 text-byu-medium-gray">{page.description}</p>
 
-      <p className="mt-6">{page.overview}</p>
+      <p className="mt-6 text-byu-medium-gray">{page.overview}</p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {page.cards.map((card) => (
