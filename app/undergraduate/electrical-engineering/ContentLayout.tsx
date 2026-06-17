@@ -12,6 +12,18 @@ export default function ContentLayout({
 }: ContentLayoutProps) {
   return (
     <div className="bg-white">
+      <section className="bg-byu-navy py-4 text-white">
+        <div className="mx-auto max-w-6xl px-6 text-center">
+          <h1 className="text-4xl font-semibold tracking-wide md:text-5xl">
+            ELECTRICAL ENGINEERING
+          </h1>
+
+          <p className="mt-4 text-xl">
+            Undergraduate Students
+          </p>
+        </div>
+      </section>
+
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="mb-6 lg:hidden">
           <MobileNav currentSlug={currentSlug} />

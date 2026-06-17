@@ -10,6 +10,12 @@ interface Props {
   }>;
 }
 
+export function generateStaticParams() {
+  return Object.keys(content)
+    .filter((slug) => slug !== "home")
+    .map((slug) => ({ slug }));
+}
+
 export default async function Page({
   params,
 }: Props) {

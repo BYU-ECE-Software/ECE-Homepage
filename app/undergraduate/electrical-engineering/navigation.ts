@@ -24,6 +24,10 @@ export const navigation: NavSection[] = [
         title: "Course Catalog",
         slug: "course-catalog",
       },
+      {
+        title: "Graduation Flowcharts",
+        slug: "graduation-flowcharts",
+      },
     ],
   },
   {

@@ -67,4 +67,92 @@ export const content: Record<string, SectionContent> = {
 
     cards: [],
   },
+
+  "course-catalog": {
+    title: "Course Catalog",
+    description:
+      "Browse course offerings, descriptions, and prerequisites for the Electrical Engineering program.",
+
+    overview:
+      "Placeholder content for the course catalog. Replace with a course list, a link to the registrar's catalog, or an embedded search tool.",
+
+    cards: [],
+  },
+
+  "graduation-flowcharts": {
+    title: "Graduation Flowcharts",
+    description:
+      "Visual roadmaps showing the recommended course sequence to graduate on time.",
+
+    overview:
+      "Placeholder content for graduation flowcharts. Replace with downloadable PDFs or images of the degree flowcharts for each track or catalog year.",
+
+    cards: [],
+  },
+
+  internships: {
+    title: "Internships",
+    description:
+      "Internship opportunities and resources for Electrical Engineering students.",
+
+    overview:
+      "Placeholder content for internships. Replace with listings, employer partners, or links to the department's internship coordinator.",
+
+    cards: [],
+  },
+
+  scholarships: {
+    title: "Scholarships",
+    description:
+      "Scholarship opportunities available to Electrical Engineering students.",
+
+    overview:
+      "Placeholder content for scholarships. Replace with eligibility info, application deadlines, and links to apply.",
+
+    cards: [],
+  },
+
+  "student-organizations": {
+    title: "Student Organizations",
+    description:
+      "Clubs, competition teams, and leadership opportunities for Electrical Engineering students.",
+
+    overview:
+      "Placeholder content for student organizations. Replace with a list of clubs, advisor contacts, and meeting information.",
+
+    cards: [],
+  },
+
+  "faculty-research": {
+    title: "Faculty Research",
+    description:
+      "Research groups and faculty expertise within the Electrical Engineering department.",
+
+    overview:
+      "Placeholder content for faculty research. Replace with faculty profiles, research areas, and links to lab pages.",
+
+    cards: [],
+  },
+
+  "undergraduate-research": {
+    title: "Undergraduate Research",
+    description:
+      "Opportunities for undergraduate students to get involved in research.",
+
+    overview:
+      "Placeholder content for undergraduate research. Replace with how to find a mentor, available positions, and application steps.",
+
+    cards: [],
+  },
+
+  "research-labs": {
+    title: "Research Labs",
+    description:
+      "Labs and facilities supporting research within the department.",
+
+    overview:
+      "Placeholder content for research labs. Replace with a list of labs, their focus areas, and links to lab websites.",
+
+    cards: [],
+  },
 };
