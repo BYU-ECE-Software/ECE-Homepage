@@ -4,7 +4,6 @@ import { useState } from 'react';
 import NavBar from './NavBar';
 import Link from 'next/link';
 import Image from 'next/image';
-import NavBarv2 from './NavBarv2';
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,6 +23,14 @@ const Header: React.FC = () => {
             </Link>
             <h1 className="text-2xl">Electrical and Computer Engineering</h1>
           </div>
+            <Link
+            href={"https://give.churchofjesuschrist.org/campaigns/81249/donations/new"}
+            target='_blank'
+            rel="noopener noreferrer"
+            className='px-5 py-2 text-sm font-medium ml-auto text-white bg-byu-royal rounded-full hover:bg-blue-600 transition duration-150'
+            >
+              Give to ECE
+            </Link>
 
           <div className="flex items-center gap-3 pr-6 text-base">
 
@@ -44,7 +51,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* <NavBar navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} /> */}
-      <NavBarv2 navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <NavBar navPadLeft={128} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
     </div>
   );
 };

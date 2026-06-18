@@ -23,17 +23,21 @@ const navConfig: NavItem[] = [
     {kind: 'link', label: 'Home', href: '/'},
   {
     kind: 'dropdown',
-    label: 'Faculty And Staff',
+    label: 'People',
     // roles: [],
     children: [
-      { label: 'Faculty & Staff', href: '/faculty-and-staff/faculty-and-staff' },
-      { label: 'Faith & Engineering Lectures', href: '/faculty-and-staff/faith-and-engineering-lectures' },
+      { label: 'Faculty', href: '/people/faculty' },
+      { label: 'Advisors', href: '/people/advisors' },
+      { label: 'Staff', href: '/people/staff' },
+      { label: 'Student Employees', href: '/people/student-employees' },
+      { label: 'PhD Students', href: '/people/phd-students' },
     ],
   },
   {
     kind: 'dropdown',
     label: 'Undergraduate',
     children: [
+      { label: 'Prospective Students', href: '/undergraduate/prospective-students' },
       { label: 'Electrical Engineering', href: '/undergraduate/electrical-engineering' },
       { label: 'Computer Engineering', href: '/undergraduate/computer-engineering' },
       { label: 'Cybersecurity', href: '/undergraduate/cybersecurity' },
@@ -51,10 +55,10 @@ const navConfig: NavItem[] = [
   },
   {
     kind: 'dropdown',
-    label: 'Schedule',
+    label: 'News and Events',
     children: [
-      { label: 'Department Tours', href: '/schedule/department-tours' },
-      { label: 'Schedule of Events', href: '/schedule/schedule-of-events' },
+      { label: 'Calendar', href: '/news-and-events/calendar' },
+      { label: 'News', href: '/news-and-events/news' },
     ],
   },
   {
