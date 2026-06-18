@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import ContentLayout from "@/components/undergrad-majors/ContentLayout";
 import ResourceCard from "@/components/undergrad-majors/ResourceCard";
+import Overview from "@/components/undergrad-majors/Overview";
 import { getMajor, getAllMajorSlugs } from "@/data/undergrad-majors";
+import { resolveOverview } from "@/data/undergrad-majors/resolveOverview";
 
 interface Props {
   params: Promise<{
@@ -35,7 +37,7 @@ export default async function MajorLandingPage({ params }: Props) {
 
       <p className="mt-4 text-byu-medium-gray">{page.description}</p>
 
-      <p className="mt-6 text-byu-dark-gray">{page.overview}</p>
+      <Overview content={resolveOverview(page.overview)} />
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {page.cards.map((card) => (

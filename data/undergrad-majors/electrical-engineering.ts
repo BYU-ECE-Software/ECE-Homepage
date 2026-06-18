@@ -77,8 +77,21 @@ export const electricalEngineering: MajorConfig = {
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
-      overview: "Placeholder advising content.",
-      cards: [],
+      overview: { file: "data/undergrad-majors/content/academic-advising.md" },
+      cards: [
+        {
+          title: "Jana Featherstone",
+          description: "ECEn New Student/ Freshman and Graduate Program Advisor",
+          href: "https://ece.byu.edu/jana-featherstone",
+          image: "/undergrad-majors/advisers/Jana-Featherstone.jpeg",
+        },
+        {
+          title: "Janalyn Mergist",
+          description: "ECEn Undergraduate Adviser",
+          href: "https://ece.byu.edu/janalyn-mergist",
+          image: "/undergrad-majors/advisers/Janalyn-Mergist.jpeg",
+        },
+      ],
     },
 
     "course-catalog": {
@@ -90,6 +103,7 @@ export const electricalEngineering: MajorConfig = {
       cards: [],
     },
 
+    
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
       description:

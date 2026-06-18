@@ -15,10 +15,17 @@ export interface ResourceCardData {
   image: string;
 }
 
+export interface OverviewFile {
+  // Path to a Markdown file, relative to the project root,
+  // e.g. "content/electrical-engineering/academic-advising.md"
+  file: string;
+}
+
 export interface PageContent {
   title: string;
   description: string;
-  overview: string;
+  // Either inline Markdown, or a reference to a Markdown file read at build time.
+  overview: string | OverviewFile;
   cards: ResourceCardData[];
 }
 
