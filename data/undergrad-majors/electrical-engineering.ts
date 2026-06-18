@@ -18,7 +18,7 @@ export const electricalEngineering: MajorConfig = {
     {
       title: "Opportunities",
       items: [
-        { title: "Internships", slug: "internships" },
+        { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
         { title: "Student Organizations", slug: "student-organizations" },
       ],
@@ -135,13 +135,28 @@ export const electricalEngineering: MajorConfig = {
       ],
     },
 
-    internships: {
-      title: "Internships",
+    "networking-internships": {
+      title: "Networking and Internships",
       description:
         "Internship opportunities and resources for Electrical Engineering students.",
       overview:
-        "Placeholder content for internships. Replace with listings, employer partners, or links to the department's internship coordinator.",
-      cards: [],
+        "Check out these awesome resources!",
+      cards: [
+        {
+          title: "Jobs and Internships",
+          description:
+            "Career Services Director, Andrea Merriman, can assist you in all your employment needs. Whether you're seeking a full-time job, internship, or just some sound advice, she is waiting to assist you",
+          href: "https://careers.byu.edu/andrea-merriman",
+          image: "/undergrad-majors/career-services/andrea-merriman.png",
+        },
+        {
+          title: "Connect with Alumni",
+          description:
+            "BYU Connect allows students to connect directly with BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
+          href: "https://alumni.byu.edu/byuconnect",
+          image: "/undergrad-majors/career-services/byu-connect-alumni.jpeg",
+        },
+      ],
     },
 
     scholarships: {
