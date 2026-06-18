@@ -13,6 +13,7 @@ export interface ResourceCardData {
   description: string;
   href: string;
   image: string;
+  linkText?: string;
 }
 
 export interface OverviewFile {
