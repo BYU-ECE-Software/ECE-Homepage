@@ -37,7 +37,7 @@ const navConfig: NavItem[] = [
       { label: 'Electrical Engineering', href: '/undergraduate/electrical-engineering' },
       { label: 'Computer Engineering', href: '/undergraduate/computer-engineering' },
       { label: 'Cybersecurity', href: '/undergraduate/cybersecurity' },
-      { label: 'Cybersecurity Minor', href: '/undergraduate/cybersecurity-minor' },
+      { label: 'Cybersecurity Minor', href: '/undergraduate/minors/cybersecurity' },
     ],
   },
   {

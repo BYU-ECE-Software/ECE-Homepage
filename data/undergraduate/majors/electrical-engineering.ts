@@ -70,14 +70,14 @@ export const electricalEngineering: MajorConfig = {
       title: "Degree Requirements",
       description:
         "Requirements and milestones needed to complete the Electrical Engineering degree.",
-      overview: "Placeholder content for degree requirements.",
+      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34594/program-information-aoYks) for Electrical Engineering.",
       cards: [],
     },
 
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
-      overview: { file: "data/undergrad-majors/content/academic-advising.md" },
+      overview: { file: "/data/undergraduate/content/academic-advising.md" },
       cards: [
         {
           title: "Jana Featherstone",
@@ -101,7 +101,7 @@ export const electricalEngineering: MajorConfig = {
       description:
         "Browse course offerings, descriptions, and prerequisites for the Electrical Engineering program.",
       overview:
-        "Placeholder content for the course catalog. Replace with a course list, a link to the registrar's catalog, or an embedded search tool.",
+        "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
       cards: [],
     },
 
@@ -184,8 +184,7 @@ export const electricalEngineering: MajorConfig = {
       title: "Scholarships",
       description:
         "Scholarship opportunities available to Electrical Engineering students.",
-      overview:
-        "Placeholder content for scholarships. Replace with eligibility info, application deadlines, and links to apply.",
+      overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
 
@@ -203,7 +202,7 @@ export const electricalEngineering: MajorConfig = {
       description:
         "Research groups and faculty expertise within the Electrical Engineering department.",
       overview:
-        "Placeholder content for faculty research. Replace with faculty profiles, research areas, and links to lab pages.",
+        "Check out the [faculty research page](/research).",
       cards: [],
     },
 

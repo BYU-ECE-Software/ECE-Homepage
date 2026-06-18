@@ -1,6 +1,6 @@
 import Sidebar from "./Sidebar";
 import MobileNav from "./MobileNav";
-import { MajorConfig } from "@/data/undergrad-majors/types";
+import { MajorConfig } from "@/data/undergraduate/majors/types";
 
 interface ContentLayoutProps {
   major: MajorConfig;

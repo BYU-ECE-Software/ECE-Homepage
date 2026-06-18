@@ -1,0 +1,5 @@
+Thanks to generous donations, the Department of Electrical and Computer Engineering awards several scholarships annually to qualified undergraduate students majoring in the department's degree programs. Because available funding fluctuates with the return rate on the university's endowment accounts, the number of awards made each year varies. In accordance with donor wishes, scholarship recipients are selected based on academic performance, progress in the program, and financial need. Awarded scholarships generally cover partial tuition; no student will receive scholarships administered through the university totaling more than full tuition.
+
+Complete the [BYU scholarship application](https://enrollment.byu.edu/scholarships) to be considered for department scholarships. Deadlines specified for the university scholarship application also apply to the departmental scholarships. To maximize your chances of receiving financial assistance, it is essential to submit your application by the designated university scholarship deadline.
+
+[ECEn Department Scholarship Application](https://enrollment.byu.edu/scholarships)

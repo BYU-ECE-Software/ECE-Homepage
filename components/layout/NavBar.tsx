@@ -166,51 +166,50 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen }: NavBarProps) =>
                 }}
                 aria-expanded={undergraduateOpen}
                 className={`flex w-full items-center justify-between px-6 py-4 text-left hover:bg-[#FAFAFA] ${
-                  undergraduateOpen ? 'bg-[#FAFAFA]' : ''
+                  undergraduateOpen ? "bg-[#FAFAFA]" : ""
                 }`}
               >
                 <span>Undergraduate</span>
                 <FiChevronDown className="text-byu-navy h-4 w-4" aria-hidden="true" />
               </button>
-
+              
               {undergraduateOpen && (
                 <div className="flex flex-col text-sm">
+                  <span className="px-10 pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+                    Majors
+                  </span>
+              
                   <Link
                     href="/undergraduate/electrical-engineering"
-                    onClick={() => {
-                      setUndergraduateOpen(false);
-                      setMobileOpen(false);
-                    }}
+                    onClick={() => { setUndergraduateOpen(false); setMobileOpen(false); }}
                     className="text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA]"
                   >
                     Electrical Engineering
                   </Link>
+              
                   <Link
                     href="/undergraduate/computer-engineering"
-                    onClick={() => {
-                      setUndergraduateOpen(false);
-                      setMobileOpen(false);
-                    }}
+                    onClick={() => { setUndergraduateOpen(false); setMobileOpen(false); }}
                     className="text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA]"
                   >
                     Computer Engineering
                   </Link>
+              
                   <Link
                     href="/undergraduate/cybersecurity"
-                    onClick={() => {
-                      setUndergraduateOpen(false);
-                      setMobileOpen(false);
-                    }}
+                    onClick={() => { setUndergraduateOpen(false); setMobileOpen(false); }}
                     className="text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA]"
                   >
                     Cybersecurity
                   </Link>
+              
+                  <span className="px-10 pt-3 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-400">
+                    Minors
+                  </span>
+              
                   <Link
-                    href="/undergraduate/cybersecurity-minor"
-                    onClick={() => {
-                      setUndergraduateOpen(false);
-                      setMobileOpen(false);
-                    }}
+                    href="/undergraduate/minors/cybersecurity"
+                    onClick={() => { setUndergraduateOpen(false); setMobileOpen(false); }}
                     className="text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA]"
                   >
                     Cybersecurity Minor
@@ -508,7 +507,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen }: NavBarProps) =>
                   Cybersecurity
                 </Link>
                 <Link
-                  href="/undergraduate/cybersecurity-minor"
+                  href="/undergraduate/minors/cybersecurity"
                   onClick={() => setUndergraduateOpen(false)}
                   className="text-byu-navy block w-full px-6 py-3 text-left hover:bg-gray-50"
                 >
