@@ -70,26 +70,28 @@ export const electricalEngineering: MajorConfig = {
       title: "Degree Requirements",
       description:
         "Requirements and milestones needed to complete the Electrical Engineering degree.",
-      overview: "Placeholder content for degree requirements.",
+      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34594/program-information-aoYks) for Electrical Engineering.",
       cards: [],
     },
 
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
-      overview: { file: "data/undergrad-majors/content/academic-advising.md" },
+      overview: { file: "/data/undergraduate/content/academic-advising.md" },
       cards: [
         {
           title: "Jana Featherstone",
           description: "ECEn New Student/ Freshman and Graduate Program Advisor",
           href: "https://ece.byu.edu/jana-featherstone",
           image: "/undergrad-majors/advisers/Jana-Featherstone.jpeg",
+          linkText: "Schedule Appointment →"
         },
         {
           title: "Janalyn Mergist",
           description: "ECEn Undergraduate Adviser",
           href: "https://ece.byu.edu/janalyn-mergist",
           image: "/undergrad-majors/advisers/Janalyn-Mergist.jpeg",
+          linkText: "Schedule Appointment →"
         },
       ],
     },
@@ -99,7 +101,7 @@ export const electricalEngineering: MajorConfig = {
       description:
         "Browse course offerings, descriptions, and prerequisites for the Electrical Engineering program.",
       overview:
-        "Placeholder content for the course catalog. Replace with a course list, a link to the registrar's catalog, or an embedded search tool.",
+        "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
       cards: [],
     },
 
@@ -117,6 +119,7 @@ export const electricalEngineering: MajorConfig = {
             "View the 2026-27 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2026-27.",
           href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-26-27.pdf",
           image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/26-27.png",
+          linkText: "View Flowchart →"
         },
         {
           title: "EE Flowchart 25-26",
@@ -124,6 +127,7 @@ export const electricalEngineering: MajorConfig = {
             "View the 2025-26 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2025-26.",
           href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-25-26.pdf",
           image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/25-26.png",
+          linkText: "View Flowchart →"
         },
         {
           title: "EE Flowchart 24-25",
@@ -131,6 +135,7 @@ export const electricalEngineering: MajorConfig = {
             "View the 2024-25 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2024-25.",
           href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-24-25.pdf",
           image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/24-25.png",
+          linkText: "View Flowchart →"
         },
         {
           title: "EE Flowchart 23-24",
@@ -138,6 +143,7 @@ export const electricalEngineering: MajorConfig = {
             "View the 2023-24 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2023-24.",
           href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-23-24.pdf",
           image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/23-24.png",
+          linkText: "View Flowchart →"
         },
         {
           title: "EE Flowchart 22-23",
@@ -145,6 +151,7 @@ export const electricalEngineering: MajorConfig = {
             "View the 2022-23 course requirements to complete a degree in Electrical Engineering. This flowchart is for students who started the program in 2022-23.",
           href: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pdfs/ee-flowchart-22-23.pdf",
           image: "/undergrad-majors/electrical-engineering/graduation-flowcharts/flowchart-pngs/22-23.png",
+          linkText: "View Flowchart →"
         },
       ],
     },
@@ -177,8 +184,7 @@ export const electricalEngineering: MajorConfig = {
       title: "Scholarships",
       description:
         "Scholarship opportunities available to Electrical Engineering students.",
-      overview:
-        "Placeholder content for scholarships. Replace with eligibility info, application deadlines, and links to apply.",
+      overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
 
@@ -196,7 +202,7 @@ export const electricalEngineering: MajorConfig = {
       description:
         "Research groups and faculty expertise within the Electrical Engineering department.",
       overview:
-        "Placeholder content for faculty research. Replace with faculty profiles, research areas, and links to lab pages.",
+        "Check out the [faculty research page](/research).",
       cards: [],
     },
 

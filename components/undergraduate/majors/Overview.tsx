@@ -1,24 +1,18 @@
+"use client";
+
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 interface OverviewProps {
   content: string;
 }
 
-// Strips leading whitespace from every line. Markdown treats 4+ spaces of
-// indentation as a code block, so an inline template literal indented to
-// match surrounding code (rather than a file read straight from disk) would
-// otherwise render as code instead of formatted text.
-function dedent(text: string): string {
-  return text
-    .split("\n")
-    .map((line) => line.replace(/^[ \t]+/, ""))
-    .join("\n")
-    .trim();
-}
-
 // Renders Markdown (headers, bold, lists, etc.) for the `overview` field,
 // styled to match the site's existing color theme without requiring the
 // @tailwindcss/typography plugin.
+//
+// Expects `content` to already be resolved (and, for inline strings,
+// dedented) via resolveOverview() before being passed in here.
 export default function Overview({ content }: OverviewProps) {
   return (
     <div className="mt-6 space-y-4 text-byu-dark-gray">
@@ -52,17 +46,29 @@ export default function Overview({ content }: OverviewProps) {
               {children}
             </strong>
           ),
-          a: ({ href, children }) => (
-            <a
-              href={href}
-              className="font-medium text-byu-royal underline hover:no-underline"
-            >
-              {children}
-            </a>
-          ),
+          a: ({ href, children }) => {
+            const isInternal = href?.startsWith("/");
+            return isInternal ? (
+              <Link
+                href={href ?? "#"}
+                className="font-medium text-byu-royal underline hover:no-underline"
+              >
+                {children}
+              </Link>
+            ) : (
+              <a
+                href={href}
+                className="font-medium text-byu-royal underline hover:no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {children}
+              </a>
+            );
+          },
         }}
       >
-        {dedent(content)}
+        {content}
       </ReactMarkdown>
     </div>
   );

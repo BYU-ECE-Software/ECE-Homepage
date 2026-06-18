@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import ContentLayout from "@/components/undergrad-majors/ContentLayout";
-import ResourceCard from "@/components/undergrad-majors/ResourceCard";
-import Overview from "@/components/undergrad-majors/Overview";
-import { getMajor, majors } from "@/data/undergrad-majors";
-import { resolveOverview } from "@/data/undergrad-majors/resolveOverview";
+import ContentLayout from "@/components/undergraduate/majors/ContentLayout";
+import ResourceCard from "@/components/undergraduate/majors/ResourceCard";
+import Overview from "@/components/undergraduate/majors/Overview";
+import { getMajor, majors } from "@/data/undergraduate/majors";
+import { resolveOverview } from "@/data/undergraduate/resolveOverview";
 
 interface Props {
   params: Promise<{

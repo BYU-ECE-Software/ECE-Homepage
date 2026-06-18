@@ -6,6 +6,7 @@ interface ResourceCardProps {
   description: string;
   href: string;
   image: string;
+  linkText?: string;
 }
 
 export default function ResourceCard({
@@ -13,6 +14,7 @@ export default function ResourceCard({
   description,
   href,
   image,
+  linkText,
 }: ResourceCardProps) {
   return (
     <Link
@@ -34,9 +36,11 @@ export default function ResourceCard({
 
         <p className="mt-2 text-sm text-byu-medium-gray">{description}</p>
 
-        <span className="mt-4 inline-block font-medium text-byu-royal">
-          Learn More →
-        </span>
+        {linkText && (
+          <span className="mt-4 inline-block font-medium text-byu-royal">
+            {linkText}
+          </span>
+        )}
       </div>
     </Link>
   );

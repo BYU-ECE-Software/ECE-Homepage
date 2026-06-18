@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { NavSection } from "@/data/undergrad-majors/types";
+import { NavSection } from "@/data/undergraduate/majors/types";
 
 interface MobileNavProps {
   majorSlug: string;
