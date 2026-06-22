@@ -1,5 +1,5 @@
 import React from "react";
-import { Course, Semester } from "@/types/course";
+import { Course, Semester } from "@/types/Course";
 import { CourseCard } from "./CourseCard";
 
 interface CourseGridProps {

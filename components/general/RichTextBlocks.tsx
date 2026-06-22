@@ -49,7 +49,7 @@ export function Paragraph({ block }: { block: ParagraphBlock }) {
 // ─── Heading ──────────────────────────────────────────────────────────────────
 
 export function Heading({ block }: { block: HeadingBlock }) {
-  const Tag = `h${block.level}` as keyof JSX.IntrinsicElements;
+  const Tag = `h${block.level}` as React.ElementType;
 
   const sizeMap: Record<number, string> = {
     1: "text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight",

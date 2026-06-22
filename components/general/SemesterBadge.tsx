@@ -1,5 +1,5 @@
 import React from "react";
-import { Semester, YearCycle } from "@/types/course";
+import { Semester, YearCycle } from "@/types/Course";
 
 const semesterConfig: Record<Semester, { label: string; classes: string; dimClasses: string }> = {
   fall: {

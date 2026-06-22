@@ -1,4 +1,5 @@
-import type { Spacing, Align, InlineMark } from "@/components/general/RichText";
+import React from "react";
+import type { Spacing, Align, InlineMark } from "@/types/RichText";
 
 // ─── Spacing Map ──────────────────────────────────────────────────────────────
 
