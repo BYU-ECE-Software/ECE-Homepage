@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CourseSection } from "@/types/course";
+import { CourseSection } from "@/types/Course";
 import { sectionMeta } from "@/data/courses/gradCourses";
 
 const SECTIONS: CourseSection[] = [

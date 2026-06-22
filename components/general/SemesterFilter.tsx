@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Semester, YearCycle } from "@/types/course";
+import { Semester, YearCycle } from "@/types/Course";
 
 const SEMESTERS: { value: Semester; label: string; activeClasses: string }[] = [
   { value: "fall", label: "Fall", activeClasses: "bg-amber-500 text-white ring-amber-500" },

@@ -1,4 +1,4 @@
-import { Course } from "@/types/course";
+import { Course } from "@/types/Course";
 
 export const courses: Course[] = [
   // Regular offerings
@@ -110,8 +110,8 @@ export const courses: Course[] = [
     instructor: "Dr. Barrett",
     semesters: [{ semester: "fall", cycle: "odd" }],
     section: "special-topics",
-    lastTaught: "Fall 2023",
-    nextTaught: "Fall 2025",
+    lastOffered: "Fall 2023",
+    nextOffered: "Fall 2025",
   },
   {
     id: "ece-5220",
@@ -120,8 +120,8 @@ export const courses: Course[] = [
     instructor: "Dr. Lee",
     semesters: [{ semester: "winter", cycle: "even" }],
     section: "special-topics",
-    lastTaught: "Winter 2024",
-    nextTaught: "Winter 2026",
+    lastOffered: "Winter 2024",
+    nextOffered: "Winter 2026",
   },
   {
     id: "ece-5320",
@@ -130,8 +130,8 @@ export const courses: Course[] = [
     instructor: "Dr. Cambou",
     semesters: [{ semester: "spring", cycle: "every" }],
     section: "special-topics",
-    lastTaught: "Spring 2024",
-    nextTaught: "Spring 2025",
+    lastOffered: "Spring 2024",
+    nextOffered: "Spring 2025",
   },
   {
     id: "ece-5420",
@@ -140,8 +140,8 @@ export const courses: Course[] = [
     instructor: "Dr. Millet",
     semesters: [{ semester: "fall", cycle: "even" }],
     section: "special-topics",
-    lastTaught: "Fall 2022",
-    nextTaught: "Fall 2024",
+    lastOffered: "Fall 2022",
+    nextOffered: "Fall 2024",
   },
   {
     id: "ece-6620",
@@ -150,8 +150,8 @@ export const courses: Course[] = [
     instructor: "Dr. Beard",
     semesters: [{ semester: "winter", cycle: "odd" }],
     section: "special-topics",
-    lastTaught: "Winter 2023",
-    nextTaught: "Winter 2025",
+    lastOffered: "Winter 2023",
+    nextOffered: "Winter 2025",
   },
 
   // Unscheduled

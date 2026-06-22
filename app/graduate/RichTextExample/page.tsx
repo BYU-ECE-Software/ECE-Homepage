@@ -1,7 +1,7 @@
 "use client";
 
 import { RichText } from "@/components/general/RichText";
-import type { RichTextBlock } from "@/components/general/RichTextBlocks";
+import type { RichTextBlock } from "@/types/RichText";
 
 const exampleBlocks: RichTextBlock[] = [
   {

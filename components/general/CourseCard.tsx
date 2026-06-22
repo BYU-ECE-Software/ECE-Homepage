@@ -1,5 +1,5 @@
 import React from "react";
-import { Course, Semester, SemesterOffering } from "@/types/course";
+import { Course, Semester, SemesterOffering } from "@/types/Course";
 import { SemesterBadge } from "./SemesterBadge";
 
 const ALL_SEMESTERS: Semester[] = ["fall", "winter", "spring", "summer"];
