@@ -59,6 +59,8 @@ const navConfig: NavItem[] = [
     children: [
       { label: 'Calendar', href: '/news-and-events/calendar' },
       { label: 'News', href: '/news-and-events/news' },
+      { label: 'Faith and Engineering Lectures', href: '/news-and-events/faith-and-engineering-lectures' },
+      { label: 'Department Tours', href: '/news-and-events/department-tours' }
     ],
   },
   {
