@@ -31,6 +31,7 @@ const navConfig: NavItem[] = [
       { label: 'Staff', href: '/people/staff' },
       { label: 'Student Employees', href: '/people/student-employees' },
       { label: 'PhD Students', href: '/people/phd-students' },
+      { label: 'Emeritus', href: '/people/emeritus' },
     ],
   },
   {
