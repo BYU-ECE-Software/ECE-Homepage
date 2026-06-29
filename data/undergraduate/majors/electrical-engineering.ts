@@ -83,14 +83,14 @@ export const electricalEngineering: MajorConfig = {
           title: "Jana Featherstone",
           description: "ECEn New Student/ Freshman and Graduate Program Advisor",
           href: "https://ece.byu.edu/jana-featherstone",
-          image: "/undergrad-majors/advisers/Jana-Featherstone.jpeg",
+          image: "/undergraduate/advisers/Jana-Featherstone.jpeg",
           linkText: "Schedule Appointment →"
         },
         {
           title: "Janalyn Mergist",
           description: "ECEn Undergraduate Adviser",
           href: "https://ece.byu.edu/janalyn-mergist",
-          image: "/undergrad-majors/advisers/Janalyn-Mergist.jpeg",
+          image: "/undergraduate/advisers/Janalyn-Mergist.jpeg",
           linkText: "Schedule Appointment →"
         },
       ],
@@ -168,14 +168,14 @@ export const electricalEngineering: MajorConfig = {
           description:
             "Career Services Director, Andrea Merriman, can assist you in all your employment needs. Whether you're seeking a full-time job, internship, or just some sound advice, she is waiting to assist you",
           href: "https://careers.byu.edu/andrea-merriman",
-          image: "/undergrad-majors/career-services/andrea-merriman.png",
+          image: "/undergraduate/career-services/andrea-merriman.png",
         },
         {
           title: "Connect with Alumni",
           description:
             "BYU Connect allows students to connect directly with BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
           href: "https://alumni.byu.edu/byuconnect",
-          image: "/undergrad-majors/career-services/byu-connect-alumni.jpeg",
+          image: "/undergraduate/career-services/byu-connect-alumni.jpeg",
         },
       ],
     },
@@ -200,7 +200,7 @@ export const electricalEngineering: MajorConfig = {
     "faculty-research": {
       title: "Faculty Research",
       description:
-        "Research groups and faculty expertise within the Electrical Engineering department.",
+        "Research groups and faculty expertise within the Electrical and Computer Engineering department.",
       overview:
         "Check out the [faculty research page](/research).",
       cards: [],

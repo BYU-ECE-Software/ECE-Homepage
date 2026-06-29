@@ -18,7 +18,7 @@ export const cybersecurity: MajorConfig = {
     {
       title: "Opportunities",
       items: [
-        { title: "Internships", slug: "internships" },
+        { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
         { title: "Student Organizations", slug: "student-organizations" },
       ],
@@ -49,29 +49,96 @@ export const cybersecurity: MajorConfig = {
       title: "Degree Requirements",
       description:
         "Requirements and milestones needed to complete the Cybersecurity degree.",
-      overview: "Placeholder content for degree requirements.",
+      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
       cards: [],
     },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
-      overview: "Placeholder advising content.",
-      cards: [],
+      overview: { file: "/data/undergraduate/content/electrical-engineering-academic-advising.md" },
+      cards: [
+        {
+          title: "Alisha Wall",
+          description: "Cybersecurity Undegraduate Advisor",
+          href: "https://ece.byu.edu/alisha-wall",
+          image: "/undergraduate/advisers/Alisha-Wall.jpeg",
+          linkText: "Schedule Appointment →"
+        },
+      ]  
     },
     "course-catalog": {
       title: "Course Catalog",
       description: "Browse course offerings for the Cybersecurity program.",
-      overview: "Placeholder content for the course catalog.",
+      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
       cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
-      description: "Recommended course sequence to graduate on time.",
-      overview: "Placeholder content for graduation flowcharts.",
-      cards: [],
+      description:
+        "View the course requirements to complete a degree in Cybersecurity.",
+      overview:
+        "Choose a flowchart based on the year you started the program. (See your advisor if you have questions about the flowchart).",
+      cards: [
+        {
+          title: "Cybersecurity Flowchart 26-27",
+          description:
+            "View the 2026-27 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2026-27.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-26-27.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 25-26",
+          description:
+            "View the 2025-26 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2025-26.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-25-26.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 24-25",
+          description:
+            "View the 2024-25 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2024-25.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-24-25.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 23-24",
+          description:
+            "View the 2023-24 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2023-24.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-23-24.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 22-23",
+          description:
+            "View the 2022-23 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2022-23.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-22-23.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 20-21",
+          description:
+            "View the 2020-21 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2020-21.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-20-21.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 19-20",
+          description:
+            "View the 2019-20 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2019-20.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-19-20.pdf",
+          linkText: "View Flowchart →"
+        },
+        {
+          title: "Cybersecurity Flowchart 18-19",
+          description:
+            "View the 2018-19 course requirements to complete a degree in Cybersecurity. This flowchart is for students who started the program in 2018-19.",
+          href: "/undergraduate/majors/cybersecurity/graduation-flowcharts/flowchart-pdfs/cyber-flowchart-18-19.pdf",
+          linkText: "View Flowchart →"
+        },
+      ],
     },
-    internships: {
-      title: "Internships",
+    "networking-internships": {
+      title: "Networking/Internships",
       description: "Internship opportunities for Cybersecurity students.",
       overview: "Placeholder content for internships.",
       cards: [],

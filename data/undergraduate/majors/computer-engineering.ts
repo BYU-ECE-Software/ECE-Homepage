@@ -18,7 +18,7 @@ export const computerEngineering: MajorConfig = {
     {
       title: "Opportunities",
       items: [
-        { title: "Internships", slug: "internships" },
+        { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
         { title: "Student Organizations", slug: "student-organizations" },
       ],
@@ -61,14 +61,14 @@ export const computerEngineering: MajorConfig = {
           title: "Jana Featherstone",
           description: "ECEn New Student/ Freshman and Graduate Program Advisor",
           href: "https://ece.byu.edu/jana-featherstone",
-          image: "/undergrad-majors/advisers/Jana-Featherstone.jpeg",
+          image: "/undergraduate/advisers/Jana-Featherstone.jpeg",
           linkText: "Schedule Appointment →"
         },
         {
           title: "Janalyn Mergist",
           description: "ECEn Undergraduate Adviser",
           href: "https://ece.byu.edu/janalyn-mergist",
-          image: "/undergrad-majors/advisers/Janalyn-Mergist.jpeg",
+          image: "/undergraduate/advisers/Janalyn-Mergist.jpeg",
           linkText: "Schedule Appointment →"
         },
       ],
@@ -128,16 +128,34 @@ export const computerEngineering: MajorConfig = {
         },
       ],
     },
-    internships: {
-      title: "Internships",
-      description: "Internship opportunities for Computer Engineering students.",
-      overview: "Placeholder content for internships.",
-      cards: [],
+    "networking-internships": {
+      title: "Networking and Internships",
+      description:
+        "Internship opportunities and resources for Computer Engineering students.",
+      overview:
+        "Check out these awesome resources!",
+      cards: [
+        {
+          title: "Jobs and Internships",
+          description:
+            "Career Services Director, Andrea Merriman, can assist you in all your employment needs. Whether you're seeking a full-time job, internship, or just some sound advice, she is waiting to assist you",
+          href: "https://careers.byu.edu/andrea-merriman",
+          image: "/undergraduate/career-services/andrea-merriman.png",
+        },
+        {
+          title: "Connect with Alumni",
+          description:
+            "BYU Connect allows students to connect directly with BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
+          href: "https://alumni.byu.edu/byuconnect",
+          image: "/undergraduate/career-services/byu-connect-alumni.jpeg",
+        },
+      ],
     },
     scholarships: {
       title: "Scholarships",
-      description: "Scholarship opportunities for Computer Engineering students.",
-      overview: "Placeholder content for scholarships.",
+      description:
+        "Scholarship opportunities available to Computer Engineering students.",
+      overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
     "student-organizations": {
@@ -148,8 +166,10 @@ export const computerEngineering: MajorConfig = {
     },
     "faculty-research": {
       title: "Faculty Research",
-      description: "Research groups and faculty expertise.",
-      overview: "Placeholder content for faculty research.",
+      description:
+        "Research groups and faculty expertise within the Electrical and Computer Engineering department.",
+      overview:
+        "Check out the [faculty research page](/research).",
       cards: [],
     },
     "undergraduate-research": {

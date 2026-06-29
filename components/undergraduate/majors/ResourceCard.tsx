@@ -5,7 +5,7 @@ interface ResourceCardProps {
   title: string;
   description: string;
   href: string;
-  image: string;
+  image?: string;
   linkText?: string;
 }
 
@@ -21,15 +21,17 @@ export default function ResourceCard({
       href={href}
       className="overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-md"
     >
-      <div className="relative h-48 bg-gray-200">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          unoptimized
-          className="object-cover"
-        />
-      </div>
+      {image && (
+        <div className="relative h-48 bg-gray-200">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            unoptimized
+            className="object-cover"
+          />
+        </div>
+      )}
 
       <div className="p-6">
         <h3 className="text-lg font-semibold text-byu-navy">{title}</h3>

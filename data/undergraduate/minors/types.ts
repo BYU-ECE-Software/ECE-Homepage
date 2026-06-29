@@ -15,6 +15,6 @@ export interface MinorConfig {
   description: string;
 
   // Main page body. Either an inline Markdown string or a { file } reference
-  // read at build time — same pattern as undergrad-majors.
+  // read at build time — same pattern as undergraduate.
   overview: string | OverviewFile;
 }
