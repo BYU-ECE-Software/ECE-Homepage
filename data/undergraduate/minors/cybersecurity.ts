@@ -6,5 +6,5 @@ export const cybersecurityMinor: MinorConfig = {
   tagline: "Undergraduate Minor",
   description:
     "An introduction to core concepts in electrical engineering, open to students in any major.",
-  overview: { file: "data/undergraduate/content/cybersecurity-description.md" },
+  overview: { file: "data/undergraduate/content/cybersecurity-minor-description.md" },
 };

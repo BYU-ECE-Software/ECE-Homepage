@@ -12,7 +12,7 @@ export interface ResourceCardData {
   title: string;
   description: string;
   href: string;
-  image: string;
+  image?: string;
   linkText?: string;
 }
 
