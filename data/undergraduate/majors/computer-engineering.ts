@@ -20,22 +20,32 @@ export const computerEngineering: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
         { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
 
-  // Placeholder content. Every slug listed in `navigation` above must have a
-  // matching key here, plus a "home" entry, or the build will fail (see
-  // generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Placeholder content, plus a required "home" entry. Every nav item
+  // WITHOUT an `href` must have a matching key here, or the build will fail
+  // (see generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Nav items that set `href` (e.g. Student Organizations, Faculty Research)
+  // link elsewhere and don't need an entry here.
   content: {
     home: {
       title: "Welcome",
@@ -156,20 +166,6 @@ export const computerEngineering: MajorConfig = {
       description:
         "Scholarship opportunities available to Computer Engineering students.",
       overview: { file: "/data/undergraduate/content/department-scholarships.md" },
-      cards: [],
-    },
-    "student-organizations": {
-      title: "Student Organizations",
-      description: "Clubs and teams for Computer Engineering students.",
-      overview: "Placeholder content for student organizations.",
-      cards: [],
-    },
-    "faculty-research": {
-      title: "Faculty Research",
-      description:
-        "Research groups and faculty expertise within the Electrical and Computer Engineering department.",
-      overview:
-        "Check out the [faculty research page](/research).",
       cards: [],
     },
     "undergraduate-research": {

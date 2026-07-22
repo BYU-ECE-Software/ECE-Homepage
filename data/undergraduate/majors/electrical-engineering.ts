@@ -20,15 +20,29 @@ export const electricalEngineering: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
+        // Example external link: `slug` just needs to be unique here, it
+        // doesn't need a matching entry in `content` below.
+        {
+          title: "BYU Alumni",
+          slug: "byu-alumni",
+          href: "https://alumni.byu.edu",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
-        { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
@@ -47,21 +61,21 @@ export const electricalEngineering: MajorConfig = {
           title: "Student Organizations",
           description:
             "Explore clubs, competition teams, and leadership opportunities.",
-          href: "/undergraduate/electrical-engineering/student-organizations",
-          image: "/images/placeholders/clubs.jpg",
+          href: "/student-organizations",
+          // image: "/images/placeholders/clubs.jpg",
         },
         {
           title: "Faculty Research",
           description: "Learn about research groups and faculty expertise.",
-          href: "/undergraduate/electrical-engineering/faculty-research",
-          image: "/images/placeholders/research.jpg",
+          href: "/research",
+          // image: "/images/placeholders/research.jpg",
         },
         {
           title: "Academic Advising",
           description:
             "Connect with advisors and plan your academic journey.",
           href: "/undergraduate/electrical-engineering/academic-advising",
-          image: "/images/placeholders/advising.jpg",
+          // image: "/images/placeholders/advising.jpg",
         },
       ],
     },
@@ -188,40 +202,21 @@ export const electricalEngineering: MajorConfig = {
       cards: [],
     },
 
-    "student-organizations": {
-      title: "Student Organizations",
-      description:
-        "Clubs, competition teams, and leadership opportunities for Electrical Engineering students.",
-      overview:
-        "Placeholder content for student organizations. Replace with a list of clubs, advisor contacts, and meeting information.",
-      cards: [],
-    },
-
-    "faculty-research": {
-      title: "Faculty Research",
-      description:
-        "Research groups and faculty expertise within the Electrical and Computer Engineering department.",
-      overview:
-        "Check out the [faculty research page](/research).",
-      cards: [],
-    },
-
     "undergraduate-research": {
       title: "Undergraduate Research",
       description:
         "Opportunities for undergraduate students to get involved in research.",
       overview:
-        "Placeholder content for undergraduate research. Replace with how to find a mentor, available positions, and application steps.",
-      cards: [],
+        "ECEN students have the opportunity to participate in IMMERSE, an undergraduate summer research program. This is a great opportunity for students interested in graduate school to get hands-on research experience over the summer and develop relationships with professors.",
+      cards: [
+          {
+          title: "IMMERSE",
+          description:
+            "Accepting applications",
+          href: "https://immerse.byu.edu/",
+          image: "/research/immerse_2026.jpeg",
+        },
+      ],
     },
-
-    "research-labs": {
-      title: "Research Labs",
-      description:
-        "Labs and facilities supporting research within the department.",
-      overview:
-        "Placeholder content for research labs. Replace with a list of labs, their focus areas, and links to lab websites.",
-      cards: [],
-    },
-  },
+  }
 };

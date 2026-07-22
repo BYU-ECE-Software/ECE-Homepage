@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NavSection } from "@/data/undergraduate/majors/types";
+import { resolveNavLink } from "./navUtils";
+import NavLinkIcon from "./NavLinkIcon";
 
 interface MobileNavProps {
   majorSlug: string;
@@ -77,7 +79,7 @@ export default function MobileNav({
                 className={`block rounded px-3 py-2 text-sm transition ${
                   !currentSlug
                     ? "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy"
-                    : "text-byu-medium-gray hover:bg-gray-50 hover:text-byu-navy"
+                    : "font-medium text-byu-navy hover:bg-gray-50"
                 }`}
               >
                 Home
@@ -96,12 +98,17 @@ export default function MobileNav({
 
               <ul className="space-y-1">
                 {section.items.map((item) => {
-                  const active = item.slug === currentSlug;
+                  const { href, linkType } = resolveNavLink(majorSlug, item);
+                  const active =
+                    linkType === "slug" && item.slug === currentSlug;
+                  const external = linkType === "external";
 
                   return (
                     <li key={item.slug}>
                       <Link
-                        href={`${basePath}/${item.slug}`}
+                        href={href}
+                        target={external ? "_blank" : undefined}
+                        rel={external ? "noopener noreferrer" : undefined}
                         onClick={() => setOpen(false)}
                         className={`block rounded px-3 py-2 text-sm transition ${
                           active
@@ -110,6 +117,7 @@ export default function MobileNav({
                         }`}
                       >
                         {item.title}
+                        <NavLinkIcon linkType={linkType} />
                       </Link>
                     </li>
                   );

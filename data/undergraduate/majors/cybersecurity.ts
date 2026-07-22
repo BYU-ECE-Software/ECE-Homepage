@@ -20,22 +20,32 @@ export const cybersecurity: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
         { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
 
-  // Placeholder content. Every slug listed in `navigation` above must have a
-  // matching key here, plus a "home" entry, or the build will fail (see
-  // generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Placeholder content, plus a required "home" entry. Every nav item
+  // WITHOUT an `href` must have a matching key here, or the build will fail
+  // (see generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Nav items that set `href` (e.g. Student Organizations, Faculty Research)
+  // link elsewhere and don't need an entry here.
   content: {
     home: {
       title: "Welcome",
@@ -147,18 +157,6 @@ export const cybersecurity: MajorConfig = {
       title: "Scholarships",
       description: "Scholarship opportunities for Cybersecurity students.",
       overview: "Placeholder content for scholarships.",
-      cards: [],
-    },
-    "student-organizations": {
-      title: "Student Organizations",
-      description: "Clubs and teams for Cybersecurity students.",
-      overview: "Placeholder content for student organizations.",
-      cards: [],
-    },
-    "faculty-research": {
-      title: "Faculty Research",
-      description: "Research groups and faculty expertise.",
-      overview: "Placeholder content for faculty research.",
       cards: [],
     },
     "undergraduate-research": {
