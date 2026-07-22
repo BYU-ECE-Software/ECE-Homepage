@@ -44,7 +44,6 @@ export const cybersecurity: MajorConfig = {
           href: "/research",
         },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
-        { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
@@ -156,28 +155,50 @@ export const cybersecurity: MajorConfig = {
       ],
     },
     "networking-internships": {
-      title: "Networking/Internships",
-      description: "Internship opportunities for Cybersecurity students.",
-      overview: "Placeholder content for internships.",
-      cards: [],
+      title: "Networking and Internships",
+      description:
+        "Internship opportunities and resources for Computer Engineering students.",
+      overview:
+        "Check out these awesome resources!",
+      cards: [
+        {
+          title: "Jobs and Internships",
+          description:
+            "Career Services Director, Andrea Merriman, can assist you in all your employment needs. Whether you're seeking a full-time job, internship, or just some sound advice, she is waiting to assist you",
+          href: "https://careers.byu.edu/andrea-merriman",
+          image: "/undergraduate/career-services/andrea-merriman.png",
+        },
+        {
+          title: "Connect with Alumni",
+          description:
+            "BYU Connect allows students to connect directly with BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
+          href: "https://alumni.byu.edu/byuconnect",
+          image: "/undergraduate/career-services/byu-connect-alumni.jpeg",
+        },
+      ],
     },
-    scholarships: {
+    "scholarships": {
       title: "Scholarships",
-      description: "Scholarship opportunities for Cybersecurity students.",
-      overview: "Placeholder content for scholarships.",
+      description:
+        "Scholarship opportunities available to Cybersecurity students.",
+      overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
     "undergraduate-research": {
       title: "Undergraduate Research",
-      description: "Opportunities to get involved in research.",
-      overview: "Placeholder content for undergraduate research.",
-      cards: [],
-    },
-    "research-labs": {
-      title: "Research Labs",
-      description: "Labs and facilities supporting research.",
-      overview: "Placeholder content for research labs.",
-      cards: [],
+      description:
+        "Opportunities for undergraduate students to get involved in research.",
+      overview:
+        "ECEN students have the opportunity to participate in IMMERSE, an undergraduate summer research program. This is a great opportunity for students interested in graduate school to get hands-on research experience over the summer and develop relationships with professors.",
+      cards: [
+          {
+          title: "IMMERSE",
+          description:
+            "Accepting applications",
+          href: "https://immerse.byu.edu/",
+          image: "/research/immerse_2026.jpeg",
+        },
+      ],
     },
   },
 };
