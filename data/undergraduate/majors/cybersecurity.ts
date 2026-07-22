@@ -9,9 +9,17 @@ export const cybersecurity: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34586/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -20,22 +28,32 @@ export const cybersecurity: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
         { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
 
-  // Placeholder content. Every slug listed in `navigation` above must have a
-  // matching key here, plus a "home" entry, or the build will fail (see
-  // generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Placeholder content, plus a required "home" entry. Every nav item
+  // WITHOUT an `href` must have a matching key here, or the build will fail
+  // (see generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Nav items that set `href` (e.g. Student Organizations, Faculty Research)
+  // link elsewhere and don't need an entry here.
   content: {
     home: {
       title: "Welcome",
@@ -45,13 +63,19 @@ export const cybersecurity: MajorConfig = {
         "Use the navigation menu to explore academic planning resources, student opportunities, and research experiences available within the department.",
       cards: [],
     },
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Cybersecurity degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Cybersecurity degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
+    //   cards: [],
+    // },
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description: "Browse course offerings for the Cybersecurity program.",
+    //   overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
@@ -65,12 +89,6 @@ export const cybersecurity: MajorConfig = {
           linkText: "Schedule Appointment →"
         },
       ]  
-    },
-    "course-catalog": {
-      title: "Course Catalog",
-      description: "Browse course offerings for the Cybersecurity program.",
-      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
@@ -147,18 +165,6 @@ export const cybersecurity: MajorConfig = {
       title: "Scholarships",
       description: "Scholarship opportunities for Cybersecurity students.",
       overview: "Placeholder content for scholarships.",
-      cards: [],
-    },
-    "student-organizations": {
-      title: "Student Organizations",
-      description: "Clubs and teams for Cybersecurity students.",
-      overview: "Placeholder content for student organizations.",
-      cards: [],
-    },
-    "faculty-research": {
-      title: "Faculty Research",
-      description: "Research groups and faculty expertise.",
-      overview: "Placeholder content for faculty research.",
       cards: [],
     },
     "undergraduate-research": {
