@@ -44,7 +44,6 @@ export const computerEngineering: MajorConfig = {
           href: "/research",
         },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
-        { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
@@ -178,15 +177,19 @@ export const computerEngineering: MajorConfig = {
     },
     "undergraduate-research": {
       title: "Undergraduate Research",
-      description: "Opportunities to get involved in research.",
-      overview: "Placeholder content for undergraduate research.",
-      cards: [],
-    },
-    "research-labs": {
-      title: "Research Labs",
-      description: "Labs and facilities supporting research.",
-      overview: "Placeholder content for research labs.",
-      cards: [],
+      description:
+        "Opportunities for undergraduate students to get involved in research.",
+      overview:
+        "ECEN students have the opportunity to participate in IMMERSE, an undergraduate summer research program. This is a great opportunity for students interested in graduate school to get hands-on research experience over the summer and develop relationships with professors.",
+      cards: [
+          {
+          title: "IMMERSE",
+          description:
+            "Accepting applications",
+          href: "https://immerse.byu.edu/",
+          image: "/research/immerse_2026.jpeg",
+        },
+      ],
     },
   },
 };
