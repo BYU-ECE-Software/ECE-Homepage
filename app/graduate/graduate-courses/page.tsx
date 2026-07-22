@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { courses, sectionMeta } from "@/data/courses/gradCourses";
-import { Course, CourseSection, Semester, YearCycle } from "@/types/Course";
+import { CourseSection, Semester, YearCycle } from "@/types/Course";
 import { SectionTabs } from "@/components/general/SectionTabs";
 import { SemesterFilter } from "@/components/general/SemesterFilter";
 import { CourseGrid } from "@/components/general/CourseGrid";

@@ -18,19 +18,26 @@ function dedent(text: string): string {
 
 // Resolves the `overview` field of a PageContent into a final Markdown
 // string. If given a plain string, dedents and returns it. If given a
-// { file } reference, reads that file from disk as-is, relative to the
-// project root, at build time (this runs in a server component during
-// `next build`, never in the browser).
+// { file } reference, reads that file from the undergraduate content
+// directory at build time (this runs in a server component during
+// `next build`, never in the browser). The basename keeps reads scoped to
+// that directory and prevents content configuration from traversing the project.
 export function resolveOverview(overview: string | OverviewFile): string {
   if (typeof overview === "string") {
     return dedent(overview);
   }
 
-  const absolutePath = path.join(process.cwd(), overview.file);
+  const absolutePath = path.join(
+    process.cwd(),
+    "data",
+    "undergraduate",
+    "content",
+    path.basename(overview.file),
+  );
 
   try {
     return fs.readFileSync(absolutePath, "utf-8");
-  } catch (error) {
+  } catch {
     throw new Error(
       `Could not read overview markdown file at "${overview.file}" (resolved to "${absolutePath}"). ` +
         `Check that the path is correct and relative to the project root.`

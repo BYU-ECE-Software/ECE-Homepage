@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 // Footer bar to be used on every page
 const Footer = () => {

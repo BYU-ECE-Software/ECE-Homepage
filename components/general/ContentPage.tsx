@@ -1,0 +1,134 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+export interface ResourceItem {
+  title: string;
+  description: string;
+  href?: string;
+  eyebrow?: string;
+  linkLabel?: string;
+}
+
+interface PageIntroProps {
+  title: string;
+  eyebrow?: string;
+  description?: string;
+  children?: ReactNode;
+}
+
+export function PageIntro({ title, eyebrow, description, children }: PageIntroProps) {
+  return (
+    <header className="bg-slate-100 px-6 py-14 sm:py-18">
+      <div className="mx-auto max-w-6xl">
+        {eyebrow && (
+          <p className="mb-3 text-sm font-semibold tracking-[0.18em] text-byu-royal uppercase">
+            {eyebrow}
+          </p>
+        )}
+        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-byu-navy sm:text-5xl">
+          {title}
+        </h1>
+        {description && (
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
+        )}
+        {children && <div className="mt-7">{children}</div>}
+      </div>
+    </header>
+  );
+}
+
+export function ResourceGrid({
+  items,
+  title,
+  description,
+  columns = 3,
+}: {
+  items: ResourceItem[];
+  title?: string;
+  description?: string;
+  columns?: 2 | 3 | 4;
+}) {
+  const columnClass = {
+    2: "md:grid-cols-2",
+    3: "md:grid-cols-2 lg:grid-cols-3",
+    4: "sm:grid-cols-2 lg:grid-cols-4",
+  }[columns];
+
+  return (
+    <section className="px-6 py-14">
+      <div className="mx-auto max-w-6xl">
+        {title && <h2 className="text-3xl font-semibold text-byu-navy">{title}</h2>}
+        {description && <p className="mt-3 max-w-3xl leading-7 text-slate-600">{description}</p>}
+        <div className={`mt-8 grid gap-6 ${columnClass}`}>
+          {items.map((item) => {
+            const body = (
+              <article className="flex h-full flex-col border-t-4 border-byu-royal bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md">
+                {item.eyebrow && (
+                  <p className="mb-2 text-xs font-semibold tracking-widest text-byu-royal uppercase">
+                    {item.eyebrow}
+                  </p>
+                )}
+                <h3 className="text-xl font-semibold text-byu-navy">{item.title}</h3>
+                <p className="mt-3 flex-1 leading-7 text-slate-600">{item.description}</p>
+                {item.href && (
+                  <span className="mt-5 font-semibold text-byu-royal">
+                    {item.linkLabel ?? "Learn more"} <span aria-hidden="true">→</span>
+                  </span>
+                )}
+              </article>
+            );
+
+            if (!item.href) return <div key={item.title}>{body}</div>;
+            if (/^https?:\/\//.test(item.href)) {
+              return (
+                <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer">
+                  {body}
+                </a>
+              );
+            }
+            return (
+              <Link key={item.title} href={item.href}>
+                {body}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function CallToAction({
+  title,
+  description,
+  href,
+  label,
+}: {
+  title: string;
+  description: string;
+  href: string;
+  label: string;
+}) {
+  const buttonClass =
+    "inline-flex rounded-md bg-white px-5 py-3 font-semibold text-byu-navy transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+
+  return (
+    <section className="bg-byu-navy px-6 py-12 text-white">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <div>
+          <h2 className="text-2xl font-semibold">{title}</h2>
+          <p className="mt-2 max-w-2xl leading-7 text-blue-100">{description}</p>
+        </div>
+        {/^https?:\/\//.test(href) ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" className={buttonClass}>
+            {label}
+          </a>
+        ) : (
+          <Link href={href} className={buttonClass}>
+            {label}
+          </Link>
+        )}
+      </div>
+    </section>
+  );
+}
