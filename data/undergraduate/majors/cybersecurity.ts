@@ -9,9 +9,17 @@ export const cybersecurity: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34586/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -55,13 +63,19 @@ export const cybersecurity: MajorConfig = {
         "Use the navigation menu to explore academic planning resources, student opportunities, and research experiences available within the department.",
       cards: [],
     },
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Cybersecurity degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Cybersecurity degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
+    //   cards: [],
+    // },
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description: "Browse course offerings for the Cybersecurity program.",
+    //   overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
@@ -75,12 +89,6 @@ export const cybersecurity: MajorConfig = {
           linkText: "Schedule Appointment →"
         },
       ]  
-    },
-    "course-catalog": {
-      title: "Course Catalog",
-      description: "Browse course offerings for the Cybersecurity program.",
-      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",

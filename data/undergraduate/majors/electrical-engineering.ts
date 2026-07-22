@@ -9,9 +9,17 @@ export const electricalEngineering: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34594/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -27,11 +35,11 @@ export const electricalEngineering: MajorConfig = {
         },
         // Example external link: `slug` just needs to be unique here, it
         // doesn't need a matching entry in `content` below.
-        {
-          title: "BYU Alumni",
-          slug: "byu-alumni",
-          href: "https://alumni.byu.edu",
-        },
+        // {
+        //   title: "BYU Alumni",
+        //   slug: "byu-alumni",
+        //   href: "https://alumni.byu.edu",
+        // },
       ],
     },
     {
@@ -80,13 +88,22 @@ export const electricalEngineering: MajorConfig = {
       ],
     },
 
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Electrical Engineering degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34594/program-information-aoYks) for Electrical Engineering.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Electrical Engineering degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34594/program-information-aoYks) for Electrical Engineering.",
+    //   cards: [],
+    // },
+
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description:
+    //     "Browse course offerings, descriptions, and prerequisites for the Electrical Engineering program.",
+    //   overview:
+    //     "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
 
     "academic-advising": {
       title: "Academic Advising",
@@ -110,16 +127,6 @@ export const electricalEngineering: MajorConfig = {
       ],
     },
 
-    "course-catalog": {
-      title: "Course Catalog",
-      description:
-        "Browse course offerings, descriptions, and prerequisites for the Electrical Engineering program.",
-      overview:
-        "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
-    },
-
-    
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
       description:

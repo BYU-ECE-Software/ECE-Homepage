@@ -9,9 +9,17 @@ export const computerEngineering: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34200/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -55,13 +63,19 @@ export const computerEngineering: MajorConfig = {
         "Use the navigation menu to explore academic planning resources, student opportunities, and research experiences available within the department.",
       cards: [],
     },
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Computer Engineering degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34200/program-information-aoYks) for Computer Engineering.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Computer Engineering degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34200/program-information-aoYks) for Computer Engineering.",
+    //   cards: [],
+    // },
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description: "Browse course offerings, descriptions, and prerequisites for the Computer Engineering program.",
+    //   overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
@@ -82,12 +96,6 @@ export const computerEngineering: MajorConfig = {
           linkText: "Schedule Appointment →"
         },
       ],
-    },
-    "course-catalog": {
-      title: "Course Catalog",
-      description: "Browse course offerings, descriptions, and prerequisites for the Computer Engineering program.",
-      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
