@@ -1,6 +1,18 @@
 export interface NavItem {
   title: string;
+
+  // Identifies this item and, by default, becomes the URL segment:
+  // /undergraduate/{major}/{slug}
   slug: string;
+
+  // Optional. If set, the sidebar links here instead of the internal
+  // "/undergraduate/{major}/{slug}" route. Accepts either:
+  //   - an absolute URL, e.g. "https://alumni.byu.edu" (opens in a new tab)
+  //   - an internal path elsewhere on the site, e.g. "/research"
+  // `slug` is still required (it's used as the React list key), but no
+  // matching entry in `content` is needed since the link never renders
+  // that major's own page.
+  href?: string;
 }
 
 export interface NavSection {

@@ -9,9 +9,17 @@ export const computerEngineering: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34200/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -20,22 +28,31 @@ export const computerEngineering: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
-        { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
 
-  // Placeholder content. Every slug listed in `navigation` above must have a
-  // matching key here, plus a "home" entry, or the build will fail (see
-  // generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Placeholder content, plus a required "home" entry. Every nav item
+  // WITHOUT an `href` must have a matching key here, or the build will fail
+  // (see generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Nav items that set `href` (e.g. Student Organizations, Faculty Research)
+  // link elsewhere and don't need an entry here.
   content: {
     home: {
       title: "Welcome",
@@ -45,13 +62,19 @@ export const computerEngineering: MajorConfig = {
         "Use the navigation menu to explore academic planning resources, student opportunities, and research experiences available within the department.",
       cards: [],
     },
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Computer Engineering degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34200/program-information-aoYks) for Computer Engineering.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Computer Engineering degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34200/program-information-aoYks) for Computer Engineering.",
+    //   cards: [],
+    // },
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description: "Browse course offerings, descriptions, and prerequisites for the Computer Engineering program.",
+    //   overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
@@ -72,12 +95,6 @@ export const computerEngineering: MajorConfig = {
           linkText: "Schedule Appointment →"
         },
       ],
-    },
-    "course-catalog": {
-      title: "Course Catalog",
-      description: "Browse course offerings, descriptions, and prerequisites for the Computer Engineering program.",
-      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
@@ -158,31 +175,21 @@ export const computerEngineering: MajorConfig = {
       overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
-    "student-organizations": {
-      title: "Student Organizations",
-      description: "Clubs and teams for Computer Engineering students.",
-      overview: "Placeholder content for student organizations.",
-      cards: [],
-    },
-    "faculty-research": {
-      title: "Faculty Research",
-      description:
-        "Research groups and faculty expertise within the Electrical and Computer Engineering department.",
-      overview:
-        "Check out the [faculty research page](/research).",
-      cards: [],
-    },
     "undergraduate-research": {
       title: "Undergraduate Research",
-      description: "Opportunities to get involved in research.",
-      overview: "Placeholder content for undergraduate research.",
-      cards: [],
-    },
-    "research-labs": {
-      title: "Research Labs",
-      description: "Labs and facilities supporting research.",
-      overview: "Placeholder content for research labs.",
-      cards: [],
+      description:
+        "Opportunities for undergraduate students to get involved in research.",
+      overview:
+        "ECEN students have the opportunity to participate in IMMERSE, an undergraduate summer research program. This is a great opportunity for students interested in graduate school to get hands-on research experience over the summer and develop relationships with professors.",
+      cards: [
+          {
+          title: "IMMERSE",
+          description:
+            "Accepting applications",
+          href: "https://immerse.byu.edu/",
+          image: "/research/immerse_2026.jpeg",
+        },
+      ],
     },
   },
 };

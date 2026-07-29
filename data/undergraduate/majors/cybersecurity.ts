@@ -9,9 +9,17 @@ export const cybersecurity: MajorConfig = {
     {
       title: "Graduation Planning",
       items: [
-        { title: "Degree Requirements", slug: "degree-requirements" },
+        { 
+          title: "Degree Requirements", 
+          slug: "degree-requirements",
+          href: "https://catalog.byu.edu/programs/34586/program-information-aoYks",
+        },
+        { 
+          title: "Course Catalog", 
+          slug: "course-catalog",
+          href: "https://catalog.byu.edu/departments/1130/courses",
+        },
         { title: "Academic Advising", slug: "academic-advising" },
-        { title: "Course Catalog", slug: "course-catalog" },
         { title: "Graduation Flowcharts", slug: "graduation-flowcharts" },
       ],
     },
@@ -20,22 +28,31 @@ export const cybersecurity: MajorConfig = {
       items: [
         { title: "Networking/Internships", slug: "networking-internships" },
         { title: "Scholarships", slug: "scholarships" },
-        { title: "Student Organizations", slug: "student-organizations" },
+        {
+          title: "Student Organizations",
+          slug: "student-organizations",
+          href: "/student-organizations",
+        },
       ],
     },
     {
       title: "Research",
       items: [
-        { title: "Faculty Research", slug: "faculty-research" },
+        {
+          title: "Faculty Research",
+          slug: "faculty-research",
+          href: "/research",
+        },
         { title: "Undergraduate Research", slug: "undergraduate-research" },
-        { title: "Research Labs", slug: "research-labs" },
       ],
     },
   ],
 
-  // Placeholder content. Every slug listed in `navigation` above must have a
-  // matching key here, plus a "home" entry, or the build will fail (see
-  // generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Placeholder content, plus a required "home" entry. Every nav item
+  // WITHOUT an `href` must have a matching key here, or the build will fail
+  // (see generateStaticParams in app/undergraduate/[major]/[slug]/page.tsx).
+  // Nav items that set `href` (e.g. Student Organizations, Faculty Research)
+  // link elsewhere and don't need an entry here.
   content: {
     home: {
       title: "Welcome",
@@ -45,13 +62,19 @@ export const cybersecurity: MajorConfig = {
         "Use the navigation menu to explore academic planning resources, student opportunities, and research experiences available within the department.",
       cards: [],
     },
-    "degree-requirements": {
-      title: "Degree Requirements",
-      description:
-        "Requirements and milestones needed to complete the Cybersecurity degree.",
-      overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
-      cards: [],
-    },
+    // "degree-requirements": {
+    //   title: "Degree Requirements",
+    //   description:
+    //     "Requirements and milestones needed to complete the Cybersecurity degree.",
+    //   overview: "View the [graduation requirements](https://catalog.byu.edu/programs/34586/program-information-aoYks) for Cybersecurity.",
+    //   cards: [],
+    // },
+    // "course-catalog": {
+    //   title: "Course Catalog",
+    //   description: "Browse course offerings for the Cybersecurity program.",
+    //   overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
+    //   cards: [],
+    // },
     "academic-advising": {
       title: "Academic Advising",
       description: "Advising resources and planning tools.",
@@ -65,12 +88,6 @@ export const cybersecurity: MajorConfig = {
           linkText: "Schedule Appointment →"
         },
       ]  
-    },
-    "course-catalog": {
-      title: "Course Catalog",
-      description: "Browse course offerings for the Cybersecurity program.",
-      overview: "Check out the University's course catalog: [Catalog](https://catalog.byu.edu/departments/1130/courses)",
-      cards: [],
     },
     "graduation-flowcharts": {
       title: "Graduation Flowcharts",
@@ -138,40 +155,50 @@ export const cybersecurity: MajorConfig = {
       ],
     },
     "networking-internships": {
-      title: "Networking/Internships",
-      description: "Internship opportunities for Cybersecurity students.",
-      overview: "Placeholder content for internships.",
-      cards: [],
+      title: "Networking and Internships",
+      description:
+        "Internship opportunities and resources for Computer Engineering students.",
+      overview:
+        "Check out these awesome resources!",
+      cards: [
+        {
+          title: "Jobs and Internships",
+          description:
+            "Career Services Director, Andrea Merriman, can assist you in all your employment needs. Whether you're seeking a full-time job, internship, or just some sound advice, she is waiting to assist you",
+          href: "https://careers.byu.edu/andrea-merriman",
+          image: "/undergraduate/career-services/andrea-merriman.png",
+        },
+        {
+          title: "Connect with Alumni",
+          description:
+            "BYU Connect allows students to connect directly with BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
+          href: "https://alumni.byu.edu/byuconnect",
+          image: "/undergraduate/career-services/byu-connect-alumni.jpeg",
+        },
+      ],
     },
-    scholarships: {
+    "scholarships": {
       title: "Scholarships",
-      description: "Scholarship opportunities for Cybersecurity students.",
-      overview: "Placeholder content for scholarships.",
-      cards: [],
-    },
-    "student-organizations": {
-      title: "Student Organizations",
-      description: "Clubs and teams for Cybersecurity students.",
-      overview: "Placeholder content for student organizations.",
-      cards: [],
-    },
-    "faculty-research": {
-      title: "Faculty Research",
-      description: "Research groups and faculty expertise.",
-      overview: "Placeholder content for faculty research.",
+      description:
+        "Scholarship opportunities available to Cybersecurity students.",
+      overview: { file: "/data/undergraduate/content/department-scholarships.md" },
       cards: [],
     },
     "undergraduate-research": {
       title: "Undergraduate Research",
-      description: "Opportunities to get involved in research.",
-      overview: "Placeholder content for undergraduate research.",
-      cards: [],
-    },
-    "research-labs": {
-      title: "Research Labs",
-      description: "Labs and facilities supporting research.",
-      overview: "Placeholder content for research labs.",
-      cards: [],
+      description:
+        "Opportunities for undergraduate students to get involved in research.",
+      overview:
+        "ECEN students have the opportunity to participate in IMMERSE, an undergraduate summer research program. This is a great opportunity for students interested in graduate school to get hands-on research experience over the summer and develop relationships with professors.",
+      cards: [
+          {
+          title: "IMMERSE",
+          description:
+            "Accepting applications",
+          href: "https://immerse.byu.edu/",
+          image: "/research/immerse_2026.jpeg",
+        },
+      ],
     },
   },
 };
