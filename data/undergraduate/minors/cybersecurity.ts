@@ -2,9 +2,9 @@ import { MinorConfig } from "./types";
 
 export const cybersecurityMinor: MinorConfig = {
   slug: "cybersecurity",
-  displayName: "CYBERSECURITY MINOR",
+  displayName: "Cybersecurity Minor",
   tagline: "Undergraduate Minor",
   description:
-    "An introduction to core concepts in electrical engineering, open to students in any major.",
-  overview: { file: "data/undergraduate/content/cybersecurity-minor-description.md" },
+    "A practical foundation in secure computing and information systems, open to students in any major.",
+  overview: { file: "cybersecurity-minor-description.md" },
 };

@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ContentLayout from "@/components/undergraduate/majors/ContentLayout";
-import ResourceCard from "@/components/undergraduate/majors/ResourceCard";
-import Overview from "@/components/undergraduate/majors/Overview";
+import SectionLayout from "@/components/general/section/SectionLayout";
+import ResourceCard from "@/components/general/ResourceCard";
+import Overview from "@/components/general/Overview";
 import { getMajor, majors } from "@/data/undergraduate/majors";
 import { resolveOverview } from "@/data/undergraduate/resolveOverview";
 
@@ -16,8 +17,21 @@ export function generateStaticParams() {
   return majors.flatMap((major) =>
     Object.keys(major.content)
       .filter((slug) => slug !== "home")
-      .map((slug) => ({ major: major.slug, slug }))
+      .map((slug) => ({ major: major.slug, slug })),
   );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { major: majorSlug, slug } = await params;
+  const major = getMajor(majorSlug);
+  const page = major?.content[slug];
+
+  if (!major || !page) return {};
+
+  return {
+    title: `${page.title} | ${major.displayName}`,
+    description: page.description,
+  };
 }
 
 export default async function MajorSubsectionPage({ params }: Props) {
@@ -35,7 +49,18 @@ export default async function MajorSubsectionPage({ params }: Props) {
   }
 
   return (
-    <ContentLayout major={major} currentSlug={slug}>
+    <SectionLayout
+      title={major.displayName}
+      tagline={major.tagline}
+      basePath={`/undergraduate/${major.slug}`}
+      navigation={major.navigation}
+      currentSlug={slug}
+      breadcrumbs={[
+        { label: "Undergraduate", href: "/undergraduate/prospective-students" },
+        { label: major.displayName, href: `/undergraduate/${major.slug}` },
+        { label: page.title },
+      ]}
+    >
       <h1 className="text-3xl font-semibold text-byu-dark-gray">
         {page.title}
       </h1>
@@ -49,6 +74,6 @@ export default async function MajorSubsectionPage({ params }: Props) {
           <ResourceCard key={card.title} {...card} />
         ))}
       </div>
-    </ContentLayout>
+    </SectionLayout>
   );
 }

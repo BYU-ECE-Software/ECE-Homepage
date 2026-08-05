@@ -10,9 +10,9 @@ export default function MinorLayout({ minor, children }: MinorLayoutProps) {
     <div className="bg-white">
       <section className="bg-byu-navy py-4 text-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-center gap-x-3 px-6 text-center">
-          <h1 className="text-xl font-semibold tracking-wide md:text-2xl">
+          <p className="text-xl font-semibold uppercase tracking-wide md:text-2xl">
             {minor.displayName}
-          </h1>
+          </p>
 
           <span className="text-white/40">|</span>
 
@@ -21,7 +21,7 @@ export default function MinorLayout({ minor, children }: MinorLayoutProps) {
       </section>
 
       <div className="mx-auto max-w-3xl px-6 py-12">
-        <main>{children}</main>
+        <div>{children}</div>
       </div>
     </div>
   );

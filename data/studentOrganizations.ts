@@ -1,4 +1,4 @@
-import { ResourceCardData } from "@/data/undergraduate/majors/types";
+import { ResourceCardData } from "@/types/Content";
 
 // Placeholder data — replace with the department's actual student
 // organizations. This list is shared by every major's "Student

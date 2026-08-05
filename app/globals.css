@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 
 :root {
+  /* Light theme only. `color-scheme: light` also stops the browser from
+     dark-styling native controls (scrollbars, selects, date pickers) for
+     users whose OS is set to dark mode. */
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -29,12 +33,13 @@
   --color-byu-info-blue-dark: #006073;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* This site is light-theme only. There is deliberately no
+   prefers-color-scheme: dark block — the previous one flipped the page
+   background to near-black while every component kept its light styling
+   (white cards, navy banners, dark body text), which made large parts of
+   the site unreadable for anyone whose OS was set to dark mode. If dark
+   mode is ever wanted, it needs a full pass over the components, not just
+   these two variables. */
 
 body {
   background: var(--background);

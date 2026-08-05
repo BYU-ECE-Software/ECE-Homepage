@@ -4,6 +4,8 @@ import QuickLinksGrid, { type QuickLinkItem } from "@/components/general/QuickLi
 import NewsGrid, { type NewsItem } from "@/components/general/NewsGrid";
 import PromoCard, { type PromoItem } from "@/components/general/PromoCard";
 import { ResourceGrid, CallToAction, type ResourceItem } from "@/components/general/ContentPage";
+import { majors } from "@/data/undergraduate/majors";
+import { minors } from "@/data/undergraduate/minors";
 
 const announcements: Announcement[] = [
   { eyebrow: "Get involved", title: "Department tours are available for prospective students and visitors", description: "See teaching labs, student projects, and research spaces in the Engineering Building.", href: "/news-and-events/department-tours", linkLabel: "Plan a tour" },
@@ -15,14 +17,25 @@ const quickLinks: QuickLinkItem[] = [
   { title: "Meet with an advisor", description: "Plan courses and review requirements.", href: "/people/advisors" },
   { title: "Department tours", description: "Visit projects, labs, and teaching spaces.", href: "/news-and-events/department-tours" },
   { title: "Research and labs", description: "Explore faculty research areas.", href: "/research" },
-  { title: "Graduate courses", description: "Browse recurring course offerings.", href: "/graduate/graduate-courses" },
+  { title: "Opportunities", description: "Scholarships, clubs, internships, research.", href: "/opportunities" },
 ];
 
+// Generated from the major and minor configs so a program's description is
+// written in exactly one place. Adding a major to data/undergraduate/majors
+// automatically lists it here.
 const degrees: ResourceItem[] = [
-  { title: "Electrical Engineering", description: "Build the systems behind communications, robotics, power, circuits, sensing, and modern electronics.", href: "/undergraduate/electrical-engineering", eyebrow: "BS" },
-  { title: "Computer Engineering", description: "Design computing hardware and the software that connects digital systems to the physical world.", href: "/undergraduate/computer-engineering", eyebrow: "BS" },
-  { title: "Cybersecurity", description: "Learn to protect connected systems, data, infrastructure, and the people who depend on them.", href: "/undergraduate/cybersecurity", eyebrow: "BS" },
-  { title: "Cybersecurity Minor", description: "Add a practical foundation in secure computing and information systems to another major.", href: "/undergraduate/minors/cybersecurity", eyebrow: "Minor" },
+  ...majors.map((major) => ({
+    title: major.displayName,
+    description: major.summary,
+    href: `/undergraduate/${major.slug}`,
+    eyebrow: "BS",
+  })),
+  ...minors.map((minor) => ({
+    title: minor.displayName,
+    description: minor.description,
+    href: `/undergraduate/minors/${minor.slug}`,
+    eyebrow: "Minor",
+  })),
   { title: "Graduate Programs", description: "Pursue advanced study through MS and PhD programs in ECE and cybersecurity.", href: "/graduate", eyebrow: "MS & PhD" },
 ];
 
@@ -34,8 +47,8 @@ const news: NewsItem[] = [
 
 const promos: PromoItem[] = [
   { eyebrow: "Research", title: "Join a research community", description: "Work with faculty and students on consequential problems across hardware, computing, sensing, communications, robotics, and security.", href: "/research", linkLabel: "Explore research" },
-  { eyebrow: "Community", title: "Find a student organization", description: "Build friendships and technical experience through clubs, competition teams, professional organizations, and service.", href: "/undergraduate/electrical-engineering/student-organizations", linkLabel: "Find opportunities" },
-  { eyebrow: "Career preparation", title: "Connect learning to your future", description: "Use internships, alumni connections, advising, capstone, and department resources to prepare for work and graduate study.", href: "/undergraduate/electrical-engineering/networking-internships", linkLabel: "Career resources" },
+  { eyebrow: "Community", title: "Find a student organization", description: "Build friendships and technical experience through clubs, competition teams, professional organizations, and service.", href: "/student-organizations", linkLabel: "Find opportunities" },
+  { eyebrow: "Career preparation", title: "Connect learning to your future", description: "Use internships, alumni connections, advising, capstone, and department resources to prepare for work and graduate study.", href: "/opportunities/networking-internships", linkLabel: "Career resources" },
 ];
 
 export default function Home() {

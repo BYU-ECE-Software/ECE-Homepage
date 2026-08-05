@@ -2,30 +2,35 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { NavSection } from "@/data/undergraduate/majors/types";
+import { NavSection } from "@/types/Content";
 import { resolveNavLink } from "./navUtils";
 import NavLinkIcon from "./NavLinkIcon";
 
 interface MobileNavProps {
-  majorSlug: string;
+  /** Section root, e.g. "/undergraduate/electrical-engineering". */
+  basePath: string;
+  homeLabel?: string;
   navigation: NavSection[];
   currentSlug?: string;
 }
 
+const activeClasses =
+  "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy";
+
 export default function MobileNav({
-  majorSlug,
+  basePath,
+  homeLabel = "Overview",
   navigation,
   currentSlug,
 }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const basePath = `/undergraduate/${majorSlug}`;
 
   const currentTitle = currentSlug
-    ? navigation
+    ? (navigation
         .flatMap((section) => section.items)
-        .find((item) => item.slug === currentSlug)?.title
-    : "Home";
+        .find((item) => item.slug === currentSlug)?.title ?? homeLabel)
+    : homeLabel;
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -37,9 +42,16 @@ export default function MobileNav({
       }
     }
 
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
+    document.addEventListener("keydown", handleEscape);
+    return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   return (
@@ -59,6 +71,7 @@ export default function MobileNav({
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
@@ -70,19 +83,23 @@ export default function MobileNav({
       </button>
 
       {open && (
-        <div className="absolute z-20 mt-2 w-full rounded border border-gray-200 bg-white p-4 shadow-lg">
+        <nav
+          aria-label="Section navigation"
+          className="absolute z-20 mt-2 w-full rounded border border-gray-200 bg-white p-4 shadow-lg"
+        >
           <ul className="mb-4 space-y-1 border-b border-gray-100 pb-4">
             <li>
               <Link
                 href={basePath}
                 onClick={() => setOpen(false)}
+                aria-current={!currentSlug ? "page" : undefined}
                 className={`block rounded px-3 py-2 text-sm transition ${
                   !currentSlug
-                    ? "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy"
+                    ? activeClasses
                     : "font-medium text-byu-navy hover:bg-gray-50"
                 }`}
               >
-                Home
+                {homeLabel}
               </Link>
             </li>
           </ul>
@@ -98,7 +115,7 @@ export default function MobileNav({
 
               <ul className="space-y-1">
                 {section.items.map((item) => {
-                  const { href, linkType } = resolveNavLink(majorSlug, item);
+                  const { href, linkType } = resolveNavLink(basePath, item);
                   const active =
                     linkType === "slug" && item.slug === currentSlug;
                   const external = linkType === "external";
@@ -110,9 +127,10 @@ export default function MobileNav({
                         target={external ? "_blank" : undefined}
                         rel={external ? "noopener noreferrer" : undefined}
                         onClick={() => setOpen(false)}
+                        aria-current={active ? "page" : undefined}
                         className={`block rounded px-3 py-2 text-sm transition ${
                           active
-                            ? "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy"
+                            ? activeClasses
                             : "text-byu-medium-gray hover:bg-gray-50 hover:text-byu-navy"
                         }`}
                       >
@@ -125,7 +143,7 @@ export default function MobileNav({
               </ul>
             </div>
           ))}
-        </div>
+        </nav>
       )}
     </div>
   );

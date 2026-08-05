@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { OverviewFile } from "./majors/types";
+import { OverviewFile } from "@/types/Content";
 
 // Strips leading whitespace from every line. Markdown treats 4+ spaces of
 // indentation as a code block, so an inline template literal indented to
@@ -18,10 +18,11 @@ function dedent(text: string): string {
 
 // Resolves the `overview` field of a PageContent into a final Markdown
 // string. If given a plain string, dedents and returns it. If given a
-// { file } reference, reads that file from the undergraduate content
-// directory at build time (this runs in a server component during
-// `next build`, never in the browser). The basename keeps reads scoped to
-// that directory and prevents content configuration from traversing the project.
+// { file } reference, reads that file from data/undergraduate/content at
+// build time (this runs in a server component during `next build`, never in
+// the browser). Pass a bare filename, e.g. { file: "academic-advising.md" }.
+// Only the basename is used, which keeps reads scoped to that one directory
+// and prevents content configuration from traversing the project.
 export function resolveOverview(overview: string | OverviewFile): string {
   if (typeof overview === "string") {
     return dedent(overview);

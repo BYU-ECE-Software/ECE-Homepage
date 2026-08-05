@@ -1,7 +1,7 @@
 import PageTitle from "@/components/layout/PageTitle";
 import Description from "@/components/general/Description";
 import CardGrid from "@/components/general/CardGrid";
-import ResourceCard from "@/components/undergraduate/majors/ResourceCard";
+import ResourceCard from "@/components/general/ResourceCard";
 import { studentOrganizations } from "@/data/studentOrganizations";
 
 // One shared page for all majors. Every major's sidebar "Student

@@ -6,9 +6,9 @@ export default function Emeritus() {
   return (
     <>
     <PageTitle title="Faculty Emeritus"/>
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <FacStaffGrid title="" members={emeritusMembers} columns={4} />
-    </main>
+    </div>
     </>
   );
 }

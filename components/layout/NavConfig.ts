@@ -46,6 +46,20 @@ const navConfig: NavItem[] = [
     ],
   },
   {
+    // Department-wide opportunities, shared by all three majors. Each has its
+    // own page, and they are linked from here rather than repeated inside
+    // every major's pages.
+    kind: 'dropdown',
+    label: 'Opportunities',
+    children: [
+      { label: 'All Opportunities', href: '/opportunities' },
+      { label: 'Student Organizations', href: '/student-organizations' },
+      { label: 'Scholarships', href: '/opportunities/scholarships' },
+      { label: 'Networking & Internships', href: '/opportunities/networking-internships' },
+      { label: 'Undergraduate Research', href: '/opportunities/undergraduate-research' },
+    ],
+  },
+  {
     kind: 'dropdown',
     label: 'Graduate',
     children: [
@@ -69,19 +83,16 @@ const navConfig: NavItem[] = [
     label: 'Research',
     href: '/research',
   },
-  {
-    kind: 'dropdown',
-    label: 'Outreach',
-    children: [
-      { label: 'Outreach 1', href: '/outreach/outreach-1' },
-      { label: 'Outreach 2', href: '/outreach/outreach-2' },
-      { label: 'Outreach 3', href: '/outreach/outreach-3' },
-      { label: 'Outreach 4', href: '/outreach/outreach-4' },
-      { label: 'Outreach 5', href: '/outreach/outreach-5' },
-      { label: 'Outreach 6', href: '/outreach/outreach-6' },
-      { label: 'Outreach 7', href: '/outreach/outreach-7' },
-    ],
-  },
+  // TODO: Outreach is still a placeholder. Every link below points at a route
+  // that does not exist yet, so the dropdown currently sends visitors to a 404.
+  // Either build these pages or leave this block commented out until they exist.
+  // {
+  //   kind: 'dropdown',
+  //   label: 'Outreach',
+  //   children: [
+  //     { label: 'Outreach 1', href: '/outreach/outreach-1' },
+  //   ],
+  // },
   {
     kind: 'link',
     label: 'EPIcenter',

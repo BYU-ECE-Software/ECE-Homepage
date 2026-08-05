@@ -15,13 +15,17 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <Link
               href="/"
-            //   target="_blank"
-              rel="noopener noreferrer"
               className="border-byu-royal mr-4 border-r pr-4"
+              aria-label="Electrical and Computer Engineering home"
             >
               <Image src="/BYU_monogram_white.svg" width={40} height={40} alt="BYU logo" className="h-10 w-auto" />
             </Link>
-            <h1 className="text-2xl">Electrical and Computer Engineering</h1>
+            {/* Deliberately not an <h1>: this appears on every page, and each
+                page supplies its own <h1>. Two competing top-level headings
+                confuse screen readers and search engines. */}
+            <Link href="/" className="text-2xl hover:underline">
+              Electrical and Computer Engineering
+            </Link>
           </div>
             <Link
             href={"https://give.churchofjesuschrist.org/campaigns/81249/donations/new"}
