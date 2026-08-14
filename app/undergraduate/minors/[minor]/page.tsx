@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import MinorLayout from "@/components/undergraduate/minors/MinorLayout";
-import Overview from "@/components/undergraduate/majors/Overview";
+import Overview from "@/components/general/Overview";
 import { getMinor, getAllMinorSlugs } from "@/data/undergraduate/minors";
 import { resolveOverview } from "@/data/undergraduate/resolveOverview";
 
@@ -24,9 +24,9 @@ export default async function MinorPage({ params }: Props) {
 
   return (
     <MinorLayout minor={minor}>
-      <h2 className="text-3xl font-semibold text-byu-dark-gray">
+      <h1 className="text-3xl font-semibold text-byu-dark-gray">
         {minor.displayName}
-      </h2>
+      </h1>
 
       <p className="mt-4 text-byu-medium-gray">{minor.description}</p>
 

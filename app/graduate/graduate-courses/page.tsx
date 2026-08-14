@@ -71,7 +71,7 @@ export default function GraduateCoursesPage() {
       </header>
 
       {/* Main content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <SectionTabs
           active={activeSection}
           counts={sectionCounts}
@@ -103,7 +103,7 @@ export default function GraduateCoursesPage() {
             sectionDescription={sectionMeta[activeSection].description}
           />
         </div>
-      </main>
+      </div>
     </div>
   );
 }

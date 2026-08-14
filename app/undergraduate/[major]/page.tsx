@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ContentLayout from "@/components/undergraduate/majors/ContentLayout";
-import ResourceCard from "@/components/undergraduate/majors/ResourceCard";
-import Overview from "@/components/undergraduate/majors/Overview";
+import SectionLayout from "@/components/general/section/SectionLayout";
+import ResourceCard from "@/components/general/ResourceCard";
+import Overview from "@/components/general/Overview";
 import { getMajor, getAllMajorSlugs } from "@/data/undergraduate/majors";
 import { resolveOverview } from "@/data/undergraduate/resolveOverview";
 
@@ -15,6 +16,18 @@ export function generateStaticParams() {
   return getAllMajorSlugs().map((major) => ({ major }));
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { major: majorSlug } = await params;
+  const major = getMajor(majorSlug);
+
+  if (!major) return {};
+
+  return {
+    title: `${major.displayName} | Electrical and Computer Engineering`,
+    description: major.summary,
+  };
+}
+
 export default async function MajorLandingPage({ params }: Props) {
   const { major: majorSlug } = await params;
   const major = getMajor(majorSlug);
@@ -25,15 +38,20 @@ export default async function MajorLandingPage({ params }: Props) {
 
   const page = major.content.home;
 
-  if (!page) {
-    notFound();
-  }
-
   return (
-    <ContentLayout major={major}>
-      <h2 className="text-3xl font-semibold text-byu-dark-gray">
+    <SectionLayout
+      title={major.displayName}
+      tagline={major.tagline}
+      basePath={`/undergraduate/${major.slug}`}
+      navigation={major.navigation}
+      breadcrumbs={[
+        { label: "Undergraduate", href: "/undergraduate/prospective-students" },
+        { label: major.displayName },
+      ]}
+    >
+      <h1 className="text-3xl font-semibold text-byu-dark-gray">
         {page.title}
-      </h2>
+      </h1>
 
       <p className="mt-4 text-byu-medium-gray">{page.description}</p>
 
@@ -44,6 +62,6 @@ export default async function MajorLandingPage({ params }: Props) {
           <ResourceCard key={card.title} {...card} />
         ))}
       </div>
-    </ContentLayout>
+    </SectionLayout>
   );
 }

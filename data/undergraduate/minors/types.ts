@@ -1,4 +1,4 @@
-import { OverviewFile } from "@/data/undergraduate/majors/types";
+import { OverviewFile } from "@/types/Content";
 
 export interface MinorConfig {
   // URL segment, e.g. "electrical-engineering-minor"

@@ -6,9 +6,9 @@ export default function Faculty() {
   return (
     <>
     <PageTitle title="Faculty"/>
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <FacStaffGrid title="" members={facultyMembers} columns={4} />
-    </main>
+    </div>
     </>
   );
 }

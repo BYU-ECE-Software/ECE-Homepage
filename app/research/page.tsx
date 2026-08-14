@@ -31,6 +31,12 @@ const heroImages: string[] = [
   "/hero/LES3.webp",
 ];
 
+// TODO: Every `href` below points at /faculty/<name>, but no such route
+// exists — all 32 of these links currently 404. The department already has
+// full faculty records in data/people/Faculty.ts, so the cleanest fix is a
+// dynamic /people/faculty/[slug] route generated from that data, which would
+// also give each professor a linkable page for their research and contact
+// info. As a stopgap, point these at /people/faculty.
 const researchAreas: ResearchArea[] = [
   {
     image: "/research/BlockY.png",

@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FiChevronDown } from 'react-icons/fi';
 import navConfig, { NavItem } from './NavConfig';
 
@@ -16,8 +17,29 @@ type NavBarProps = {
 const hasAccess = (requiredRoles: string[] | undefined, userRoles: string[]): boolean =>
   !requiredRoles || requiredRoles.some((r) => userRoles.includes(r));
 
+// Trailing slashes are on (see next.config.ts), so normalise before comparing
+const normalise = (path: string): string =>
+  path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
+
+// A link is "current" when the visitor is on that page or anywhere beneath it.
+// The Home link only matches the root, so it isn't highlighted on every page.
+const linkMatches = (href: string, pathname: string): boolean => {
+  const target = normalise(href);
+  const current = normalise(pathname);
+  if (target === '/') return current === '/';
+  return current === target || current.startsWith(`${target}/`);
+};
+
+// A dropdown is "current" if any of its children match, so visitors can see
+// which section of the site they're in from the top-level bar alone.
+const itemMatches = (item: NavItem, pathname: string): boolean =>
+  item.kind === 'link'
+    ? linkMatches(item.href, pathname)
+    : item.children.some((child) => linkMatches(child.href, pathname));
+
 const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }: NavBarProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const pathname = usePathname() ?? '/';
 
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
   const desktopRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -84,12 +106,16 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
   const renderMobileItem = (item: NavItem, index: number) => {
     if (item.kind === 'link') {
+      const active = linkMatches(item.href, pathname);
       return (
         <Link
           key={item.href}
           href={item.href}
           onClick={() => setMobileOpen(false)}
-          className="px-6 py-4 text-left hover:bg-[#FAFAFA]"
+          aria-current={active ? 'page' : undefined}
+          className={`px-6 py-4 text-left hover:bg-[#FAFAFA] ${
+            active ? 'border-byu-navy border-l-4 bg-[#FAFAFA] font-semibold' : ''
+          }`}
         >
           {item.label}
         </Link>
@@ -97,6 +123,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
     }
 
     const isOpen = openIndex === index;
+    const sectionActive = itemMatches(item, pathname);
     // Filter children by role too
     const visibleChildren = item.children.filter((c) => hasAccess(c.roles, userRoles));
     if (visibleChildren.length === 0) return null;
@@ -109,7 +136,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
           aria-expanded={isOpen}
           className={`flex w-full items-center justify-between px-6 py-4 text-left hover:bg-[#FAFAFA] ${
             isOpen ? 'bg-[#FAFAFA]' : ''
-          }`}
+          } ${sectionActive ? 'border-byu-navy border-l-4 font-semibold' : ''}`}
         >
           <span>{item.label}</span>
           <FiChevronDown className="text-byu-navy h-4 w-4" aria-hidden="true" />
@@ -117,16 +144,22 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
         {isOpen && (
           <div className="flex flex-col text-sm">
-            {visibleChildren.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                onClick={() => { closeAll(); setMobileOpen(false); }}
-                className="text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA]"
-              >
-                {child.label}
-              </Link>
-            ))}
+            {visibleChildren.map((child) => {
+              const childActive = linkMatches(child.href, pathname);
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  onClick={() => { closeAll(); setMobileOpen(false); }}
+                  aria-current={childActive ? 'page' : undefined}
+                  className={`text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA] ${
+                    childActive ? 'bg-[#FAFAFA] font-semibold' : ''
+                  }`}
+                >
+                  {child.label}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
@@ -135,12 +168,16 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
   const renderDesktopItem = (item: NavItem, index: number) => {
     if (item.kind === 'link') {
+      const active = linkMatches(item.href, pathname);
       return (
         <Link
           key={item.href}
           href={item.href}
           onClick={closeAll}
-          className="nav-link-hover px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA]"
+          aria-current={active ? 'page' : undefined}
+          className={`nav-link-hover px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA] ${
+            active ? 'nav-link-active font-semibold' : ''
+          }`}
         >
           {item.label}
         </Link>
@@ -148,6 +185,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
     }
 
     const isOpen = openIndex === index;
+    const sectionActive = itemMatches(item, pathname);
     const visibleChildren = item.children.filter((c) => hasAccess(c.roles, userRoles));
     if (visibleChildren.length === 0) return null;
 
@@ -161,7 +199,9 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
           type="button"
           onClick={() => toggle(index)}
           aria-expanded={isOpen}
-          className="nav-link-hover inline-flex items-center gap-2 px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA]"
+          className={`nav-link-hover inline-flex items-center gap-2 px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA] ${
+            sectionActive ? 'nav-link-active font-semibold' : ''
+          }`}
         >
           <span>{item.label}</span>
           <FiChevronDown className="text-byu-navy h-3 w-3" aria-hidden="true" />
@@ -169,16 +209,22 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
         {isOpen && (
           <div className="absolute top-full left-0 w-56 border border-gray-200 bg-white shadow-lg">
-            {visibleChildren.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                onClick={closeAll}
-                className="text-byu-navy block w-full px-6 py-3 text-left hover:bg-gray-50"
-              >
-                {child.label}
-              </Link>
-            ))}
+            {visibleChildren.map((child) => {
+              const childActive = linkMatches(child.href, pathname);
+              return (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  onClick={closeAll}
+                  aria-current={childActive ? 'page' : undefined}
+                  className={`text-byu-navy block w-full px-6 py-3 text-left hover:bg-gray-50 ${
+                    childActive ? 'bg-gray-50 font-semibold' : ''
+                  }`}
+                >
+                  {child.label}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>

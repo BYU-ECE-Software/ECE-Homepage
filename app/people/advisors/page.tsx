@@ -6,9 +6,9 @@ export default function Advisors() {
   return (
     <>
     <PageTitle title="Advisors"/>
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <FacStaffGrid title="" members={advisementTeam} columns={3} />
-    </main>
+    </div>
     </>
   );
 }
