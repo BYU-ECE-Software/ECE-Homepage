@@ -1,4 +1,4 @@
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import Description from '@/components/general/Description';
 import CardGrid from '@/components/general/CardGrid';
 import ResourceCard from '@/components/general/ResourceCard';
@@ -11,7 +11,7 @@ import { studentOrganizations } from '@/data/studentOrganizations';
 export default function StudentOrganizationsPage() {
   return (
     <>
-      <PageTitle title="Student Organizations" />
+      <PageBanner title="Student Organizations" />
 
       <Description
         text="Get involved outside the classroom."

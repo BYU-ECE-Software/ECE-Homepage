@@ -53,7 +53,6 @@ export default function Epicenter() {
   return (
     <>
       <PageIntro
-        eyebrow="Student Resources"
         title="Electronic Prototype Implementation Center"
         description="Parts, machinery, prototyping tools, project services, and practical help for turning designs into working hardware."
       />

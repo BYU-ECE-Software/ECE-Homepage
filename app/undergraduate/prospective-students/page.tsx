@@ -173,7 +173,6 @@ export default function ProspectiveStudentsPage() {
   return (
     <>
       <PageIntro
-        eyebrow="Undergraduate"
         title="Find your place in ECE"
         description="Learn how electrical engineering, computer engineering, and cybersecurity turn curiosity into technologies that serve people."
       />

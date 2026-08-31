@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import Overview from '@/components/general/Overview';
 import { resolveOverview } from '@/data/undergraduate/resolveOverview';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ScholarshipsPage() {
   return (
     <>
-      <PageTitle title="Scholarships" />
+      <PageBanner title="Scholarships" />
 
       <section className="mx-auto max-w-3xl px-6 py-12">
         <Overview content={resolveOverview({ file: 'department-scholarships.md' })} />

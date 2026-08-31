@@ -48,7 +48,6 @@ export default function GraduatePage() {
   return (
     <>
       <PageIntro
-        eyebrow="Graduate Program"
         title="Graduate study in ECE"
         description="Join a community of scholars and innovators pursuing rigorous research, technical excellence, faith, and meaningful impact."
       />

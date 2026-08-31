@@ -66,7 +66,6 @@ export default function NewsPage() {
   return (
     <>
       <PageIntro
-        eyebrow="News & Events"
         title="Department news"
         description="Research breakthroughs, student accomplishments, faculty work, and stories from the ECE community."
       />

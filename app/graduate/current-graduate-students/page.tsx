@@ -52,7 +52,6 @@ export default function CurrentGraduateStudents() {
   return (
     <>
       <PageIntro
-        eyebrow="Graduate Program"
         title="Current graduate students"
         description="Program guidance, course planning, research registration, policies, and milestone resources."
       />

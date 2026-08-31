@@ -48,7 +48,6 @@ export default function ProspectiveGraduateStudents() {
   return (
     <>
       <PageIntro
-        eyebrow="Graduate Program"
         title="Prospective graduate students"
         description="Explore advanced degrees, prepare a strong application, and connect your interests with faculty research."
       />

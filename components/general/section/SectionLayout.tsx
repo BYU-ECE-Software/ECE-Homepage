@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Sidebar from './Sidebar';
 import MobileNav from './MobileNav';
+import PageBanner from '@/components/layout/PageBanner';
 import type { NavSection } from '@/types/Content';
 
 export interface Breadcrumb {
@@ -43,20 +44,7 @@ export default function SectionLayout({
 }: SectionLayoutProps) {
   return (
     <div className="bg-white">
-      <section className="bg-byu-navy py-4 text-white">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-center gap-x-3 px-6 text-center">
-          <p className="text-xl font-semibold tracking-wide uppercase md:text-2xl">{title}</p>
-
-          {tagline && (
-            <>
-              <span aria-hidden="true" className="text-white/40">
-                |
-              </span>
-              <p className="text-sm text-white/80 md:text-base">{tagline}</p>
-            </>
-          )}
-        </div>
-      </section>
+      <PageBanner title={title} tagline={tagline} />
 
       <div className="mx-auto max-w-7xl px-6 py-12">
         {breadcrumbs && breadcrumbs.length > 0 && (

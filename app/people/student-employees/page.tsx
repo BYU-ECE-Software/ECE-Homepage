@@ -1,11 +1,11 @@
 import FacStaffGrid from '@/components/general/FacStaff/FacStaffGrid';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import { studentWorkers } from '@/data/people/StudentWorkers';
 
 export default function FacultyAndStaff() {
   return (
     <>
-      <PageTitle title="Student Employees" />
+      <PageBanner title="Student Employees" />
       <div className="min-h-screen bg-white">
         <FacStaffGrid title="" members={studentWorkers} columns={4} />
       </div>

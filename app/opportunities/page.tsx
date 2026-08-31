@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import Description from '@/components/general/Description';
 import CardGrid from '@/components/general/CardGrid';
 import ResourceCard from '@/components/general/ResourceCard';
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function OpportunitiesPage() {
   return (
     <>
-      <PageTitle title="Opportunities" />
+      <PageBanner title="Opportunities" />
 
       <Description
         text="Open to students in all three majors."

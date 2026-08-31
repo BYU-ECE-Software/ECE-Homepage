@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import Description from '@/components/general/Description';
 import CardGrid from '@/components/general/CardGrid';
 import ResourceCard from '@/components/general/ResourceCard';
@@ -33,7 +33,7 @@ const resources: ResourceCardData[] = [
 export default function NetworkingInternshipsPage() {
   return (
     <>
-      <PageTitle title="Networking and Internships" />
+      <PageBanner title="Networking and Internships" />
 
       <Description
         text="Connect with employers, alumni, and career advisors while you're still in the program."

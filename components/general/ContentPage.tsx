@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import PageBanner from '@/components/layout/PageBanner';
 
 export interface ResourceItem {
   title: string;
@@ -11,29 +12,23 @@ export interface ResourceItem {
 
 interface PageIntroProps {
   title: string;
-  eyebrow?: string;
   description?: string;
   children?: ReactNode;
 }
 
-export function PageIntro({ title, eyebrow, description, children }: PageIntroProps) {
+export function PageIntro({ title, description, children }: PageIntroProps) {
   return (
-    <header className="bg-slate-100 px-6 py-14 sm:py-18">
-      <div className="mx-auto max-w-6xl">
-        {eyebrow && (
-          <p className="text-byu-royal mb-3 text-sm font-semibold tracking-[0.18em] uppercase">
-            {eyebrow}
-          </p>
-        )}
-        <h1 className="text-byu-navy max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          {title}
-        </h1>
-        {description && (
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
-        )}
-        {children && <div className="mt-7">{children}</div>}
-      </div>
-    </header>
+    <>
+      <PageBanner title={title} />
+      {(description || children) && (
+        <div className="bg-slate-100 px-6 py-6">
+          <div className="mx-auto max-w-6xl text-center">
+            {description && <p className="text-lg leading-8 text-slate-600">{description}</p>}
+            {children && <div className="mt-7">{children}</div>}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

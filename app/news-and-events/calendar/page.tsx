@@ -10,7 +10,6 @@ export default function ScheduleOfEvents() {
   return (
     <>
       <PageIntro
-        eyebrow="News & Events"
         title="Schedule of events"
         description="Department-sponsored seminars, student activities, lectures, and events for the ECE community."
       />

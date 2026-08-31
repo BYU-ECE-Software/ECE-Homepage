@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 
 // Placeholder page — this exists mainly to demonstrate that a student
 // organization's card can link to a page hosted on this site instead of
@@ -8,7 +8,7 @@ import PageTitle from '@/components/layout/PageTitle';
 export default function IEEE_Association_Page() {
   return (
     <>
-      <PageTitle title="BYU IEEE Association" />
+      <PageBanner title="BYU IEEE Association" />
 
       <section className="mx-auto max-w-3xl px-6 py-12">
         <p className="text-byu-medium-gray">

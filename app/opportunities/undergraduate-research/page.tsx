@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 import Description from '@/components/general/Description';
 import CardGrid from '@/components/general/CardGrid';
 import ResourceCard from '@/components/general/ResourceCard';
@@ -32,7 +32,7 @@ const resources: ResourceCardData[] = [
 export default function UndergraduateResearchPage() {
   return (
     <>
-      <PageTitle title="Undergraduate Research" />
+      <PageBanner title="Undergraduate Research" />
 
       <Description
         text="Get hands-on research experience before you graduate."

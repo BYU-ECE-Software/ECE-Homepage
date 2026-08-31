@@ -1,4 +1,4 @@
-import PageTitle from '@/components/layout/PageTitle';
+import PageBanner from '@/components/layout/PageBanner';
 
 /**
  * app/research/page.tsx  (or  pages/research.tsx)
@@ -174,7 +174,7 @@ const researchAreas: ResearchArea[] = [
 export default function Research() {
   return (
     <>
-      <PageTitle title="Research" />
+      <PageBanner title="Research" />
       {/* 1 — Hero with carousel */}
       <Hero
         images={heroImages}

@@ -12,7 +12,8 @@ interface SidebarProps {
   currentSlug?: string;
 }
 
-const activeClasses = 'border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy';
+const activeClasses = 'bg-byu-navy text-white font-semibold';
+const inactiveClasses = 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-100';
 
 export default function Sidebar({
   basePath,
@@ -23,14 +24,14 @@ export default function Sidebar({
   return (
     <aside className="sticky top-8">
       <nav aria-label="Section navigation">
-        <div className="mb-8">
+        <div className="mb-6">
           <ul className="space-y-1">
             <li>
               <Link
                 href={basePath}
                 aria-current={!currentSlug ? 'page' : undefined}
-                className={`block rounded px-3 py-2 text-sm transition ${
-                  !currentSlug ? activeClasses : 'text-byu-navy font-medium hover:bg-gray-50'
+                className={`block rounded-lg px-4 py-2.5 text-sm transition ${
+                  !currentSlug ? activeClasses : `${inactiveClasses} font-medium`
                 }`}
               >
                 {homeLabel}
@@ -40,8 +41,8 @@ export default function Sidebar({
         </div>
 
         {navigation.map((section) => (
-          <div key={section.title} className="mb-8">
-            <h2 className="text-byu-dark-gray mb-3 text-sm font-bold tracking-wide uppercase">
+          <div key={section.title} className="mb-6">
+            <h2 className="text-byu-dark-gray mb-3 px-4 text-sm font-bold tracking-wide uppercase">
               {section.title}
             </h2>
 
@@ -58,10 +59,8 @@ export default function Sidebar({
                       target={external ? '_blank' : undefined}
                       rel={external ? 'noopener noreferrer' : undefined}
                       aria-current={active ? 'page' : undefined}
-                      className={`block rounded px-3 py-2 text-sm transition ${
-                        active
-                          ? activeClasses
-                          : 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-50'
+                      className={`block rounded-lg px-4 py-2.5 text-sm transition ${
+                        active ? activeClasses : inactiveClasses
                       }`}
                     >
                       {item.title}
