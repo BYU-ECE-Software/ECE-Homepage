@@ -7,6 +7,9 @@
   color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
+  /* Real height of the sticky site header, set by Header.tsx via
+     ResizeObserver. This fallback covers the initial render before JS runs. */
+  --header-height: 122px;
 }
 
 @theme {

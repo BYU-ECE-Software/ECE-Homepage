@@ -82,7 +82,7 @@ export default function SectionLayout({
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
-          <div className="hidden lg:block">
+          <div className="hidden self-start lg:block">
             <Sidebar
               basePath={basePath}
               homeLabel={homeLabel}

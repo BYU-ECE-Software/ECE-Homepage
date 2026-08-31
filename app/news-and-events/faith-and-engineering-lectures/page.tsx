@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import PageBanner from '@/components/layout/PageBanner';
 
 // if you want to add more lectures, just add them to this array with the title, date, and video URL (if available)
 const lectures = [
@@ -40,75 +41,26 @@ function LectureCard({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div
-      style={{
-        borderTop: '1px solid #d0d7e2',
-        paddingTop: 20,
-        paddingBottom: 20,
-      }}
-    >
-      <button
-        onClick={() => setExpanded(!expanded)}
-        style={{
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0,
-          textAlign: 'left',
-          width: '100%',
-        }}
-      >
+    <div className="border-t border-slate-200 py-5">
+      <button onClick={() => setExpanded(!expanded)} className="w-full text-left">
         <h3
-          style={{
-            margin: '0 0 4px 0',
-            fontSize: 17,
-            fontWeight: 700,
-            color: '#002E5D',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-            textDecoration: videoUrl ? 'underline' : 'none',
-          }}
+          className={`text-byu-navy text-[17px] font-bold ${videoUrl ? 'underline' : ''}`}
         >
           {title}
         </h3>
-        <p
-          style={{
-            margin: 0,
-            fontSize: 13,
-            color: '#666666',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-          }}
-        >
-          {date}
-        </p>
+        <p className="mt-1 text-sm text-slate-500">{date}</p>
       </button>
 
       {expanded && videoUrl && (
-        <div
-          style={{
-            marginTop: 16,
-            borderRadius: 4,
-            overflow: 'hidden',
-            boxShadow: '0 2px 10px rgba(0,46,93,0.12)',
-          }}
-        >
-          <video controls style={{ width: '100%', display: 'block' }} src={videoUrl}>
+        <div className="mt-4 overflow-hidden rounded-lg shadow-md">
+          <video controls className="block w-full" src={videoUrl}>
             Your browser does not support the video tag.
           </video>
         </div>
       )}
 
       {expanded && !videoUrl && (
-        <p
-          style={{
-            marginTop: 12,
-            fontSize: 14,
-            color: '#888',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-            fontStyle: 'italic',
-          }}
-        >
-          Video not yet available.
-        </p>
+        <p className="mt-3 text-sm text-slate-400 italic">Video not yet available.</p>
       )}
     </div>
   );
@@ -116,73 +68,22 @@ function LectureCard({
 
 export default function FaithEngineeringLectureSeries() {
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100%' }}>
-      <div
-        style={{
-          fontFamily: "'Open Sans', Arial, sans-serif",
-          maxWidth: 900,
-          margin: '0 auto',
-          padding: '48px 24px',
-        }}
-      >
-        {/* Page Title */}
-        <h1
-          style={{
-            fontSize: 32,
-            fontWeight: 700,
-            color: '#002E5D',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-            marginBottom: 16,
-            marginTop: 0,
-          }}
-        >
-          Faith &amp; Engineering Lecture Series
-        </h1>
+    <div className="min-h-screen w-full bg-white">
+      <PageBanner title="Faith & Engineering Lecture Series" />
 
-        {/* Subtitle */}
-        <p
-          style={{
-            fontSize: 16,
-            lineHeight: 1.7,
-            color: '#333333',
-            marginBottom: 24,
-            fontStyle: '',
-          }}
-        >
-          This lecture series will include faculty reflections on integrating faith and profession.
-          The hope is to help you get to know the faculty on a more personal level, and to
-          understand how faculty members integrate faith and profession, and how they balance
-          family, church, profession, and hobbies.
-        </p>
-
-        {/* Notice Banner */}
-        <div
-          style={{
-            backgroundColor: '#f4f6f9',
-            border: '1px solid #c0cad8',
-            borderLeft: '4px solid #002E5D',
-            borderRadius: 3,
-            padding: '14px 18px',
-            marginBottom: 40,
-          }}
-        >
-          <p style={{ margin: 0, fontSize: 14, color: '#333333', fontWeight: 600 }}>
-            The next Faith and Engineering Lecture will be given in the Fall semester. Good luck
-            finishing your classes and have a great summer!
+      <div className="mx-auto max-w-4xl px-6 pt-12">
+        <div className="mb-10 rounded-2xl border border-gray-200 bg-slate-50 p-6 shadow-sm">
+          <p className="text-lg leading-8 text-slate-600">
+            This lecture series will include faculty reflections on integrating faith and
+            profession. The hope is to help you get to know the faculty on a more personal level,
+            and to understand how faculty members integrate faith and profession, and how they
+            balance family, church, profession, and hobbies.
           </p>
         </div>
+      </div>
 
-        {/* Lectures Section */}
-        <h2
-          style={{
-            fontSize: 22,
-            fontWeight: 700,
-            color: '#002E5D',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-          }}
-        >
-          Recorded Lectures
-        </h2>
+      <div className="mx-auto max-w-3xl px-6 pb-12">
+        <h2 className="text-byu-navy text-2xl font-semibold tracking-tight">Recorded Lectures</h2>
         <div>
           {lectures.map((lecture) => (
             <LectureCard
@@ -192,8 +93,7 @@ export default function FaithEngineeringLectureSeries() {
               videoUrl={lecture.videoUrl}
             />
           ))}
-          {/* closing border */}
-          <div style={{ borderTop: '1px solid #d0d7e2' }} />
+          <div className="border-t border-slate-200" />
         </div>
       </div>
     </div>

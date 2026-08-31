@@ -6,6 +6,7 @@ import type { CourseSection, Semester, YearCycle } from '@/types/Course';
 import { SectionTabs } from '@/components/general/SectionTabs';
 import { SemesterFilter } from '@/components/general/SemesterFilter';
 import { CourseGrid } from '@/components/general/CourseGrid';
+import PageBanner from '@/components/layout/PageBanner';
 
 const SECTIONS: CourseSection[] = ['regular', 'special-topics', 'unscheduled', 'retired'];
 
@@ -84,19 +85,10 @@ export default function GraduateCoursesPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Page header */}
-      <header className="bg-[#002E5D] text-white">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <p className="mb-2 text-xs font-semibold tracking-widest text-sky-300 uppercase">
-            Electrical &amp; Computer Engineering
-          </p>
-          <h1 className="text-3xl font-bold tracking-tight">Graduate Courses</h1>
-          <p className="mt-2 max-w-xl text-sm text-slate-300">
-            Browse and filter ECE graduate course offerings by semester availability. Schedules are
-            subject to change — verify with the department.
-          </p>
-        </div>
-      </header>
+      <PageBanner
+        title="Graduate Courses"
+        description="Browse and filter ECE graduate course offerings by semester availability. Schedules are subject to change, contact the department with questions or concerns."
+      />
 
       {/* Main content */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

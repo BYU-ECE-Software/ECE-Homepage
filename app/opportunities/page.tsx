@@ -20,8 +20,8 @@ export default function OpportunitiesPage() {
       <PageBanner title="Opportunities" />
 
       <Description
-        text="Open to students in all three majors."
-        subtext="Scholarships, clubs, internships, and research are shared across Electrical Engineering, Computer Engineering, and Cybersecurity. Start wherever fits where you are right now."
+        text="Open to students in all three majors: Electrical Engineering, Computer Engineering, and Cybersecurity."
+        
       />
 
       <CardGrid columns={2} paddingClass="px-10 pt-4 pb-16">

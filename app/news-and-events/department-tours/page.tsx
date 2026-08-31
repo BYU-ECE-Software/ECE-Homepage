@@ -202,7 +202,7 @@ export default function CampusTours() {
 
         {/* Section 2: Virtual Tours */}
         <section>
-          <h2 style={sectionHeading}>Virtual Campus Tours</h2>
+          <h2 style={sectionHeading}>Virtual Tour</h2>
 
           <div
             style={{

@@ -22,7 +22,10 @@ export default function Sidebar({
   currentSlug,
 }: SidebarProps) {
   return (
-    <aside className="sticky top-8">
+    <aside
+      className="sticky max-h-[calc(100vh-var(--header-height)-2rem)] overflow-y-auto"
+      style={{ top: 'calc(var(--header-height) + 2rem)' }}
+    >
       <nav aria-label="Section navigation">
         {navigation.map((section, index) => (
           <div key={section.title || index} className="mb-6">

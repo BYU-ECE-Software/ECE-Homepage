@@ -1,15 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import NavBar from './NavBar';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const headerRef = useRef<HTMLDivElement | null>(null);
+
+  // Sidebars stick below this bar; they read its real height from
+  // --header-height instead of a guessed pixel value, since the bar's
+  // height changes (mobile menu open, nav wrapping to a second line, etc).
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    const setHeightVar = () => {
+      document.documentElement.style.setProperty('--header-height', `${el.offsetHeight}px`);
+    };
+
+    setHeightVar();
+    const observer = new ResizeObserver(setHeightVar);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [mobileOpen]);
 
   return (
-    <div className="sticky top-0 z-50 w-full">
+    <div ref={headerRef} className="sticky top-0 z-50 w-full">
       <header className="relative w-full bg-[#002E5D] py-4 text-white shadow-md md:w-full">
         <div className="flex items-center justify-between px-6">
           <div className="flex items-center">
