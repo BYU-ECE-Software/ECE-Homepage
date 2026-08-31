@@ -183,7 +183,7 @@ export default function Research() {
         heightClass="h-[400px]"
         autoPlay
         interval={6000}
-        overlayClass="bg-black/40"
+        overlayClass="bg-black/15"
       />
 
       {/* 2 — Bold description + instructional subtext */}

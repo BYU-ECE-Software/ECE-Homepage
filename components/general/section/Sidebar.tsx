@@ -24,29 +24,29 @@ export default function Sidebar({
   return (
     <aside className="sticky top-8">
       <nav aria-label="Section navigation">
-        <div className="mb-6">
-          <ul className="space-y-1">
-            <li>
-              <Link
-                href={basePath}
-                aria-current={!currentSlug ? 'page' : undefined}
-                className={`block rounded-lg px-4 py-2.5 text-sm transition ${
-                  !currentSlug ? activeClasses : `${inactiveClasses} font-medium`
-                }`}
-              >
-                {homeLabel}
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {navigation.map((section) => (
-          <div key={section.title} className="mb-6">
-            <h2 className="text-byu-dark-gray mb-3 px-4 text-sm font-bold tracking-wide uppercase">
-              {section.title}
-            </h2>
+        {navigation.map((section, index) => (
+          <div key={section.title || index} className="mb-6">
+            {section.title && (
+              <h2 className="text-byu-dark-gray mb-3 px-4 text-sm font-bold tracking-wide uppercase">
+                {section.title}
+              </h2>
+            )}
 
             <ul className="space-y-1">
+              {index === 0 && (
+                <li>
+                  <Link
+                    href={basePath}
+                    aria-current={!currentSlug ? 'page' : undefined}
+                    className={`block rounded-lg px-4 py-2.5 text-sm transition ${
+                      !currentSlug ? activeClasses : inactiveClasses
+                    }`}
+                  >
+                    {homeLabel}
+                  </Link>
+                </li>
+              )}
+
               {section.items.map((item) => {
                 const { href, linkType } = resolveNavLink(basePath, item);
                 const active = linkType === 'slug' && item.slug === currentSlug;

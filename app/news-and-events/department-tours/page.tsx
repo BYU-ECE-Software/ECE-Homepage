@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import PageBanner from '@/components/layout/PageBanner';
 
 const faqs = [
   {
@@ -132,6 +133,8 @@ export default function CampusTours() {
 
   return (
     <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100%' }}>
+      <PageBanner title="Schedule an On Campus Tour" />
+
       <div
         style={{
           fontFamily: "'Open Sans', Arial, sans-serif",
@@ -146,8 +149,6 @@ export default function CampusTours() {
       >
         {/* Section 1: On Campus Tour */}
         <section>
-          <h2 style={sectionHeading}>Schedule an On Campus Tour</h2>
-
           <p style={{ fontSize: 15, lineHeight: 1.75, color: '#333333', marginBottom: 24 }}>
             Join us for a guided tour hosted by the Department of Electrical and Computer
             Engineering. Discover our stunning new building and exciting program through interactive
@@ -163,7 +164,7 @@ export default function CampusTours() {
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
-              backgroundColor: '#002E5D',
+              backgroundColor: '#0047ba',
               color: '#ffffff',
               fontWeight: 700,
               fontSize: 14,
@@ -243,7 +244,7 @@ export default function CampusTours() {
               letterSpacing: '0.01em',
             }}
           >
-            Visit Our YouTube Channel
+            Electrical and Computer Engineering YouTube Channel
           </a>
         </section>
       </div>

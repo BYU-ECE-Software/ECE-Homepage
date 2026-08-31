@@ -38,11 +38,11 @@ The annual application deadline is **January 15**. Competitive applicants have s
 - The **PhD in Electrical and Computer Engineering** emphasizes independent research and preparation for technical leadership.
 - The **MS in Cybersecurity** provides advanced study for recent technical graduates and working professionals.
 
-Before applying, review faculty research areas and identify several potential advisers whose work aligns with your interests. Admission and funding decisions depend in part on available faculty mentorship and research support.
+Before applying, review faculty research areas and identify several potential advisors whose work aligns with your interests. Admission and funding decisions depend in part on available faculty mentorship and research support.
 
 ## Funding
 
-Support may include research or teaching assistantships, tuition awards, and funds for students presenting research. Availability varies by program, adviser, and academic year.`;
+Support may include research or teaching assistantships, tuition awards, and funds for students presenting research. Availability varies by program, advisor, and academic year.`;
 
 export default function ProspectiveGraduateStudents() {
   return (

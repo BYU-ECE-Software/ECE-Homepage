@@ -64,7 +64,7 @@ ECE students learn by building. Coursework is reinforced through laboratories, t
 
 - Build a strong foundation in mathematics, physics, and programming.
 - Review the current degree flowchart and catalog requirements.
-- Meet with an academic adviser before registration decisions become urgent.
+- Meet with an academic advisor before registration decisions become urgent.
 - Visit the department, talk with students, and explore clubs and research areas.
 
 You do not need to know your specialization before beginning. Introductory courses and department experiences are designed to help you discover which problems and technologies interest you most.`;

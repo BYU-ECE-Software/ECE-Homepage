@@ -36,17 +36,17 @@ const resources: ResourceItem[] = [
 
 const guidance = `## Staying on track
 
-Meet regularly with your faculty adviser and keep your graduate committee and program of study current. Department requirements complement—rather than replace—university graduate policies.
+Meet regularly with your faculty advisor and keep your graduate committee and program of study current. Department requirements complement—rather than replace—university graduate policies.
 
 ### Recommended checkpoints
 
-1. Confirm your adviser and degree requirements early in the program.
+1. Confirm your advisor and degree requirements early in the program.
 2. File and maintain an approved study list.
 3. Form your graduate committee by the required deadline.
 4. Complete examinations, proposals, and annual evaluations on schedule.
 5. Apply for graduation and schedule your defense with sufficient lead time.
 
-Questions about registration, forms, or deadlines should be directed to the graduate program adviser.`;
+Questions about registration, forms, or deadlines should be directed to the graduate program advisor.`;
 
 export default function CurrentGraduateStudents() {
   return (

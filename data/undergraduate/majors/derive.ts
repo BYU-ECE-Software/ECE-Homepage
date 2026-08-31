@@ -125,7 +125,7 @@ export function buildMajorPages(major: MajorConfig): Record<string, PageContent>
 export function buildMajorNavigation(major: MajorConfig): NavSection[] {
   return [
     {
-      title: 'Graduation Planning',
+      title: '',
       items: [
         {
           title: 'Degree Requirements',

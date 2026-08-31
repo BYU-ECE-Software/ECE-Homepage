@@ -19,13 +19,10 @@ interface PageIntroProps {
 export function PageIntro({ title, description, children }: PageIntroProps) {
   return (
     <>
-      <PageBanner title={title} />
-      {(description || children) && (
+      <PageBanner title={title} description={description} />
+      {children && (
         <div className="bg-slate-100 px-6 py-6">
-          <div className="mx-auto max-w-6xl text-center">
-            {description && <p className="text-lg leading-8 text-slate-600">{description}</p>}
-            {children && <div className="mt-7">{children}</div>}
-          </div>
+          <div className="mx-auto max-w-6xl text-center">{children}</div>
         </div>
       )}
     </>

@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { useRouter } from 'next/navigation';
 import type { NavSection } from '@/types/Content';
 import { resolveNavLink } from './navUtils';
@@ -50,15 +51,25 @@ export default function MobileNav({
       className="text-byu-navy w-full rounded border border-gray-300 bg-white px-4 py-3 text-sm font-semibold shadow-sm"
     >
       <option value="">{homeLabel}</option>
-      {navigation.map((section) => (
-        <optgroup key={section.title} label={section.title}>
-          {section.items.map((item) => (
-            <option key={item.slug} value={item.slug}>
-              {item.title}
-            </option>
-          ))}
-        </optgroup>
-      ))}
+      {navigation.map((section, index) =>
+        section.title ? (
+          <optgroup key={section.title || index} label={section.title}>
+            {section.items.map((item) => (
+              <option key={item.slug} value={item.slug}>
+                {item.title}
+              </option>
+            ))}
+          </optgroup>
+        ) : (
+          <Fragment key={section.title || index}>
+            {section.items.map((item) => (
+              <option key={item.slug} value={item.slug}>
+                {item.title}
+              </option>
+            ))}
+          </Fragment>
+        ),
+      )}
     </select>
   );
 }
