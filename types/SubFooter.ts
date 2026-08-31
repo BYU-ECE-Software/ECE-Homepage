@@ -19,14 +19,7 @@ export interface ContactBlock {
   buttonHref: string;
 }
 
-export interface SocialLink {
-  label: string;
-  href: string;
-  icon: ReactNode;
-}
-
 export interface SubFooterProps {
   columns?: FooterColumn[];
   contactBlock?: ContactBlock;
-  socialLinks?: SocialLink[];
 }

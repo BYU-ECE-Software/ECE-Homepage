@@ -23,7 +23,7 @@ export default function PromoCard({ item }: { item: PromoItem }) {
         {item.eyebrow && <p className="text-xs font-semibold tracking-widest text-byu-royal uppercase">{item.eyebrow}</p>}
         <h3 className="mt-2 text-xl font-semibold text-byu-navy">{item.title}</h3>
         <p className="mt-3 flex-1 leading-7 text-slate-600">{item.description}</p>
-        <span className="mt-5 font-semibold text-byu-royal">{item.linkLabel ?? "Learn more"} <span aria-hidden="true">→</span></span>
+        <span className="mt-5 font-semibold text-byu-royal">{item.linkLabel ?? "Learn more"}</span>
       </div>
     </article>
   );

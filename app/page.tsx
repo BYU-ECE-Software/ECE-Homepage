@@ -1,4 +1,4 @@
-import AnnouncementCarousel, { type Announcement } from "@/components/general/AnnouncementCarousel";
+import { FaChalkboardTeacher, FaMapMarkedAlt, FaFlask, FaHandsHelping } from "react-icons/fa";
 import PromoHero from "@/components/general/PromoHero";
 import QuickLinksGrid, { type QuickLinkItem } from "@/components/general/QuickLinksGrid";
 import NewsGrid, { type NewsItem } from "@/components/general/NewsGrid";
@@ -7,17 +7,11 @@ import { ResourceGrid, CallToAction, type ResourceItem } from "@/components/gene
 import { majors } from "@/data/undergraduate/majors";
 import { minors } from "@/data/undergraduate/minors";
 
-const announcements: Announcement[] = [
-  { eyebrow: "Get involved", title: "Department tours are available for prospective students and visitors", description: "See teaching labs, student projects, and research spaces in the Engineering Building.", href: "/news-and-events/department-tours", linkLabel: "Plan a tour" },
-  { eyebrow: "Graduate study", title: "Explore MS and PhD programs in ECE and cybersecurity", description: "Review degrees, research areas, application preparation, and student resources.", href: "/graduate", linkLabel: "Graduate programs" },
-  { eyebrow: "Student resources", title: "Build, prototype, and get practical help at the EPICenter", description: "Find parts, project services, lab kits, tutorials, and robotics competition information.", href: "/epicenter", linkLabel: "Visit the EPICenter" },
-];
-
 const quickLinks: QuickLinkItem[] = [
-  { title: "Meet with an advisor", description: "Plan courses and review requirements.", href: "/people/advisors" },
-  { title: "Department tours", description: "Visit projects, labs, and teaching spaces.", href: "/news-and-events/department-tours" },
-  { title: "Research and labs", description: "Explore faculty research areas.", href: "/research" },
-  { title: "Opportunities", description: "Scholarships, clubs, internships, research.", href: "/opportunities" },
+  { title: "Meet with an advisor", href: "/people/advisors", icon: FaChalkboardTeacher },
+  { title: "Department tours", href: "/news-and-events/department-tours", icon: FaMapMarkedAlt },
+  { title: "Research and labs", href: "/research", icon: FaFlask },
+  { title: "Opportunities", href: "/opportunities", icon: FaHandsHelping },
 ];
 
 // Generated from the major and minor configs so a program's description is
@@ -40,23 +34,21 @@ const degrees: ResourceItem[] = [
 ];
 
 const news: NewsItem[] = [
-  { title: "BYU engineering students design wearable technology for search and rescue rats", description: "A capstone team improved a localization backpack for HeroRATs working in disaster response.", date: "May 21, 2026", category: "Intellect", author: "Sharman Gill", href: "https://news.byu.edu/" },
-  { title: "BYU student named Honor Graduate as top U.S. Marine Corps officer candidate", description: "A BYU student received national recognition after completing the Marine Corps officer candidate program.", date: "May 19, 2026", category: "Character", author: "Ellie Larsen", href: "https://news.byu.edu/" },
-  { title: "When GPS fails, HeroRATs and BYU engineers step in", description: "Electrical and computer engineering students helped make survivor localization easier after earthquakes.", date: "May 14, 2026", category: "Department News", author: "Allyson Gibson", href: "/news-and-events/news" },
+  { title: "BYU engineering students design wearable technology for search and rescue rats", description: "A capstone team improved a localization backpack for HeroRATs working in disaster response.", date: "May 21, 2026", author: "Sharman Gill", href: "https://news.byu.edu/" },
+  { title: "BYU student named Honor Graduate as top U.S. Marine Corps officer candidate", description: "A BYU student received national recognition after completing the Marine Corps officer candidate program.", date: "May 19, 2026", author: "Ellie Larsen", href: "https://news.byu.edu/" },
+  { title: "When GPS fails, HeroRATs and BYU engineers step in", description: "Electrical and computer engineering students helped make survivor localization easier after earthquakes.", date: "May 14, 2026", author: "Allyson Gibson", href: "/news-and-events/news" },
 ];
 
 const promos: PromoItem[] = [
-  { eyebrow: "Research", title: "Join a research community", description: "Work with faculty and students on consequential problems across hardware, computing, sensing, communications, robotics, and security.", href: "/research", linkLabel: "Explore research" },
-  { eyebrow: "Community", title: "Find a student organization", description: "Build friendships and technical experience through clubs, competition teams, professional organizations, and service.", href: "/student-organizations", linkLabel: "Find opportunities" },
-  { eyebrow: "Career preparation", title: "Connect learning to your future", description: "Use internships, alumni connections, advising, capstone, and department resources to prepare for work and graduate study.", href: "/opportunities/networking-internships", linkLabel: "Career resources" },
+  { title: "Join a research community", description: "Work with faculty and students on consequential problems across hardware, computing, sensing, communications, robotics, and security.", href: "/research", linkLabel: "Explore research" },
+  { title: "Find a student organization", description: "Build friendships and technical experience through clubs, competition teams, professional organizations, and service.", href: "/student-organizations", linkLabel: "Find opportunities" },
+  { title: "Connect learning to your future", description: "Use internships, alumni connections, advising, capstone, and department resources to prepare for work and graduate study.", href: "/opportunities/networking-internships", linkLabel: "Career resources" },
 ];
 
 export default function Home() {
   return (
     <>
-      <AnnouncementCarousel announcements={announcements} />
       <PromoHero
-        eyebrow="Electrical & Computer Engineering"
         title="Imagine. Create. Contribute."
         description="Learn to solve consequential problems through engineering, computing, cybersecurity, and research at Brigham Young University."
         actions={[
@@ -68,7 +60,7 @@ export default function Home() {
       <QuickLinksGrid items={quickLinks} />
 
       <div className="bg-slate-50">
-        <ResourceGrid items={degrees} title="Degrees offered" description="Choose a program that matches how you want to understand, build, and protect technology." columns={3} />
+        <ResourceGrid items={degrees} title="Degrees offered" columns={3} />
       </div>
 
       <section className="px-6 py-14">

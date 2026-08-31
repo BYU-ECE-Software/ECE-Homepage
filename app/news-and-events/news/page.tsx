@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { PageIntro } from "@/components/general/ContentPage";
 import NewsGrid, { type NewsItem } from "@/components/general/NewsGrid";
+import Pagination from "@/components/general/Pagination";
 
 const stories: NewsItem[] = [
   {
@@ -41,12 +45,27 @@ const stories: NewsItem[] = [
   },
 ];
 
+const STORIES_PER_PAGE = 6;
+
 export default function NewsPage() {
+  const [page, setPage] = useState(1);
+  const totalPages = Math.ceil(stories.length / STORIES_PER_PAGE);
+  const start = (page - 1) * STORIES_PER_PAGE;
+  const pageStories = stories.slice(start, start + STORIES_PER_PAGE);
+
+  const handlePageChange = (nextPage: number) => {
+    setPage(nextPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <PageIntro eyebrow="News & Events" title="Department news" description="Research breakthroughs, student accomplishments, faculty work, and stories from the ECE community." />
       <section className="px-6 py-12">
-        <div className="mx-auto max-w-6xl"><NewsGrid items={stories} featuredFirst /></div>
+        <div className="mx-auto max-w-6xl">
+          <NewsGrid items={pageStories} featuredFirst={page === 1} />
+          <Pagination currentPage={page} totalPages={totalPages} onPageChange={handlePageChange} />
+        </div>
       </section>
     </>
   );

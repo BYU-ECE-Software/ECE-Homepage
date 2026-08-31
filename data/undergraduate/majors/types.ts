@@ -77,4 +77,10 @@ export interface MajorConfig {
   advising: AdvisingConfig;
 
   flowcharts: FlowchartSet;
+
+  // Set to true once real outcome stats (starting salary, placement rate,
+  // grad-school continuation rate, etc.) are ready for this major. Until
+  // then the landing page shows a "coming soon" placeholder instead of
+  // fabricated numbers.
+  hasOutcomesData?: boolean;
 }

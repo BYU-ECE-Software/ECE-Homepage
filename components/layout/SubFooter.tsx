@@ -4,7 +4,6 @@ import type { SubFooterProps } from "@/types/SubFooter";
 export default function SubFooter({
   columns = [],
   contactBlock,
-  socialLinks,
 }: SubFooterProps) {
   return (
     <footer className="w-full bg-[#f0f2f4] px-10 py-10">
@@ -29,29 +28,6 @@ export default function SubFooter({
             >
               {contactBlock.buttonLabel}
             </Link>
-
-            {/* Social icons */}
-            {socialLinks && socialLinks.length > 0 && (
-              <div className="mt-2">
-                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-gray-900 mb-2">
-                  Connect with us
-                </p>
-                <div className="flex items-center gap-2">
-                  {socialLinks.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      aria-label={s.label}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-[#002255] transition-colors"
-                    >
-                      {s.icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         )}
 

@@ -17,27 +17,27 @@ export const opportunities: ResourceCardData[] = [
     description:
       "Clubs, competition teams, and professional chapters open to students in every major.",
     href: "/student-organizations",
-    linkText: "Browse organizations →",
+    linkText: "Browse organizations",
   },
   {
     title: "Scholarships",
     description:
       "Department scholarships awarded annually to undergraduates in all ECE programs.",
     href: "/opportunities/scholarships",
-    linkText: "Learn more →",
+    linkText: "Learn more",
   },
   {
     title: "Networking & Internships",
     description:
       "Career services, alumni mentoring, and internship resources for ECE students.",
     href: "/opportunities/networking-internships",
-    linkText: "Learn more →",
+    linkText: "Learn more",
   },
   {
     title: "Undergraduate Research",
     description:
       "Work alongside faculty on real research problems before you graduate.",
     href: "/opportunities/undergraduate-research",
-    linkText: "Learn more →",
+    linkText: "Learn more",
   },
 ];

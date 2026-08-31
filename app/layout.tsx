@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import SubFooter from '@/components/layout/SubFooter';
-import { contactBlock, socialLinks, subfooterColumns } from '@/components/layout/SubFooterConfig';
+import { contactBlock, subfooterColumns } from '@/components/layout/SubFooterConfig';
 
 export const metadata: Metadata = {
   title: 'Electrical and Computer Engineering',
@@ -36,7 +36,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           </a>
           <Header />
           <main id="main-content" className="flex-1">{children}</main>
-          <SubFooter columns={subfooterColumns} contactBlock={contactBlock} socialLinks={socialLinks} />
+          <SubFooter columns={subfooterColumns} contactBlock={contactBlock} />
           <Footer />
       </body>
     </html>

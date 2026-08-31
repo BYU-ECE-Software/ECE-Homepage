@@ -18,14 +18,14 @@ const resources: ResourceCardData[] = [
       "A paid summer research program pairing undergraduates with faculty mentors. Applications are currently being accepted.",
     href: "https://immerse.byu.edu/",
     image: "/research/immerse_2026.jpeg",
-    linkText: "Apply to IMMERSE →",
+    linkText: "Apply to IMMERSE",
   },
   {
     title: "Faculty Research Areas",
     description:
       "Browse the department's research groups to find faculty working on problems you want to help solve, then reach out about openings in their group.",
     href: "/research",
-    linkText: "Explore research →",
+    linkText: "Explore research",
   },
 ];
 

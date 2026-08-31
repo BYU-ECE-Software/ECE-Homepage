@@ -37,7 +37,7 @@ export default function PromoHero({
         </>
       )}
       <div className={`mx-auto max-w-6xl ${centered ? "flex flex-col items-center" : ""}`}>
-        {eyebrow && <p className="text-sm font-semibold tracking-[0.2em] text-blue-200 uppercase">{eyebrow}</p>}
+        {eyebrow && <p className="text-sm font-semibold tracking-[0.2em] text-[#7093ef] uppercase">{eyebrow}</p>}
         <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">{title}</h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-100 sm:text-xl">{description}</p>
         {actions.length > 0 && (

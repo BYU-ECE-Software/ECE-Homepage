@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import SectionLayout from "@/components/general/section/SectionLayout";
 import ResourceCard from "@/components/general/ResourceCard";
 import Overview from "@/components/general/Overview";
+import OutcomesPlaceholder from "@/components/general/OutcomesPlaceholder";
 import { getMajor, getAllMajorSlugs } from "@/data/undergraduate/majors";
 import { resolveOverview } from "@/data/undergraduate/resolveOverview";
 
@@ -62,6 +63,8 @@ export default async function MajorLandingPage({ params }: Props) {
           <ResourceCard key={card.title} {...card} />
         ))}
       </div>
+
+      {!major.hasOutcomesData && <OutcomesPlaceholder />}
     </SectionLayout>
   );
 }

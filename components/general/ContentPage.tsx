@@ -72,7 +72,7 @@ export function ResourceGrid({
                 <p className="mt-3 flex-1 leading-7 text-slate-600">{item.description}</p>
                 {item.href && (
                   <span className="mt-5 font-semibold text-byu-royal">
-                    {item.linkLabel ?? "Learn more"} <span aria-hidden="true">→</span>
+                    {item.linkLabel ?? "Learn more"}
                   </span>
                 )}
               </article>

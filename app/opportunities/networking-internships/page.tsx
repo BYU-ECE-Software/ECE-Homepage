@@ -18,7 +18,7 @@ const resources: ResourceCardData[] = [
       "Career Services Director Andrea Merriman can assist you with all your employment needs. Whether you're seeking a full-time job, an internship, or just some sound advice, she is ready to help.",
     href: "https://careers.byu.edu/andrea-merriman",
     image: "/undergraduate/career-services/andrea-merriman.png",
-    linkText: "Meet with Career Services →",
+    linkText: "Meet with Career Services",
   },
   {
     title: "Connect with Alumni",
@@ -26,7 +26,7 @@ const resources: ResourceCardData[] = [
       "BYU Connect lets students reach BYU alumni at specific companies to explore career paths, ask questions, and receive mentoring and professional advice. It is a valuable resource for building your network and preparing for internships and careers after graduation.",
     href: "https://alumni.byu.edu/byuconnect",
     image: "/undergraduate/career-services/byu-connect-alumni.jpeg",
-    linkText: "Browse BYU Connect →",
+    linkText: "Browse BYU Connect",
   },
 ];
 
