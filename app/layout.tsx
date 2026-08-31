@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-
   return (
     <html lang="en">
       <head>
@@ -26,18 +25,20 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <link rel="icon" href="/BYU_Block_Y_white.svg" type="image/svg+xml" />
       </head>
       <body className="flex min-h-screen flex-col">
-          {/* Lets keyboard and screen-reader users jump past the header and
+        {/* Lets keyboard and screen-reader users jump past the header and
               nav straight to the page content. Visible only when focused. */}
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-medium focus:text-byu-navy focus:shadow-lg"
-          >
-            Skip to main content
-          </a>
-          <Header />
-          <main id="main-content" className="flex-1">{children}</main>
-          <SubFooter columns={subfooterColumns} contactBlock={contactBlock} />
-          <Footer />
+        <a
+          href="#main-content"
+          className="focus:text-byu-navy sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:font-medium focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
+        <Header />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <SubFooter columns={subfooterColumns} contactBlock={contactBlock} />
+        <Footer />
       </body>
     </html>
   );

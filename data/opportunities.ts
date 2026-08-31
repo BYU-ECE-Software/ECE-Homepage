@@ -1,4 +1,4 @@
-import { ResourceCardData } from "@/types/Content";
+import type { ResourceCardData } from '@/types/Content';
 
 /**
  * Department-wide opportunities, listed on the /opportunities landing page.
@@ -13,31 +13,28 @@ import { ResourceCardData } from "@/types/Content";
  */
 export const opportunities: ResourceCardData[] = [
   {
-    title: "Student Organizations",
+    title: 'Student Organizations',
     description:
-      "Clubs, competition teams, and professional chapters open to students in every major.",
-    href: "/student-organizations",
-    linkText: "Browse organizations",
+      'Clubs, competition teams, and professional chapters open to students in every major.',
+    href: '/student-organizations',
+    linkText: 'Browse organizations',
   },
   {
-    title: "Scholarships",
-    description:
-      "Department scholarships awarded annually to undergraduates in all ECE programs.",
-    href: "/opportunities/scholarships",
-    linkText: "Learn more",
+    title: 'Scholarships',
+    description: 'Department scholarships awarded annually to undergraduates in all ECE programs.',
+    href: '/opportunities/scholarships',
+    linkText: 'Learn more',
   },
   {
-    title: "Networking & Internships",
-    description:
-      "Career services, alumni mentoring, and internship resources for ECE students.",
-    href: "/opportunities/networking-internships",
-    linkText: "Learn more",
+    title: 'Networking & Internships',
+    description: 'Career services, alumni mentoring, and internship resources for ECE students.',
+    href: '/opportunities/networking-internships',
+    linkText: 'Learn more',
   },
   {
-    title: "Undergraduate Research",
-    description:
-      "Work alongside faculty on real research problems before you graduate.",
-    href: "/opportunities/undergraduate-research",
-    linkText: "Learn more",
+    title: 'Undergraduate Research',
+    description: 'Work alongside faculty on real research problems before you graduate.',
+    href: '/opportunities/undergraduate-research',
+    linkText: 'Learn more',
   },
 ];

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import type { ReactNode } from "react";
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 
 export interface ResourceItem {
   title: string;
@@ -21,11 +21,11 @@ export function PageIntro({ title, eyebrow, description, children }: PageIntroPr
     <header className="bg-slate-100 px-6 py-14 sm:py-18">
       <div className="mx-auto max-w-6xl">
         {eyebrow && (
-          <p className="mb-3 text-sm font-semibold tracking-[0.18em] text-byu-royal uppercase">
+          <p className="text-byu-royal mb-3 text-sm font-semibold tracking-[0.18em] uppercase">
             {eyebrow}
           </p>
         )}
-        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-byu-navy sm:text-5xl">
+        <h1 className="text-byu-navy max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl">
           {title}
         </h1>
         {description && (
@@ -49,30 +49,30 @@ export function ResourceGrid({
   columns?: 2 | 3 | 4;
 }) {
   const columnClass = {
-    2: "md:grid-cols-2",
-    3: "md:grid-cols-2 lg:grid-cols-3",
-    4: "sm:grid-cols-2 lg:grid-cols-4",
+    2: 'md:grid-cols-2',
+    3: 'md:grid-cols-2 lg:grid-cols-3',
+    4: 'sm:grid-cols-2 lg:grid-cols-4',
   }[columns];
 
   return (
     <section className="px-6 py-14">
       <div className="mx-auto max-w-6xl">
-        {title && <h2 className="text-3xl font-semibold text-byu-navy">{title}</h2>}
+        {title && <h2 className="text-byu-navy text-3xl font-semibold">{title}</h2>}
         {description && <p className="mt-3 max-w-3xl leading-7 text-slate-600">{description}</p>}
         <div className={`mt-8 grid gap-6 ${columnClass}`}>
           {items.map((item) => {
             const body = (
-              <article className="flex h-full flex-col border-t-4 border-byu-royal bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md">
+              <article className="border-byu-royal flex h-full flex-col border-t-4 bg-white p-6 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:shadow-md">
                 {item.eyebrow && (
-                  <p className="mb-2 text-xs font-semibold tracking-widest text-byu-royal uppercase">
+                  <p className="text-byu-royal mb-2 text-xs font-semibold tracking-widest uppercase">
                     {item.eyebrow}
                   </p>
                 )}
-                <h3 className="text-xl font-semibold text-byu-navy">{item.title}</h3>
+                <h3 className="text-byu-navy text-xl font-semibold">{item.title}</h3>
                 <p className="mt-3 flex-1 leading-7 text-slate-600">{item.description}</p>
                 {item.href && (
-                  <span className="mt-5 font-semibold text-byu-royal">
-                    {item.linkLabel ?? "Learn more"}
+                  <span className="text-byu-royal mt-5 font-semibold">
+                    {item.linkLabel ?? 'Learn more'}
                   </span>
                 )}
               </article>
@@ -110,10 +110,18 @@ export function CallToAction({
   label: string;
 }) {
   const buttonClass =
-    "inline-flex rounded-md bg-white px-5 py-3 font-semibold text-byu-navy transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+    'inline-flex rounded-md bg-white px-5 py-3 font-semibold text-byu-navy transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
 
   return (
-    <section className="bg-byu-navy px-6 py-12 text-white">
+    <section className="bg-byu-royal relative isolate overflow-hidden px-6 py-12 text-white">
+      <div
+        aria-hidden="true"
+        className="absolute top-[-60%] left-[-15%] -z-10 aspect-square w-[90%] min-w-175 rounded-full"
+        style={{
+          background:
+            'radial-gradient(circle, var(--color-byu-royal) 0%, var(--color-byu-royal) 45%, var(--color-byu-navy) 45%, var(--color-byu-navy) 75%, var(--color-byu-royal) 75%, var(--color-byu-royal) 100%)',
+        }}
+      />
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 md:flex-row md:items-center">
         <div>
           <h2 className="text-2xl font-semibold">{title}</h2>

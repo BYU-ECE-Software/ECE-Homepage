@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import PageTitle from "@/components/layout/PageTitle";
-import Description from "@/components/general/Description";
-import CardGrid from "@/components/general/CardGrid";
-import ResourceCard from "@/components/general/ResourceCard";
-import { opportunities } from "@/data/opportunities";
+import type { Metadata } from 'next';
+import PageTitle from '@/components/layout/PageTitle';
+import Description from '@/components/general/Description';
+import CardGrid from '@/components/general/CardGrid';
+import ResourceCard from '@/components/general/ResourceCard';
+import { opportunities } from '@/data/opportunities';
 
 export const metadata: Metadata = {
-  title: "Opportunities | Electrical and Computer Engineering",
+  title: 'Opportunities | Electrical and Computer Engineering',
   description:
-    "Scholarships, student organizations, internships, and undergraduate research open to students in Electrical Engineering, Computer Engineering, and Cybersecurity.",
+    'Scholarships, student organizations, internships, and undergraduate research open to students in Electrical Engineering, Computer Engineering, and Cybersecurity.',
 };
 
 // Landing page for department-wide opportunities. Everything linked here is

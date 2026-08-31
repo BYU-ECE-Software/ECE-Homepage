@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { NavSection } from "@/types/Content";
-import { resolveNavLink } from "./navUtils";
-import NavLinkIcon from "./NavLinkIcon";
+import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import type { NavSection } from '@/types/Content';
+import { resolveNavLink } from './navUtils';
+import NavLinkIcon from './NavLinkIcon';
 
 interface MobileNavProps {
   /** Section root, e.g. "/undergraduate/electrical-engineering". */
@@ -14,12 +14,11 @@ interface MobileNavProps {
   currentSlug?: string;
 }
 
-const activeClasses =
-  "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy";
+const activeClasses = 'border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy';
 
 export default function MobileNav({
   basePath,
-  homeLabel = "Overview",
+  homeLabel = 'Overview',
   navigation,
   currentSlug,
 }: MobileNavProps) {
@@ -27,30 +26,26 @@ export default function MobileNav({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const currentTitle = currentSlug
-    ? (navigation
-        .flatMap((section) => section.items)
-        .find((item) => item.slug === currentSlug)?.title ?? homeLabel)
+    ? (navigation.flatMap((section) => section.items).find((item) => item.slug === currentSlug)
+        ?.title ?? homeLabel)
     : homeLabel;
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     }
 
     function handleEscape(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === 'Escape') setOpen(false);
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
     };
   }, []);
 
@@ -59,26 +54,21 @@ export default function MobileNav({
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between rounded border border-gray-300 bg-white px-4 py-3 text-left text-sm font-semibold text-byu-navy shadow-sm"
+        className="text-byu-navy flex w-full items-center justify-between rounded border border-gray-300 bg-white px-4 py-3 text-left text-sm font-semibold shadow-sm"
         aria-expanded={open}
       >
         <span>{currentTitle}</span>
 
         <svg
-          className={`h-4 w-4 text-byu-medium-gray transition-transform ${
-            open ? "rotate-180" : ""
+          className={`text-byu-medium-gray h-4 w-4 transition-transform ${
+            open ? 'rotate-180' : ''
           }`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
@@ -92,11 +82,9 @@ export default function MobileNav({
               <Link
                 href={basePath}
                 onClick={() => setOpen(false)}
-                aria-current={!currentSlug ? "page" : undefined}
+                aria-current={!currentSlug ? 'page' : undefined}
                 className={`block rounded px-3 py-2 text-sm transition ${
-                  !currentSlug
-                    ? activeClasses
-                    : "font-medium text-byu-navy hover:bg-gray-50"
+                  !currentSlug ? activeClasses : 'text-byu-navy font-medium hover:bg-gray-50'
                 }`}
               >
                 {homeLabel}
@@ -105,33 +93,29 @@ export default function MobileNav({
           </ul>
 
           {navigation.map((section, index) => (
-            <div
-              key={section.title}
-              className={index === navigation.length - 1 ? "" : "mb-4"}
-            >
-              <h2 className="mb-2 text-xs font-bold uppercase tracking-wide text-byu-dark-gray">
+            <div key={section.title} className={index === navigation.length - 1 ? '' : 'mb-4'}>
+              <h2 className="text-byu-dark-gray mb-2 text-xs font-bold tracking-wide uppercase">
                 {section.title}
               </h2>
 
               <ul className="space-y-1">
                 {section.items.map((item) => {
                   const { href, linkType } = resolveNavLink(basePath, item);
-                  const active =
-                    linkType === "slug" && item.slug === currentSlug;
-                  const external = linkType === "external";
+                  const active = linkType === 'slug' && item.slug === currentSlug;
+                  const external = linkType === 'external';
 
                   return (
                     <li key={item.slug}>
                       <Link
                         href={href}
-                        target={external ? "_blank" : undefined}
-                        rel={external ? "noopener noreferrer" : undefined}
+                        target={external ? '_blank' : undefined}
+                        rel={external ? 'noopener noreferrer' : undefined}
                         onClick={() => setOpen(false)}
-                        aria-current={active ? "page" : undefined}
+                        aria-current={active ? 'page' : undefined}
                         className={`block rounded px-3 py-2 text-sm transition ${
                           active
                             ? activeClasses
-                            : "text-byu-medium-gray hover:bg-gray-50 hover:text-byu-navy"
+                            : 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-50'
                         }`}
                       >
                         {item.title}

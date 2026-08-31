@@ -1,33 +1,33 @@
-import React from "react";
-import { Semester, YearCycle } from "@/types/Course";
+import React from 'react';
+import type { Semester, YearCycle } from '@/types/Course';
 
 const semesterConfig: Record<Semester, { label: string; classes: string; dimClasses: string }> = {
   fall: {
-    label: "Fall",
-    classes: "bg-amber-100 text-amber-800 ring-1 ring-amber-200",
-    dimClasses: "bg-amber-50 text-amber-300 ring-1 ring-amber-100",
+    label: 'Fall',
+    classes: 'bg-amber-100 text-amber-800 ring-1 ring-amber-200',
+    dimClasses: 'bg-amber-50 text-amber-300 ring-1 ring-amber-100',
   },
   winter: {
-    label: "Winter",
-    classes: "bg-sky-100 text-sky-800 ring-1 ring-sky-200",
-    dimClasses: "bg-sky-50 text-sky-300 ring-1 ring-sky-100",
+    label: 'Winter',
+    classes: 'bg-sky-100 text-sky-800 ring-1 ring-sky-200',
+    dimClasses: 'bg-sky-50 text-sky-300 ring-1 ring-sky-100',
   },
   spring: {
-    label: "Spring",
-    classes: "bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200",
-    dimClasses: "bg-emerald-50 text-emerald-300 ring-1 ring-emerald-100",
+    label: 'Spring',
+    classes: 'bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200',
+    dimClasses: 'bg-emerald-50 text-emerald-300 ring-1 ring-emerald-100',
   },
   summer: {
-    label: "Summer",
-    classes: "bg-rose-100 text-rose-800 ring-1 ring-rose-200",
-    dimClasses: "bg-rose-50 text-rose-300 ring-1 ring-rose-100",
+    label: 'Summer',
+    classes: 'bg-rose-100 text-rose-800 ring-1 ring-rose-200',
+    dimClasses: 'bg-rose-50 text-rose-300 ring-1 ring-rose-100',
   },
 };
 
 const cycleLabel: Record<YearCycle, string | null> = {
   every: null,
-  even: "even yrs",
-  odd: "odd yrs",
+  even: 'even yrs',
+  odd: 'odd yrs',
 };
 
 interface SemesterBadgeProps {
@@ -36,7 +36,7 @@ interface SemesterBadgeProps {
   dimmed?: boolean;
 }
 
-export function SemesterBadge({ semester, cycle = "every", dimmed }: SemesterBadgeProps) {
+export function SemesterBadge({ semester, cycle = 'every', dimmed }: SemesterBadgeProps) {
   const { label, classes, dimClasses } = semesterConfig[semester];
   const cycleText = cycleLabel[cycle];
 

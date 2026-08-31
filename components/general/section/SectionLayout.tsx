@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Sidebar from "./Sidebar";
-import MobileNav from "./MobileNav";
-import { NavSection } from "@/types/Content";
+import Link from 'next/link';
+import Sidebar from './Sidebar';
+import MobileNav from './MobileNav';
+import type { NavSection } from '@/types/Content';
 
 export interface Breadcrumb {
   label: string;
@@ -45,9 +45,7 @@ export default function SectionLayout({
     <div className="bg-white">
       <section className="bg-byu-navy py-4 text-white">
         <div className="mx-auto flex max-w-6xl flex-wrap items-baseline justify-center gap-x-3 px-6 text-center">
-          <p className="text-xl font-semibold uppercase tracking-wide md:text-2xl">
-            {title}
-          </p>
+          <p className="text-xl font-semibold tracking-wide uppercase md:text-2xl">{title}</p>
 
           {tagline && (
             <>
@@ -63,7 +61,7 @@ export default function SectionLayout({
       <div className="mx-auto max-w-7xl px-6 py-12">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-x-2 text-sm text-byu-medium-gray">
+            <ol className="text-byu-medium-gray flex flex-wrap items-center gap-x-2 text-sm">
               {breadcrumbs.map((crumb, index) => (
                 <li key={`${crumb.label}-${index}`} className="flex items-center gap-x-2">
                   {index > 0 && (
@@ -72,10 +70,7 @@ export default function SectionLayout({
                     </span>
                   )}
                   {crumb.href ? (
-                    <Link
-                      href={crumb.href}
-                      className="hover:text-byu-royal hover:underline"
-                    >
+                    <Link href={crumb.href} className="hover:text-byu-royal hover:underline">
                       {crumb.label}
                     </Link>
                   ) : (

@@ -15,7 +15,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="rounded-md px-3 py-2 text-sm font-medium text-byu-navy disabled:cursor-not-allowed disabled:text-slate-300 hover:enabled:bg-slate-100"
+        className="text-byu-navy rounded-md px-3 py-2 text-sm font-medium hover:enabled:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300"
       >
         Previous
       </button>
@@ -24,11 +24,9 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
           key={page}
           type="button"
           onClick={() => onPageChange(page)}
-          aria-current={page === currentPage ? "page" : undefined}
+          aria-current={page === currentPage ? 'page' : undefined}
           className={`h-9 w-9 rounded-md text-sm font-medium ${
-            page === currentPage
-              ? "bg-byu-navy text-white"
-              : "text-byu-navy hover:bg-slate-100"
+            page === currentPage ? 'bg-byu-navy text-white' : 'text-byu-navy hover:bg-slate-100'
           }`}
         >
           {page}
@@ -38,7 +36,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
         type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="rounded-md px-3 py-2 text-sm font-medium text-byu-navy disabled:cursor-not-allowed disabled:text-slate-300 hover:enabled:bg-slate-100"
+        className="text-byu-navy rounded-md px-3 py-2 text-sm font-medium hover:enabled:bg-slate-100 disabled:cursor-not-allowed disabled:text-slate-300"
       >
         Next
       </button>

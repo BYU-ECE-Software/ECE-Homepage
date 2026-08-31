@@ -1,4 +1,4 @@
-import { OverviewFile } from "@/types/Content";
+import type { OverviewFile } from '@/types/Content';
 
 // Shared content primitives (NavItem, NavSection, ResourceCardData,
 // OverviewFile, PageContent) now live in types/Content.ts, since the
@@ -10,7 +10,7 @@ export type {
   ResourceCardData,
   OverviewFile,
   PageContent,
-} from "@/types/Content";
+} from '@/types/Content';
 
 /**
  * Describes a major's set of graduation flowcharts. Every flowchart follows

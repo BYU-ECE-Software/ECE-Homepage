@@ -1,31 +1,31 @@
-import type { Metadata } from "next";
-import PageTitle from "@/components/layout/PageTitle";
-import Description from "@/components/general/Description";
-import CardGrid from "@/components/general/CardGrid";
-import ResourceCard from "@/components/general/ResourceCard";
-import { ResourceCardData } from "@/types/Content";
+import type { Metadata } from 'next';
+import PageTitle from '@/components/layout/PageTitle';
+import Description from '@/components/general/Description';
+import CardGrid from '@/components/general/CardGrid';
+import ResourceCard from '@/components/general/ResourceCard';
+import type { ResourceCardData } from '@/types/Content';
 
 export const metadata: Metadata = {
-  title: "Undergraduate Research | Electrical and Computer Engineering",
+  title: 'Undergraduate Research | Electrical and Computer Engineering',
   description:
-    "Research opportunities for ECE undergraduates, including the IMMERSE summer program.",
+    'Research opportunities for ECE undergraduates, including the IMMERSE summer program.',
 };
 
 const resources: ResourceCardData[] = [
   {
-    title: "IMMERSE",
+    title: 'IMMERSE',
     description:
-      "A paid summer research program pairing undergraduates with faculty mentors. Applications are currently being accepted.",
-    href: "https://immerse.byu.edu/",
-    image: "/research/immerse_2026.jpeg",
-    linkText: "Apply to IMMERSE",
+      'A paid summer research program pairing undergraduates with faculty mentors. Applications are currently being accepted.',
+    href: 'https://immerse.byu.edu/',
+    image: '/research/immerse_2026.jpeg',
+    linkText: 'Apply to IMMERSE',
   },
   {
-    title: "Faculty Research Areas",
+    title: 'Faculty Research Areas',
     description:
       "Browse the department's research groups to find faculty working on problems you want to help solve, then reach out about openings in their group.",
-    href: "/research",
-    linkText: "Explore research",
+    href: '/research',
+    linkText: 'Explore research',
   },
 ];
 

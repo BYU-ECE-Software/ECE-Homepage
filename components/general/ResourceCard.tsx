@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ResourceCardData } from "@/types/Content";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { ResourceCardData } from '@/types/Content';
 
 function isExternal(href: string): boolean {
   return /^https?:\/\//i.test(href);
@@ -29,46 +29,31 @@ export default function ResourceCard({
     <>
       {image && (
         <div className="relative h-48 bg-gray-200">
-          <Image
-            src={image}
-            alt=""
-            fill
-            unoptimized
-            className="object-cover"
-          />
+          <Image src={image} alt="" fill unoptimized className="object-cover" />
         </div>
       )}
 
       <div className="p-6">
-        <h3 className="text-lg font-semibold text-byu-navy">
+        <h3 className="text-byu-navy text-lg font-semibold">
           {title}
-          {opensNewTab && (
-            <span className="sr-only"> (opens in a new tab)</span>
-          )}
+          {opensNewTab && <span className="sr-only"> (opens in a new tab)</span>}
         </h3>
 
-        <p className="mt-2 text-sm text-byu-medium-gray">{description}</p>
+        <p className="text-byu-medium-gray mt-2 text-sm">{description}</p>
 
         {linkText && (
-          <span className="mt-4 inline-block font-medium text-byu-royal">
-            {linkText}
-          </span>
+          <span className="text-byu-royal mt-4 inline-block font-medium">{linkText}</span>
         )}
       </div>
     </>
   );
 
   const className =
-    "block overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-byu-royal";
+    'block overflow-hidden rounded-lg border border-gray-200 bg-white transition hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-byu-royal';
 
   if (opensNewTab) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {body}
       </a>
     );

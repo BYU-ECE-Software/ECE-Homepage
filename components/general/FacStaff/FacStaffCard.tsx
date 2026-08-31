@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export interface FacStaffMember {
   name: string;
@@ -23,30 +23,24 @@ export default function FacStaffCard({
   link,
 }: FacStaffMember) {
   const initials = name
-    .split(" ")
+    .split(' ')
     .map((w) => w[0])
-    .join("")
+    .join('')
     .slice(0, 2)
     .toUpperCase();
 
   const PhotoAndName = (
     <>
-      <div className="relative w-[130px] h-[130px] rounded-full overflow-hidden bg-gray-100 mb-3 flex-shrink-0 transition-shadow duration-200 group-hover:shadow-lg">
+      <div className="relative mb-3 h-[130px] w-[130px] flex-shrink-0 overflow-hidden rounded-full bg-gray-100 transition-shadow duration-200 group-hover:shadow-lg">
         {image ? (
-          <Image
-            src={image}
-            alt={name}
-            fill
-            sizes="130px"
-            className="object-cover object-top"
-          />
+          <Image src={image} alt={name} fill sizes="130px" className="object-cover object-top" />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-gray-500 select-none">
+          <div className="flex h-full w-full items-center justify-center text-2xl font-bold text-gray-500 select-none">
             {initials}
           </div>
         )}
       </div>
-      <span className="text-[0.85rem] font-bold text-gray-900 leading-snug group-hover:underline underline-offset-2">
+      <span className="text-[0.85rem] leading-snug font-bold text-gray-900 underline-offset-2 group-hover:underline">
         {name}
       </span>
     </>
@@ -64,31 +58,28 @@ export default function FacStaffCard({
           {PhotoAndName}
         </Link>
       ) : (
-        <div className="group flex flex-col items-center cursor-default">
-          {PhotoAndName}
-        </div>
+        <div className="group flex cursor-default flex-col items-center">{PhotoAndName}</div>
       )}
 
       <div className="mt-1.5 flex flex-col items-center gap-0.5">
         {title && (
-          <p className="text-[0.82rem] font-semibold text-gray-900 leading-snug mb-1" style={{ fontFamily: "'Georgia', serif" }}>
+          <p
+            className="mb-1 text-[0.82rem] leading-snug font-semibold text-gray-900"
+            style={{ fontFamily: "'Georgia', serif" }}
+          >
             {title}
           </p>
         )}
         {email && (
           <a
             href={`mailto:${email}`}
-            className="text-[0.76rem] text-gray-600 hover:text-blue-700 hover:underline transition-colors"
+            className="text-[0.76rem] text-gray-600 transition-colors hover:text-blue-700 hover:underline"
           >
             {email}
           </a>
         )}
-        {phone && (
-          <span className="text-[0.76rem] text-gray-600">{phone}</span>
-        )}
-        {office && (
-          <span className="text-[0.76rem] text-gray-600">{office}</span>
-        )}
+        {phone && <span className="text-[0.76rem] text-gray-600">{phone}</span>}
+        {office && <span className="text-[0.76rem] text-gray-600">{office}</span>}
       </div>
     </div>
   );

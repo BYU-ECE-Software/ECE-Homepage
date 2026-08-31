@@ -1,4 +1,4 @@
-import { NavLinkType } from "./navUtils";
+import type { NavLinkType } from './navUtils';
 
 interface NavLinkIconProps {
   linkType: NavLinkType;
@@ -10,13 +10,13 @@ interface NavLinkIconProps {
 //   - "internal" -> a bare arrow; leaves this major's pages, but stays on this site
 //   - "external" -> an arrow escaping a box; leaves this site entirely (opens in a new tab)
 export default function NavLinkIcon({ linkType }: NavLinkIconProps) {
-  if (linkType === "slug") {
+  if (linkType === 'slug') {
     return null;
   }
 
-  const iconClass = "ml-1 inline h-3 w-3 -translate-y-px";
+  const iconClass = 'ml-1 inline h-3 w-3 -translate-y-px';
 
-  if (linkType === "internal") {
+  if (linkType === 'internal') {
     return (
       <svg
         className={iconClass}

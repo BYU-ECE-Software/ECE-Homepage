@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import SectionLayout from "@/components/general/section/SectionLayout";
-import ResourceCard from "@/components/general/ResourceCard";
-import Overview from "@/components/general/Overview";
-import OutcomesPlaceholder from "@/components/general/OutcomesPlaceholder";
-import { getMajor, getAllMajorSlugs } from "@/data/undergraduate/majors";
-import { resolveOverview } from "@/data/undergraduate/resolveOverview";
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import SectionLayout from '@/components/general/section/SectionLayout';
+import ResourceCard from '@/components/general/ResourceCard';
+import Overview from '@/components/general/Overview';
+import OutcomesPlaceholder from '@/components/general/OutcomesPlaceholder';
+import { getMajor, getAllMajorSlugs } from '@/data/undergraduate/majors';
+import { resolveOverview } from '@/data/undergraduate/resolveOverview';
 
 interface Props {
   params: Promise<{
@@ -46,15 +46,13 @@ export default async function MajorLandingPage({ params }: Props) {
       basePath={`/undergraduate/${major.slug}`}
       navigation={major.navigation}
       breadcrumbs={[
-        { label: "Undergraduate", href: "/undergraduate/prospective-students" },
+        { label: 'Undergraduate', href: '/undergraduate/prospective-students' },
         { label: major.displayName },
       ]}
     >
-      <h1 className="text-3xl font-semibold text-byu-dark-gray">
-        {page.title}
-      </h1>
+      <h1 className="text-byu-dark-gray text-3xl font-semibold">{page.title}</h1>
 
-      <p className="mt-4 text-byu-medium-gray">{page.description}</p>
+      <p className="text-byu-medium-gray mt-4">{page.description}</p>
 
       <Overview content={resolveOverview(page.overview)} />
 

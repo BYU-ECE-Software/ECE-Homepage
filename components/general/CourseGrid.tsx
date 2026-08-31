@@ -1,6 +1,6 @@
-import React from "react";
-import { Course, Semester } from "@/types/Course";
-import { CourseCard } from "./CourseCard";
+import React from 'react';
+import type { Course, Semester } from '@/types/Course';
+import { CourseCard } from './CourseCard';
 
 interface CourseGridProps {
   courses: Course[];
@@ -8,17 +8,13 @@ interface CourseGridProps {
   sectionDescription?: string;
 }
 
-export function CourseGrid({
-  courses,
-  activeSemesters,
-  sectionDescription,
-}: CourseGridProps) {
+export function CourseGrid({ courses, activeSemesters, sectionDescription }: CourseGridProps) {
   if (courses.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
-        <div className="rounded-full bg-slate-100 p-4 mb-4">
+        <div className="mb-4 rounded-full bg-slate-100 p-4">
           <svg
-            className="w-6 h-6 text-slate-400"
+            className="h-6 w-6 text-slate-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -32,25 +28,17 @@ export function CourseGrid({
           </svg>
         </div>
         <p className="text-sm font-medium text-slate-600">No courses found</p>
-        <p className="text-xs text-slate-400 mt-1">
-          Try adjusting your search or filters.
-        </p>
+        <p className="mt-1 text-xs text-slate-400">Try adjusting your search or filters.</p>
       </div>
     );
   }
 
   return (
     <div>
-      {sectionDescription && (
-        <p className="text-sm text-slate-500 mb-4">{sectionDescription}</p>
-      )}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      {sectionDescription && <p className="mb-4 text-sm text-slate-500">{sectionDescription}</p>}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {courses.map((course) => (
-          <CourseCard
-            key={course.id}
-            course={course}
-            activeSemesters={activeSemesters}
-          />
+          <CourseCard key={course.id} course={course} activeSemesters={activeSemesters} />
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import ArticleLayout from "@/components/general/ArticleLayout";
+import ArticleLayout from '@/components/general/ArticleLayout';
 
 const exampleArticle = `Engineering articles usually need a small, predictable vocabulary: headings, paragraphs, emphasis, links, lists, quotations, code, tables, and images. Markdown provides that vocabulary without requiring authors to construct a nested array of presentation objects.
 

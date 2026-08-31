@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import RichText from "@/components/general/RichText";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import RichText from '@/components/general/RichText';
 import {
   PageIntro,
   ResourceGrid,
   CallToAction,
   type ResourceItem,
-} from "@/components/general/ContentPage";
-import { majors } from "@/data/undergraduate/majors";
-import { minors } from "@/data/undergraduate/minors";
-import { DEPARTMENT_COURSE_CATALOG_URL } from "@/data/undergraduate/majors/derive";
+} from '@/components/general/ContentPage';
+import { majors } from '@/data/undergraduate/majors';
+import { minors } from '@/data/undergraduate/minors';
+import { DEPARTMENT_COURSE_CATALOG_URL } from '@/data/undergraduate/majors/derive';
 
 export const metadata: Metadata = {
-  title: "Prospective Students | Electrical and Computer Engineering",
+  title: 'Prospective Students | Electrical and Computer Engineering',
   description:
-    "Compare the Electrical Engineering, Computer Engineering, and Cybersecurity programs and learn how to prepare for the major.",
+    'Compare the Electrical Engineering, Computer Engineering, and Cybersecurity programs and learn how to prepare for the major.',
 };
 
 // Built from the major and minor configs, so each program is described in
@@ -30,31 +30,29 @@ const programs: ResourceItem[] = [
     title: minor.displayName,
     description: minor.description,
     href: `/undergraduate/minors/${minor.slug}`,
-    eyebrow: "Minor",
+    eyebrow: 'Minor',
   })),
 ];
 
 const nextSteps: ResourceItem[] = [
   {
-    title: "Opportunities",
+    title: 'Opportunities',
     description:
-      "Scholarships, student organizations, internships, and undergraduate research are open to students in all three majors.",
-    href: "/opportunities",
+      'Scholarships, student organizations, internships, and undergraduate research are open to students in all three majors.',
+    href: '/opportunities',
     linkLabel: "See what's available",
   },
   {
-    title: "Academic Advising",
-    description:
-      "Advisors help you plan semesters, choose a major, and stay on track to graduate.",
-    href: "/people/advisors",
-    linkLabel: "Meet the advisors",
+    title: 'Academic Advising',
+    description: 'Advisors help you plan semesters, choose a major, and stay on track to graduate.',
+    href: '/people/advisors',
+    linkLabel: 'Meet the advisors',
   },
   {
-    title: "Research and Labs",
-    description:
-      "Browse faculty research areas to see the kind of work students get involved in.",
-    href: "/research",
-    linkLabel: "Explore research",
+    title: 'Research and Labs',
+    description: 'Browse faculty research areas to see the kind of work students get involved in.',
+    href: '/research',
+    linkLabel: 'Explore research',
   },
 ];
 
@@ -81,59 +79,39 @@ function ProgramComparison() {
   return (
     <section className="px-6 py-14">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-3xl font-semibold text-byu-navy">
-          Compare the three majors
-        </h2>
+        <h2 className="text-byu-navy text-3xl font-semibold">Compare the three majors</h2>
         <p className="mt-3 max-w-3xl leading-7 text-slate-600">
-          All three degrees share a common core and the same department
-          resources. Use the catalog requirements and the graduation flowcharts
-          to see how the upper-division coursework differs.
+          All three degrees share a common core and the same department resources. Use the catalog
+          requirements and the graduation flowcharts to see how the upper-division coursework
+          differs.
         </p>
 
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[40rem] border-collapse text-left">
             <caption className="sr-only">
-              Comparison of the three undergraduate majors offered by the
-              Department of Electrical and Computer Engineering
+              Comparison of the three undergraduate majors offered by the Department of Electrical
+              and Computer Engineering
             </caption>
             <thead>
-              <tr className="border-b-2 border-byu-navy">
-                <th
-                  scope="col"
-                  className="py-3 pr-4 text-sm font-semibold text-byu-navy"
-                >
+              <tr className="border-byu-navy border-b-2">
+                <th scope="col" className="text-byu-navy py-3 pr-4 text-sm font-semibold">
                   Program
                 </th>
-                <th
-                  scope="col"
-                  className="py-3 pr-4 text-sm font-semibold text-byu-navy"
-                >
+                <th scope="col" className="text-byu-navy py-3 pr-4 text-sm font-semibold">
                   What you&apos;ll work on
                 </th>
-                <th
-                  scope="col"
-                  className="py-3 pr-4 text-sm font-semibold text-byu-navy"
-                >
+                <th scope="col" className="text-byu-navy py-3 pr-4 text-sm font-semibold">
                   Requirements
                 </th>
-                <th
-                  scope="col"
-                  className="py-3 text-sm font-semibold text-byu-navy"
-                >
+                <th scope="col" className="text-byu-navy py-3 text-sm font-semibold">
                   Course maps
                 </th>
               </tr>
             </thead>
             <tbody>
               {majors.map((major) => (
-                <tr
-                  key={major.slug}
-                  className="border-b border-slate-200 align-top"
-                >
-                  <th
-                    scope="row"
-                    className="py-5 pr-4 font-semibold text-byu-navy"
-                  >
+                <tr key={major.slug} className="border-b border-slate-200 align-top">
+                  <th scope="row" className="text-byu-navy py-5 pr-4 font-semibold">
                     <Link
                       href={`/undergraduate/${major.slug}`}
                       className="underline hover:no-underline"
@@ -141,15 +119,13 @@ function ProgramComparison() {
                       {major.displayName}
                     </Link>
                   </th>
-                  <td className="py-5 pr-4 text-sm leading-6 text-slate-600">
-                    {major.summary}
-                  </td>
+                  <td className="py-5 pr-4 text-sm leading-6 text-slate-600">{major.summary}</td>
                   <td className="py-5 pr-4 text-sm">
                     <a
                       href={major.degreeRequirementsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium text-byu-royal underline hover:no-underline"
+                      className="text-byu-royal font-medium underline hover:no-underline"
                     >
                       Catalog listing
                     </a>
@@ -157,7 +133,7 @@ function ProgramComparison() {
                   <td className="py-5 text-sm">
                     <Link
                       href={`/undergraduate/${major.slug}/graduation-flowcharts`}
-                      className="font-medium text-byu-royal underline hover:no-underline"
+                      className="text-byu-royal font-medium underline hover:no-underline"
                     >
                       {major.flowcharts.years.length} flowcharts
                     </Link>
@@ -169,24 +145,24 @@ function ProgramComparison() {
         </div>
 
         <p className="mt-6 max-w-3xl text-sm leading-6 text-slate-600">
-          Still deciding?{" "}
+          Still deciding?{' '}
           <a
             href={DEPARTMENT_COURSE_CATALOG_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-byu-royal underline hover:no-underline"
+            className="text-byu-royal font-medium underline hover:no-underline"
           >
             Browse the full course catalog
-          </a>{" "}
-          or{" "}
+          </a>{' '}
+          or{' '}
           <Link
             href="/people/advisors"
-            className="font-medium text-byu-royal underline hover:no-underline"
+            className="text-byu-royal font-medium underline hover:no-underline"
           >
             talk with an academic advisor
           </Link>
-          . Advisors help students move between these majors regularly, so
-          picking one now is not a permanent decision.
+          . Advisors help students move between these majors regularly, so picking one now is not a
+          permanent decision.
         </p>
       </div>
     </section>

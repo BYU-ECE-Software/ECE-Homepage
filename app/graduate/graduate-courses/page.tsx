@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import React, { useState, useMemo } from "react";
-import { courses, sectionMeta } from "@/data/courses/gradCourses";
-import { CourseSection, Semester, YearCycle } from "@/types/Course";
-import { SectionTabs } from "@/components/general/SectionTabs";
-import { SemesterFilter } from "@/components/general/SemesterFilter";
-import { CourseGrid } from "@/components/general/CourseGrid";
+import React, { useState, useMemo } from 'react';
+import { courses, sectionMeta } from '@/data/courses/gradCourses';
+import type { CourseSection, Semester, YearCycle } from '@/types/Course';
+import { SectionTabs } from '@/components/general/SectionTabs';
+import { SemesterFilter } from '@/components/general/SemesterFilter';
+import { CourseGrid } from '@/components/general/CourseGrid';
 
 export default function GraduateCoursesPage() {
-  const [activeSection, setActiveSection] = useState<CourseSection>("regular");
+  const [activeSection, setActiveSection] = useState<CourseSection>('regular');
   const [activeSemesters, setActiveSemesters] = useState<Semester[]>([]);
   const [activeCycle, setActiveCycle] = useState<YearCycle | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Count courses per section (unfiltered)
   const sectionCounts = useMemo(() => {
     const counts = {} as Record<CourseSection, number>;
-    const sections: CourseSection[] = ["regular", "special-topics", "unscheduled", "retired"];
+    const sections: CourseSection[] = ['regular', 'special-topics', 'unscheduled', 'retired'];
     sections.forEach((s) => {
       counts[s] = courses.filter((c) => c.section === s).length;
     });
@@ -27,7 +27,7 @@ export default function GraduateCoursesPage() {
   const showCycleFilter = useMemo(() => {
     return courses
       .filter((c) => c.section === activeSection)
-      .some((c) => c.semesters.some((o) => o.cycle !== "every"));
+      .some((c) => c.semesters.some((o) => o.cycle !== 'every'));
   }, [activeSection]);
 
   // Filtered courses for current section
@@ -46,8 +46,7 @@ export default function GraduateCoursesPage() {
         course.semesters.some((o) => activeSemesters.includes(o.semester));
 
       const matchesCycle =
-        activeCycle === null ||
-        course.semesters.some((o) => o.cycle === activeCycle);
+        activeCycle === null || course.semesters.some((o) => o.cycle === activeCycle);
 
       return matchesSearch && matchesSemester && matchesCycle;
     });
@@ -57,21 +56,20 @@ export default function GraduateCoursesPage() {
     <div className="min-h-screen bg-slate-50">
       {/* Page header */}
       <header className="bg-[#002E5D] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-300 mb-2">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <p className="mb-2 text-xs font-semibold tracking-widest text-sky-300 uppercase">
             Electrical &amp; Computer Engineering
           </p>
           <h1 className="text-3xl font-bold tracking-tight">Graduate Courses</h1>
-          <p className="mt-2 text-slate-300 text-sm max-w-xl">
-            Browse and filter ECE graduate course offerings by semester
-            availability. Schedules are subject to change — verify with the
-            department.
+          <p className="mt-2 max-w-xl text-sm text-slate-300">
+            Browse and filter ECE graduate course offerings by semester availability. Schedules are
+            subject to change — verify with the department.
           </p>
         </div>
       </header>
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <SectionTabs
           active={activeSection}
           counts={sectionCounts}
@@ -79,7 +77,7 @@ export default function GraduateCoursesPage() {
             setActiveSection(s);
             setActiveSemesters([]);
             setActiveCycle(null);
-            setSearchQuery("");
+            setSearchQuery('');
           }}
         />
 

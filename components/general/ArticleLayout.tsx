@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import RichText from "./RichText";
+import type { ReactNode } from 'react';
+import RichText from './RichText';
 
 interface ArticleLayoutProps {
   title: string;
@@ -14,7 +14,7 @@ interface ArticleLayoutProps {
 export default function ArticleLayout({
   title,
   content,
-  eyebrow = "Department News",
+  eyebrow = 'Department News',
   description,
   author,
   published,
@@ -24,8 +24,12 @@ export default function ArticleLayout({
     <article>
       <header className="border-b border-slate-200 bg-slate-50 px-6 py-14">
         <div className="mx-auto max-w-3xl">
-          <p className="text-sm font-semibold tracking-widest text-byu-royal uppercase">{eyebrow}</p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-byu-navy sm:text-5xl">{title}</h1>
+          <p className="text-byu-royal text-sm font-semibold tracking-widest uppercase">
+            {eyebrow}
+          </p>
+          <h1 className="text-byu-navy mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+            {title}
+          </h1>
           {description && <p className="mt-5 text-xl leading-8 text-slate-600">{description}</p>}
           {(author || published) && (
             <p className="mt-6 text-sm text-slate-500">

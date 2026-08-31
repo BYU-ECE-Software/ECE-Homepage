@@ -1,4 +1,5 @@
-import FacStaffCard, { FacStaffMember } from "./FacStaffCard";
+import type { FacStaffMember } from './FacStaffCard';
+import FacStaffCard from './FacStaffCard';
 
 interface FacStaffGridProps {
   /** Section heading text, e.g. "FACULTY" */
@@ -13,25 +14,21 @@ interface FacStaffGridProps {
 }
 
 const colClasses: Record<number, string> = {
-  2: "grid-cols-1 sm:grid-cols-2",
-  3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
-  4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+  2: 'grid-cols-1 sm:grid-cols-2',
+  3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
+  4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
 };
 
-export default function FacStaffGrid({
-  title,
-  members = [],
-  columns = 4,
-}: FacStaffGridProps) {
+export default function FacStaffGrid({ title, members = [], columns = 4 }: FacStaffGridProps) {
   return (
-    <section className="max-w-5xl mx-auto px-6 py-12">
+    <section className="mx-auto max-w-5xl px-6 py-12">
       {title && (
-        <h2 className="text-center text-xs font-bold tracking-[0.18em] uppercase text-gray-900 mb-10">
+        <h2 className="mb-10 text-center text-xs font-bold tracking-[0.18em] text-gray-900 uppercase">
           {title}
         </h2>
       )}
 
-      <div className={`grid ${colClasses[columns]} gap-y-10 gap-x-6`}>
+      <div className={`grid ${colClasses[columns]} gap-x-6 gap-y-10`}>
         {members.map((member, i) => (
           <FacStaffCard key={i} {...member} />
         ))}

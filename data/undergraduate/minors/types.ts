@@ -1,4 +1,4 @@
-import { OverviewFile } from "@/types/Content";
+import type { OverviewFile } from '@/types/Content';
 
 export interface MinorConfig {
   // URL segment, e.g. "electrical-engineering-minor"

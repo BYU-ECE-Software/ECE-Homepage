@@ -1,4 +1,4 @@
-import { NavItem } from "@/types/Content";
+import type { NavItem } from '@/types/Content';
 
 // Matches "http://..." or "https://..." at the start of a string.
 const ABSOLUTE_URL = /^https?:\/\//i;
@@ -6,7 +6,7 @@ const ABSOLUTE_URL = /^https?:\/\//i;
 // - "slug"     -> no `href` set; a page inside this section
 // - "internal" -> `href` set, but points elsewhere on this site
 // - "external" -> `href` set to an absolute http(s) URL
-export type NavLinkType = "slug" | "internal" | "external";
+export type NavLinkType = 'slug' | 'internal' | 'external';
 
 export interface ResolvedNavLink {
   href: string;
@@ -28,19 +28,16 @@ export function isExternal(href: string): boolean {
  * `basePath` is the section root, e.g. "/undergraduate/electrical-engineering"
  * or "/opportunities".
  */
-export function resolveNavLink(
-  basePath: string,
-  item: NavItem,
-): ResolvedNavLink {
+export function resolveNavLink(basePath: string, item: NavItem): ResolvedNavLink {
   if (item.href) {
     return {
       href: item.href,
-      linkType: isExternal(item.href) ? "external" : "internal",
+      linkType: isExternal(item.href) ? 'external' : 'internal',
     };
   }
 
   return {
     href: `${basePath}/${item.slug}`,
-    linkType: "slug",
+    linkType: 'slug',
   };
 }

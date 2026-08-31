@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { NavSection } from "@/types/Content";
-import { resolveNavLink } from "./navUtils";
-import NavLinkIcon from "./NavLinkIcon";
+import Link from 'next/link';
+import type { NavSection } from '@/types/Content';
+import { resolveNavLink } from './navUtils';
+import NavLinkIcon from './NavLinkIcon';
 
 interface SidebarProps {
   /** Section root, e.g. "/undergraduate/electrical-engineering". */
@@ -12,12 +12,11 @@ interface SidebarProps {
   currentSlug?: string;
 }
 
-const activeClasses =
-  "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy";
+const activeClasses = 'border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy';
 
 export default function Sidebar({
   basePath,
-  homeLabel = "Overview",
+  homeLabel = 'Overview',
   navigation,
   currentSlug,
 }: SidebarProps) {
@@ -29,11 +28,9 @@ export default function Sidebar({
             <li>
               <Link
                 href={basePath}
-                aria-current={!currentSlug ? "page" : undefined}
+                aria-current={!currentSlug ? 'page' : undefined}
                 className={`block rounded px-3 py-2 text-sm transition ${
-                  !currentSlug
-                    ? activeClasses
-                    : "font-medium text-byu-navy hover:bg-gray-50"
+                  !currentSlug ? activeClasses : 'text-byu-navy font-medium hover:bg-gray-50'
                 }`}
               >
                 {homeLabel}
@@ -44,27 +41,27 @@ export default function Sidebar({
 
         {navigation.map((section) => (
           <div key={section.title} className="mb-8">
-            <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-byu-dark-gray">
+            <h2 className="text-byu-dark-gray mb-3 text-sm font-bold tracking-wide uppercase">
               {section.title}
             </h2>
 
             <ul className="space-y-1">
               {section.items.map((item) => {
                 const { href, linkType } = resolveNavLink(basePath, item);
-                const active = linkType === "slug" && item.slug === currentSlug;
-                const external = linkType === "external";
+                const active = linkType === 'slug' && item.slug === currentSlug;
+                const external = linkType === 'external';
 
                 return (
                   <li key={item.slug}>
                     <Link
                       href={href}
-                      target={external ? "_blank" : undefined}
-                      rel={external ? "noopener noreferrer" : undefined}
-                      aria-current={active ? "page" : undefined}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      aria-current={active ? 'page' : undefined}
                       className={`block rounded px-3 py-2 text-sm transition ${
                         active
                           ? activeClasses
-                          : "text-byu-medium-gray hover:bg-gray-50 hover:text-byu-navy"
+                          : 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-50'
                       }`}
                     >
                       {item.title}

@@ -4,7 +4,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiChevronDown } from 'react-icons/fi';
-import navConfig, { NavItem } from './NavConfig';
+import type { NavItem } from './NavConfig';
+import navConfig from './NavConfig';
 
 type NavBarProps = {
   navPadLeft?: number;
@@ -129,7 +130,12 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
     if (visibleChildren.length === 0) return null;
 
     return (
-      <div key={item.label} ref={(el) => { mobileRefs.current[index] = el; }}>
+      <div
+        key={item.label}
+        ref={(el) => {
+          mobileRefs.current[index] = el;
+        }}
+      >
         <button
           type="button"
           onClick={() => toggle(index)}
@@ -150,7 +156,10 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
                 <Link
                   key={child.href}
                   href={child.href}
-                  onClick={() => { closeAll(); setMobileOpen(false); }}
+                  onClick={() => {
+                    closeAll();
+                    setMobileOpen(false);
+                  }}
                   aria-current={childActive ? 'page' : undefined}
                   className={`text-byu-navy px-10 py-2 text-left hover:bg-[#FAFAFA] ${
                     childActive ? 'bg-[#FAFAFA] font-semibold' : ''
@@ -193,7 +202,9 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
       <div
         key={item.label}
         className="relative"
-        ref={(el) => { desktopRefs.current[index] = el; }}
+        ref={(el) => {
+          desktopRefs.current[index] = el;
+        }}
       >
         <button
           type="button"
