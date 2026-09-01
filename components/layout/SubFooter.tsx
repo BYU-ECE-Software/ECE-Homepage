@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import type { SubFooterProps } from '@/types/SubFooter';
 
+function isExternal(href: string) {
+  return /^https?:\/\//.test(href);
+}
+
 export default function SubFooter({ columns = [], contactBlock }: SubFooterProps) {
   return (
     <footer className="w-full bg-[#f0f2f4] px-10 py-10">
@@ -41,6 +45,9 @@ export default function SubFooter({ columns = [], contactBlock }: SubFooterProps
                     <Link
                       href={link.href}
                       className="text-xs leading-relaxed text-[#0057a8] hover:underline"
+                      {...(isExternal(link.href)
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
                     >
                       {link.label}
                     </Link>
