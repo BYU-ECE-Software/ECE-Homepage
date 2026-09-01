@@ -27,21 +27,15 @@ interface ResearchArea {
 
 const heroImages: string[] = ['/hero/LES.webp', '/hero/LES2.webp', '/hero/LES3.webp'];
 
-// TODO: Every `href` below points at /faculty/<name>, but no such route
-// exists — all 32 of these links currently 404. The department already has
-// full faculty records in data/people/Faculty.ts, so the cleanest fix is a
-// dynamic /people/faculty/[slug] route generated from that data, which would
-// also give each professor a linkable page for their research and contact
-// info. As a stopgap, point these at /people/faculty.
 const researchAreas: ResearchArea[] = [
   {
     image: '/research/BlockY.png',
     imageAlt: 'Close-up of a circuit board with a magnifying glass',
     title: 'Analog Circuits',
     people: [
-      { label: 'Wood Chiang', href: '/faculty/wood-chiang' },
-      { label: 'Aaron Hawkins', href: '/faculty/aaron-hawkins' },
-      { label: 'Stephen Schultz', href: '/faculty/stephen-schultz' },
+      { label: 'Wood Chiang', href: '/people/faculty/wood-chiang' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Stephen Schultz', href: '/people/faculty/stephen-schultz' },
     ],
   },
   {
@@ -49,26 +43,26 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Futuristic biomedical engineering lab',
     title: 'Biomedical Engineering',
     people: [
-      { label: 'Steven Allen', href: '/faculty/steven-allen' },
-      { label: 'Aaron Hawkins', href: '/faculty/aaron-hawkins' },
-      { label: 'Preston Manwaring', href: '/faculty/preston-manwaring' },
-      { label: 'Brian Mazzeo', href: '/faculty/brian-mazzeo' },
-      { label: 'Ben Schooley', href: '/faculty/ben-schooley' },
+      { label: 'Steven Allen', href: '/people/faculty/steven-allen' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
     ],
   },
   {
     image: '/research/BlockY.png',
     imageAlt: 'Glowing network of connected nodes',
     title: 'Computer Networks',
-    people: [{ label: 'Phil Lundrigan', href: '/faculty/phil-lundrigan' }],
+    people: [{ label: 'Phil Lundrigan', href: '/people/faculty/phil-lundrigan' }],
   },
   {
     image: '/research/BlockY.png',
     imageAlt: 'Digital chip on a glowing blue circuit',
     title: 'Digital Circuits & FPGAs',
     people: [
-      { label: 'Mike Wirthlin', href: '/faculty/mike-wirthlin' },
-      { label: 'Jeff Goeders', href: '/faculty/jeff-goeders' },
+      { label: 'Mike Wirthlin', href: '/people/faculty/mike-wirthlin' },
+      { label: 'Jeff Goeders', href: '/people/faculty/jeff-goeders' },
     ],
   },
   {
@@ -76,10 +70,10 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Sensors embedded in soil in a field',
     title: 'Embedded Systems',
     people: [
-      { label: 'Brian Mazzeo', href: '/faculty/brian-mazzeo' },
-      { label: 'Jeff Goeders', href: '/faculty/jeff-goeders' },
-      { label: 'Mike Wirthlin', href: '/faculty/mike-wirthlin' },
-      { label: 'Phil Lundrigan', href: '/faculty/phil-lundrigan' },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Jeff Goeders', href: '/people/faculty/jeff-goeders' },
+      { label: 'Mike Wirthlin', href: '/people/faculty/mike-wirthlin' },
+      { label: 'Phil Lundrigan', href: '/people/faculty/phil-lundrigan' },
     ],
   },
   {
@@ -87,9 +81,9 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Soldier using augmented reality headset',
     title: 'Human Computer Interaction',
     people: [
-      { label: 'Derek Hansen', href: '/faculty/derek-hansen' },
-      { label: 'Ben Schooley', href: '/faculty/ben-schooley' },
-      { label: 'Daniel Smalley', href: '/faculty/daniel-smalley' },
+      { label: 'Derek Hansen', href: '/people/faculty/derek-hansen' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
+      { label: 'Daniel Smalley', href: '/people/faculty/daniel-smalley' },
     ],
   },
   {
@@ -97,12 +91,12 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Autonomous truck with LIDAR sensors on highway',
     title: 'Machine Learning / Artificial Intelligence',
     people: [
-      { label: 'Willie Harrison', href: '/faculty/willie-harrison' },
-      { label: 'D.J. Lee', href: '/faculty/dj-lee' },
-      { label: 'Josh Mangelson', href: '/faculty/josh-mangelson' },
-      { label: 'Cammy Peterson', href: '/faculty/cammy-peterson' },
-      { label: 'Ben Schooley', href: '/faculty/ben-schooley' },
-      { label: 'James Usevitch', href: '/faculty/james-usevitch' },
+      { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
+      { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
+      { label: 'Josh Mangelson', href: '/people/faculty/josh-mangelson' },
+      { label: 'Cammy Peterson', href: '/people/faculty/cammy-peterson' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
+      { label: 'James Usevitch', href: '/people/faculty/james-usevitch' },
     ],
   },
   {
@@ -110,9 +104,9 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Microfluidics lab equipment',
     title: 'Microfluidics and MEMS',
     people: [
-      { label: 'Aaron Hawkins', href: '/faculty/aaron-hawkins' },
-      { label: 'Preston Manwaring', href: '/faculty/preston-manwaring' },
-      { label: 'Greg Nordin', href: '/faculty/greg-nordin' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
+      { label: 'Greg Nordin', href: '/people/faculty/greg-nordin' },
     ],
   },
   {
@@ -120,27 +114,27 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Optical engineering equipment with lenses',
     title: 'Optical Engineering',
     people: [
-      { label: 'Aaron Hawkins', href: '/faculty/aaron-hawkins' },
-      { label: 'Stephen Schultz', href: '/faculty/stephen-schultz' },
-      { label: 'Daniel Smalley', href: '/faculty/daniel-smalley' },
-      { label: 'Greg Nordin', href: '/faculty/greg-nordin' },
-      { label: 'Ryan Camacho', href: '/faculty/ryan-camacho' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Stephen Schultz', href: '/people/faculty/stephen-schultz' },
+      { label: 'Daniel Smalley', href: '/people/faculty/daniel-smalley' },
+      { label: 'Greg Nordin', href: '/people/faculty/greg-nordin' },
+      { label: 'Ryan Camacho', href: '/people/faculty/ryan-camacho' },
     ],
   },
   {
     image: '/research/BlockY.png',
     imageAlt: 'Quantum engineering laboratory',
     title: 'Quantum Engineering',
-    people: [{ label: 'Ryan Camacho', href: '/faculty/ryan-camacho' }],
+    people: [{ label: 'Ryan Camacho', href: '/people/faculty/ryan-camacho' }],
   },
   {
     image: '/research/BlockY.png',
     imageAlt: 'Satellite in orbit above Earth',
     title: 'Remote Sensing',
     people: [
-      { label: 'David Long', href: '/faculty/david-long' },
-      { label: 'Brian Jeffs', href: '/faculty/brian-jeffs' },
-      { label: 'Karl Warnick', href: '/faculty/karl-warnick' },
+      { label: 'David Long', href: '/people/faculty/david-long' },
+      { label: 'Brian Jeffs' },
+      { label: 'Karl Warnick', href: '/people/faculty/karl-warnick' },
     ],
   },
   {
@@ -148,11 +142,11 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Underwater robotics and remote vehicles',
     title: 'Robotics/Controls',
     people: [
-      { label: 'Randy Beard', href: '/faculty/randy-beard' },
-      { label: 'D.J. Lee', href: '/faculty/dj-lee' },
-      { label: 'Josh Mangelson', href: '/faculty/josh-mangelson' },
-      { label: 'Cammy Peterson', href: '/faculty/cammy-peterson' },
-      { label: 'James Usevitch', href: '/faculty/james-usevitch' },
+      { label: 'Randy Beard', href: '/people/faculty/randy-beard' },
+      { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
+      { label: 'Josh Mangelson', href: '/people/faculty/josh-mangelson' },
+      { label: 'Cammy Peterson', href: '/people/faculty/cammy-peterson' },
+      { label: 'James Usevitch', href: '/people/faculty/james-usevitch' },
     ],
   },
   {
@@ -160,11 +154,11 @@ const researchAreas: ResearchArea[] = [
     imageAlt: 'Digital signal processing visualization',
     title: 'Signal Processing and Telecommunications',
     people: [
-      { label: 'Willie Harrison', href: '/faculty/willie-harrison' },
-      { label: 'Brian Jeffs', href: '/faculty/brian-jeffs' },
-      { label: 'Brian Mazzeo', href: '/faculty/brian-mazzeo' },
-      { label: 'Michael Rice', href: '/faculty/michael-rice' },
-      { label: 'Karl Warnick', href: '/faculty/karl-warnick' },
+      { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
+      { label: 'Brian Jeffs' },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Michael Rice' },
+      { label: 'Karl Warnick', href: '/people/faculty/karl-warnick' },
     ],
   },
 ];
