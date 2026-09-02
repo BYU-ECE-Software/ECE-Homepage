@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+function isExternal(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
 export interface CardItem {
   label: string;
   /** If provided, renders the item as a Next.js Link. */
@@ -62,9 +66,20 @@ export default function Card({
         {title && (
           <h3 className="mb-1.5 text-sm leading-snug font-bold text-gray-900">
             {titleHref ? (
-              <Link href={titleHref} className="hover:text-[#002255] hover:underline">
-                {title}
-              </Link>
+              isExternal(titleHref) ? (
+                <a
+                  href={titleHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#002255] hover:underline"
+                >
+                  {title}
+                </a>
+              ) : (
+                <Link href={titleHref} className="hover:text-[#002255] hover:underline">
+                  {title}
+                </Link>
+              )
             ) : (
               title
             )}

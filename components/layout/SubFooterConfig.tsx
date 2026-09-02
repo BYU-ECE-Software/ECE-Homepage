@@ -12,13 +12,6 @@ export const contactBlock: ContactBlock = {
   buttonHref: '/contact',
 };
 
-// TODO: The following links still point at routes that don't exist yet on
-// this site (/alumni-and-friends, /diversity-and-belonging,
-// /objectives-and-outcomes, /accreditation, /ai-policy, /event-requesting,
-// /cadence). They currently land on the 404 page. Their content exists on
-// the live ece.byu.edu site and can be replicated here — build those pages
-// before launch. Everything else below now points at the real external
-// system (or existing internal page) it belongs to.
 export const subfooterColumns: FooterColumn[] = [
   {
     heading: 'Department Resources',
