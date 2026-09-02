@@ -48,17 +48,30 @@ export default function Card({
   return (
     <article className="flex flex-col bg-white">
       {/* Image */}
-      {image && (
-        <div className="group relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-        </div>
-      )}
+      {image &&
+        (() => {
+          const img = (
+            <div className="group relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
+          );
+
+          if (!titleHref) return img;
+
+          return isExternal(titleHref) ? (
+            <a href={titleHref} target="_blank" rel="noopener noreferrer">
+              {img}
+            </a>
+          ) : (
+            <Link href={titleHref}>{img}</Link>
+          );
+        })()}
 
       {/* Body */}
       <div className={`flex-1 px-1 pt-3 pb-2 ${alignClass}`}>
