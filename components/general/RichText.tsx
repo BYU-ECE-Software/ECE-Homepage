@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import type { RichTextProps } from '@/types/RichText';
 
 const widthClasses = {
@@ -22,6 +23,7 @@ export function RichText({
       className={`rich-text ${widthClasses[maxWidth]} ${compact ? 'text-sm' : 'text-base'} ${className}`.trim()}
     >
       <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
             <h1 className="text-byu-navy mt-10 mb-5 text-3xl font-bold tracking-tight first:mt-0 sm:text-4xl">
