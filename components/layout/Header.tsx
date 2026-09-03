@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import NavBar from './NavBar';
+import SearchBar from './SearchBar';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -51,11 +52,15 @@ const Header: React.FC = () => {
               Electrical and Computer Engineering
             </Link>
           </div>
+          <div className="ml-auto hidden md:block">
+            <SearchBar />
+          </div>
+
           <Link
             href="https://give.churchofjesuschrist.org/campaigns/81249/donations/new"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-byu-royal ml-auto rounded-full px-5 py-2 text-sm font-medium text-white transition duration-150 hover:bg-blue-600"
+            className="bg-byu-royal ml-4 rounded-full px-5 py-2 text-sm font-medium whitespace-nowrap text-white transition duration-150 hover:bg-blue-600"
           >
             Give to ECE
           </Link>

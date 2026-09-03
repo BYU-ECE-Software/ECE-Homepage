@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated at build/dev time by scripts/build-search-index.mjs
+/data/search/pageIndex.generated.json

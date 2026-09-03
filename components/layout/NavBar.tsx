@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { FiChevronDown } from 'react-icons/fi';
 import type { NavItem } from './NavConfig';
 import navConfig from './NavConfig';
+import SearchBar from './SearchBar';
 
 type NavBarProps = {
   navPadLeft?: number;
@@ -249,6 +250,9 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
       {/* ------ Mobile nav bar ------ */}
       {mobileOpen && (
         <div id="mobile-menu" className="text-byu-navy w-full border-t bg-white shadow md:hidden">
+          <div className="px-6 py-3">
+            <SearchBar variant="light" />
+          </div>
           <nav className="flex flex-col py-2 text-base font-medium">
             {visibleItems.map((item, index) => renderMobileItem(item, index))}
           </nav>
