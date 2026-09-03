@@ -26,7 +26,12 @@ interface ResearchArea {
 
 // ─── Data ──────────────────────────────────────────────────────────────────
 
-const heroImages: string[] = ['/hero/LES.webp', '/hero/LES2.webp', '/hero/LES3.webp'];
+const heroImages: string[] = [
+  '/hero/1908-02 0125.webp',
+  '/hero/2201-53 0029.webp',
+  '/hero/2302-11 0446.webp',
+  '/hero/2304-13 0238.webp',
+];
 
 const researchAreas: ResearchArea[] = [
   {

@@ -87,7 +87,7 @@ export default function Hero({
             alt={i === 0 ? alt : ''}
             fill
             priority={i === 0}
-            className="object-cover object-top"
+            className="object-cover object-center"
             sizes="100vw"
           />
         </div>
