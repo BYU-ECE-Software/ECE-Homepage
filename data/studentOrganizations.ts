@@ -32,7 +32,7 @@ export const studentOrganizations: ResourceCardData[] = [
   {
     title: 'Rocketry Club',
     description:
-      'Rocketry is our passion. From record breaking alka-seltzer rockets to towering 10 foot rocket, we aim to be the best in what we do.',
+      'Rocketry is our passion. From record breaking alka-seltzer rockets to our towering 10 foot rocket, we aim to be the best in what we do.',
     href: 'https://rocketry.byu.edu/',
     image: '/student-organizations/byu-rocketry.jpg',
     linkText: 'Learn more',

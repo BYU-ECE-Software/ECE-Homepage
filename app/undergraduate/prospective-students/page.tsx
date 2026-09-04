@@ -177,7 +177,7 @@ export default function ProspectiveStudentsPage() {
         description="Learn how electrical engineering, computer engineering, and cybersecurity turn curiosity into technologies that serve people."
       />
 
-      <ResourceGrid items={programs} title="Explore our programs" columns={3} />
+      <ResourceGrid items={programs} title="Programs We Offer" columns={3} />
 
       <div className="bg-slate-50">
         <ProgramComparison />

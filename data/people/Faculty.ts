@@ -12,7 +12,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'beard@byu.edu',
     phone: '422-8392',
     office: '460B EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/randy-beard.jpg',
     link: '/people/faculty/randy-beard',
   },
   {
@@ -21,7 +21,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'spallen@byu.edu',
     phone: '422-9421',
     office: '154 MCDB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/steven-allen.jpg',
     link: '/people/faculty/steven-allen',
   },
   {
@@ -30,7 +30,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'camacho@byu.edu',
     phone: '422-6505',
     office: '460E EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/ryan-camacho.jpg',
     link: '/people/faculty/ryan-camacho',
   },
   {
@@ -39,7 +39,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'wochiang@byu.edu',
     phone: '422-6749',
     office: '450A EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/wood-chiang.jpg',
     link: '/people/faculty/wood-chiang',
   },
   {
@@ -48,7 +48,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'jrebert@byu.edu',
     phone: '422-5301',
     office: '460P EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/jamison-ebert.jpg',
     link: '/people/faculty/jamison-ebert',
   },
   {
@@ -57,7 +57,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'jgoeders@byu.edu',
     phone: '422-3499',
     office: '450I EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/jeff-goeders.jpg',
     link: '/people/faculty/jeff-goeders',
   },
   {
@@ -66,7 +66,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'dlhansen@byu.edu',
     phone: '422-7467',
     office: '460G EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/derek-hansen.jpg',
     link: '/people/faculty/derek-hansen',
   },
   {
@@ -75,7 +75,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'willie.harrison@byu.edu',
     phone: '422-4355',
     office: '460I EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/willie-harrison.jpg',
     link: '/people/faculty/willie-harrison',
   },
   {
@@ -84,7 +84,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'hawkins@ee.byu.edu',
     phone: '422-8693',
     office: '460J EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/aaron-hawkins.jpg',
     link: '/people/faculty/aaron-hawkins',
   },
   {
@@ -93,7 +93,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'jensen@byu.edu',
     phone: '422-5736',
     office: '240E EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/michael-jensen.jpg',
     link: '/people/faculty/michael-jensen',
   },
   {
@@ -102,7 +102,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'djlee@byu.edu',
     phone: '422-5923',
     office: '450E EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/d-j-lee.jpg',
     link: '/people/faculty/d-j-lee',
   },
   {
@@ -111,7 +111,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'scott_lloyd@byu.edu',
     phone: '422-2598',
     office: '450L EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/scott-lloyd.jpg',
     link: '/people/faculty/scott-lloyd',
   },
   {
@@ -120,7 +120,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'long@ee.byu.edu',
     phone: '422-4383',
     office: '450C EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/david-long.jpg',
     link: '/people/faculty/david-long',
   },
   {
@@ -129,7 +129,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'lundrigan@byu.edu',
     phone: '422-0734',
     office: '450J EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/phil-lundrigan.jpg',
     link: '/people/faculty/phil-lundrigan',
   },
   {
@@ -138,7 +138,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'joshua_mangelson@byu.edu',
     phone: '422-8739',
     office: '450E EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/josh-mangelson.jpg',
     link: '/people/faculty/josh-mangelson',
   },
   {
@@ -147,7 +147,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'preston_manwaring@byu.edu',
     phone: '422-7092',
     office: '450Q EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/preston-manwaring.jpg',
     link: '/people/faculty/preston-manwaring',
   },
   {
@@ -156,7 +156,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'bmazzeo@byu.edu',
     phone: '422-1240',
     office: '450M EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/brian-mazzeo.jpg',
     link: '/people/faculty/brian-mazzeo',
   },
   {
@@ -165,7 +165,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'nordin@byu.edu',
     phone: '422-1863',
     office: '450G EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/greg-nordin.jpg',
     link: '/people/faculty/greg-nordin',
   },
   {
@@ -174,7 +174,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'cammy.peterson@byu.edu',
     phone: '422-3348',
     office: '460H EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/cammy-peterson.jpg',
     link: '/people/faculty/cammy-peterson',
   },
   {
@@ -183,7 +183,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'ben_schooley@byu.edu',
     phone: '422-0027',
     office: '460F EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/ben-schooley.jpg',
     link: '/people/faculty/ben-schooley',
   },
   {
@@ -192,7 +192,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'schultz@ee.byu.edu',
     phone: '422-1693',
     office: '450F EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/stephen-schultz.jpg',
     link: '/people/faculty/stephen-schultz',
   },
   {
@@ -201,7 +201,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'smalley@byu.edu',
     phone: '422-4343',
     office: '450D EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/daniel-smalley.jpg',
     link: '/people/faculty/daniel-smalley',
   },
   {
@@ -210,7 +210,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'jay_snell@byu.edu',
     phone: '422-6412',
     office: '460 EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/jay-snell.jpg',
     link: '/people/faculty/jay-snell',
   },
   {
@@ -219,7 +219,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'james_usevitch@byu.edu',
     phone: '422-7612',
     office: '460N EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/james-usevitch.png',
     link: '/people/faculty/james-usevitch',
   },
   {
@@ -228,7 +228,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'warnick@byu.edu',
     phone: '422-1732',
     office: '450H EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/karl-warnick.jpg',
     link: '/people/faculty/karl-warnick',
   },
   {
@@ -237,7 +237,7 @@ export const facultyMembers: FacStaffMember[] = [
     email: 'wirthlin@byu.edu',
     phone: '422-7601',
     office: '450P EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/mike-wirthlin.jpg',
     link: '/people/faculty/mike-wirthlin',
   },
 ];
