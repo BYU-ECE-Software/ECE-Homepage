@@ -12,7 +12,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'jrfraser@ee.byu.edu',
     phone: '422-4344',
     office: '460L EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/jim-fraser.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -21,7 +21,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'allyson_gibson@byu.edu',
     phone: '422-7962',
     office: '450S EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/allyson-gibson.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -30,7 +30,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'kaytlin_mangelson@byu.edu',
     phone: '422-4969',
     office: '460M EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/kaytlin-mangelson.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -39,7 +39,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'audra_mchoes@byu.edu',
     phone: '422-8275',
     office: '460M EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/audra-mchoe.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -48,7 +48,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'kerrie_mennear@byu.edu',
     phone: '422-6455',
     office: '460A EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/kerrie-mennear.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -57,7 +57,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'markus@ee.byu.edu',
     phone: '422-6577',
     office: '460D EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/mark-ormsby.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -66,7 +66,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'tomoo.taguchi@byu.edu',
     phone: '422-6579',
     office: '416 CB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/tomoo-taguchi.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -75,7 +75,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'hayden.taylor@byu.edu',
     phone: '422-5574',
     office: '442 EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/hayden-taylor.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
   {
@@ -84,7 +84,7 @@ export const staffMembers: FacStaffMember[] = [
     email: 'roman.vish@byu.edu',
     phone: '422-9286',
     office: '460R EB',
-    image: '/faculty/Cosmo.jpg',
+    image: '/faculty/roman-vish.jpg',
     link: 'https://faculty.byu.edu/harrison',
   },
 ];
