@@ -76,7 +76,7 @@ const researchAreas: ResearchArea[] = [
     ],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/embedded-systems.jpg',
     imageAlt: 'Sensors embedded in soil in a field',
     title: 'Embedded Systems',
     titleHref: 'https://ccl.byu.edu/',
@@ -88,7 +88,7 @@ const researchAreas: ResearchArea[] = [
     ],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/human-computer-interaction.jpg',
     imageAlt: 'Soldier using augmented reality headset',
     title: 'Human Computer Interaction',
     titleHref: 'https://ece.byu.edu/human-computer-interaction',
@@ -99,7 +99,7 @@ const researchAreas: ResearchArea[] = [
     ],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/machine-learning.jpg',
     imageAlt: 'Autonomous truck with LIDAR sensors on highway',
     title: 'Machine Learning / Artificial Intelligence',
     titleHref: 'https://ece.byu.edu/machine-learning-artificial-intelligence',
@@ -137,14 +137,14 @@ const researchAreas: ResearchArea[] = [
     ],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/quantum-engineering.jpg',
     imageAlt: 'Quantum engineering laboratory',
     title: 'Quantum Engineering',
     titleHref: 'https://camacholab.byu.edu/',
     people: [{ label: 'Ryan Camacho', href: '/people/faculty/ryan-camacho' }],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/remote-sensing.jpg',
     imageAlt: 'Satellite in orbit above Earth',
     title: 'Remote Sensing',
     titleHref: 'https://ece.byu.edu/remote-sensing',
@@ -155,7 +155,7 @@ const researchAreas: ResearchArea[] = [
     ],
   },
   {
-    image: '/research/BlockY.png',
+    image: '/research/robotics-controls.jpg',
     imageAlt: 'Underwater robotics and remote vehicles',
     title: 'Robotics/Controls',
     titleHref: 'https://ece.byu.edu/robotics-controls',

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiChevronDown } from 'react-icons/fi';
@@ -43,40 +43,14 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const pathname = usePathname() ?? '/';
 
-  const desktopNavRef = useRef<HTMLDivElement | null>(null);
   const desktopRefs = useRef<(HTMLDivElement | null)[]>([]);
   const mobileRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const [navSize, setNavSize] = useState<'base' | 'sm' | 'xs'>('base');
 
   const closeAll = () => setOpenIndex(null);
   const toggle = (index: number) => setOpenIndex((prev) => (prev === index ? null : index));
 
   // Filter the config once per render so indexes stay stable for refs
   const visibleItems = navConfig.filter((item) => hasAccess(item.roles, userRoles));
-
-  useLayoutEffect(() => {
-    const el = desktopNavRef.current;
-    if (!el) return;
-
-    const fits = () => el.scrollWidth <= el.clientWidth;
-
-    const update = () => {
-      setNavSize('base');
-      requestAnimationFrame(() => {
-        if (fits()) return;
-        setNavSize('sm');
-        requestAnimationFrame(() => {
-          if (fits()) return;
-          setNavSize('xs');
-        });
-      });
-    };
-
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, [navPadLeft, openIndex]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -185,7 +159,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
           href={item.href}
           onClick={closeAll}
           aria-current={active ? 'page' : undefined}
-          className={`nav-link-hover px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA] ${
+          className={`nav-link-hover px-3 py-4 whitespace-nowrap hover:bg-[#FAFAFA] md:px-4 lg:px-8 ${
             active ? 'nav-link-active font-semibold' : ''
           }`}
         >
@@ -211,7 +185,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
           type="button"
           onClick={() => toggle(index)}
           aria-expanded={isOpen}
-          className={`nav-link-hover inline-flex items-center gap-2 px-8 py-4 whitespace-nowrap hover:bg-[#FAFAFA] ${
+          className={`nav-link-hover inline-flex items-center gap-2 px-3 py-4 whitespace-nowrap hover:bg-[#FAFAFA] md:px-4 lg:px-8 ${
             sectionActive ? 'nav-link-active font-semibold' : ''
           }`}
         >
@@ -220,7 +194,7 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
         </button>
 
         {isOpen && (
-          <div className="absolute top-full left-0 w-56 border border-gray-200 bg-white shadow-lg">
+          <div className="absolute top-full left-0 z-20 w-56 border border-gray-200 bg-white shadow-lg">
             {visibleChildren.map((child) => {
               const childActive = linkMatches(child.href, pathname);
               return (
@@ -262,11 +236,8 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
       {/* ------ Desktop nav bar ------ */}
       <nav className="text-byu-navy hidden w-full bg-white shadow md:block">
         <div
-          ref={desktopNavRef}
-          className={`flex px-6 font-medium ${
-            navSize === 'base' ? 'text-base' : navSize === 'sm' ? 'text-sm' : 'text-xs'
-          }`}
-          style={{ paddingLeft: navPadLeft }}
+          className="flex flex-wrap justify-center px-6 text-sm font-medium lg:justify-start lg:text-base"
+          style={{ paddingLeft: 'clamp(0px, 4vw, ' + navPadLeft + 'px)' }}
         >
           {visibleItems.map((item, index) => renderDesktopItem(item, index))}
         </div>

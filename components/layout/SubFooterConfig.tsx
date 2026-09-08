@@ -16,6 +16,7 @@ export const subfooterColumns: FooterColumn[] = [
   {
     heading: 'Department Resources',
     links: [
+      { label: 'Quick Links', href: '/quick-links' },
       { label: 'ECE Intranet', href: 'https://eceintranet.byu.edu' },
       { label: 'ECE Purchasing', href: 'https://ecepurchasing.byu.edu' },
       { label: 'Student Employees', href: '/people/student-employees/resources' },
@@ -25,6 +26,7 @@ export const subfooterColumns: FooterColumn[] = [
       { label: 'Accreditation', href: '/accreditation' },
       { label: 'Department AI Policy', href: '/ai-policy' },
       { label: 'Event Requesting', href: '/event-requesting' },
+      { label: 'Room Reservations', href: 'https://reserve.et.byu.edu/reservations/Web/index.php' },
     ],
   },
   {
