@@ -23,3 +23,5 @@ export interface SubFooterProps {
   columns?: FooterColumn[];
   contactBlock?: ContactBlock;
 }
+
+export type FooterProps = SubFooterProps;

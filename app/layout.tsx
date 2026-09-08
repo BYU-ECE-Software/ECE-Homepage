@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import SubFooter from '@/components/layout/SubFooter';
 import { contactBlock, subfooterColumns } from '@/components/layout/SubFooterConfig';
 
 export const metadata: Metadata = {
@@ -37,8 +36,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <SubFooter columns={subfooterColumns} contactBlock={contactBlock} />
-        <Footer />
+        <Footer columns={subfooterColumns} contactBlock={contactBlock} />
       </body>
     </html>
   );

@@ -14,22 +14,6 @@ export const contactBlock: ContactBlock = {
 
 export const subfooterColumns: FooterColumn[] = [
   {
-    heading: 'Department Resources',
-    links: [
-      { label: 'Quick Links', href: '/quick-links' },
-      { label: 'ECE Intranet', href: 'https://eceintranet.byu.edu' },
-      { label: 'ECE Purchasing', href: 'https://ecepurchasing.byu.edu' },
-      { label: 'Student Employees', href: '/people/student-employees/resources' },
-      { label: 'Alumni & Friends', href: '/alumni-and-friends' },
-      { label: 'Diversity and Belonging', href: '/diversity-and-belonging' },
-      { label: 'Objectives and Outcomes', href: '/objectives-and-outcomes' },
-      { label: 'Accreditation', href: '/accreditation' },
-      { label: 'Department AI Policy', href: '/ai-policy' },
-      { label: 'Event Requesting', href: '/event-requesting' },
-      { label: 'Room Reservations', href: 'https://reserve.et.byu.edu/reservations/Web/index.php' },
-    ],
-  },
-  {
     heading: 'Scholarship & Employment',
     links: [
       {
@@ -48,6 +32,7 @@ export const subfooterColumns: FooterColumn[] = [
       { label: 'Submit a Ticket', href: 'https://eceticket.byu.edu' },
       { label: 'CAEDM', href: 'https://caedm.et.byu.edu/cms/' },
       { label: 'Cadence Software', href: '/cadence' },
+      { label: 'Department Resources', href: '/department-resources' },
     ],
   },
 ];
