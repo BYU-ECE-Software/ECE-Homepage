@@ -1,4 +1,4 @@
-import PageTitle from "@/components/layout/PageTitle";
+import PageBanner from '@/components/layout/PageBanner';
 
 /**
  * app/research/page.tsx  (or  pages/research.tsx)
@@ -9,10 +9,10 @@ import PageTitle from "@/components/layout/PageTitle";
  * Replace placeholder image paths with real assets.
  */
 
-import Hero from "@/components/general/Hero";
-import Description from "@/components/general/Description";
-import Card, { type CardItem } from "@/components/general/Card";
-import CardGrid from "@/components/general/CardGrid";
+import Hero from '@/components/general/Hero';
+import Description from '@/components/general/Description';
+import Card, { type CardItem } from '@/components/general/Card';
+import CardGrid from '@/components/general/CardGrid';
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -20,167 +20,174 @@ interface ResearchArea {
   image: string;
   imageAlt: string;
   title: string;
+  titleHref?: string;
   people: CardItem[];
 }
 
 // ─── Data ──────────────────────────────────────────────────────────────────
 
 const heroImages: string[] = [
-  "/hero/LES.webp",
-  "/hero/LES2.webp",
-  "/hero/LES3.webp",
+  '/hero/1908-02 0125.webp',
+  '/hero/2201-53 0029.webp',
+  '/hero/2302-11 0446.webp',
+  '/hero/2304-13 0238.webp',
 ];
 
-// TODO: Every `href` below points at /faculty/<name>, but no such route
-// exists — all 32 of these links currently 404. The department already has
-// full faculty records in data/people/Faculty.ts, so the cleanest fix is a
-// dynamic /people/faculty/[slug] route generated from that data, which would
-// also give each professor a linkable page for their research and contact
-// info. As a stopgap, point these at /people/faculty.
 const researchAreas: ResearchArea[] = [
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Close-up of a circuit board with a magnifying glass",
-    title: "Analog Circuits",
+    image: '/research/BlockY.png',
+    imageAlt: 'Close-up of a circuit board with a magnifying glass',
+    title: 'Analog Circuits',
+    titleHref: 'https://microcl.groups.et.byu.net/',
     people: [
-      { label: "Wood Chiang", href: "/faculty/wood-chiang" },
-      { label: "Aaron Hawkins", href: "/faculty/aaron-hawkins" },
-      { label: "Stephen Schultz", href: "/faculty/stephen-schultz" },
+      { label: 'Wood Chiang', href: '/people/faculty/wood-chiang' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Stephen Schultz', href: '/people/faculty/stephen-schultz' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Futuristic biomedical engineering lab",
-    title: "Biomedical Engineering",
+    image: '/research/BlockY.png',
+    imageAlt: 'Futuristic biomedical engineering lab',
+    title: 'Biomedical Engineering',
+    titleHref: 'https://ece.byu.edu/biomedical-engineering',
     people: [
-      { label: "Steven Allen", href: "/faculty/steven-allen" },
-      { label: "Aaron Hawkins", href: "/faculty/aaron-hawkins" },
-      { label: "Preston Manwaring", href: "/faculty/preston-manwaring" },
-      { label: "Brian Mazzeo", href: "/faculty/brian-mazzeo" },
-      { label: "Ben Schooley", href: "/faculty/ben-schooley" },
+      { label: 'Steven Allen', href: '/people/faculty/steven-allen' },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Glowing network of connected nodes",
-    title: "Computer Networks",
-    people: [{ label: "Phil Lundrigan", href: "/faculty/phil-lundrigan" }],
+    image: '/research/BlockY.png',
+    imageAlt: 'Glowing network of connected nodes',
+    title: 'Computer Networks',
+    titleHref: 'https://netlab.byu.edu/',
+    people: [{ label: 'Phil Lundrigan', href: '/people/faculty/phil-lundrigan' }],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Digital chip on a glowing blue circuit",
-    title: "Digital Circuits & FPGAs",
+    image: '/research/BlockY.png',
+    imageAlt: 'Digital chip on a glowing blue circuit',
+    title: 'Digital Circuits & FPGAs',
+    titleHref: 'https://ccl.byu.edu/',
     people: [
-      { label: "Mike Wirthlin", href: "/faculty/mike-wirthlin" },
-      { label: "Jeff Goeders", href: "/faculty/jeff-goeders" },
+      { label: 'Mike Wirthlin', href: '/people/faculty/mike-wirthlin' },
+      { label: 'Jeff Goeders', href: '/people/faculty/jeff-goeders' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Sensors embedded in soil in a field",
-    title: "Embedded Systems",
+    image: '/research/embedded-systems.jpg',
+    imageAlt: 'Sensors embedded in soil in a field',
+    title: 'Embedded Systems',
+    titleHref: 'https://ccl.byu.edu/',
     people: [
-      { label: "Brian Mazzeo", href: "/faculty/brian-mazzeo" },
-      { label: "Jeff Goeders", href: "/faculty/jeff-goeders" },
-      { label: "Mike Wirthlin", href: "/faculty/mike-wirthlin" },
-      { label: "Phil Lundrigan", href: "/faculty/phil-lundrigan" },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Jeff Goeders', href: '/people/faculty/jeff-goeders' },
+      { label: 'Mike Wirthlin', href: '/people/faculty/mike-wirthlin' },
+      { label: 'Phil Lundrigan', href: '/people/faculty/phil-lundrigan' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Soldier using augmented reality headset",
-    title: "Human Computer Interaction",
+    image: '/research/human-computer-interaction.jpg',
+    imageAlt: 'Soldier using augmented reality headset',
+    title: 'Human Computer Interaction',
+    titleHref: 'https://ece.byu.edu/human-computer-interaction',
     people: [
-      { label: "Derek Hansen", href: "/faculty/derek-hansen" },
-      { label: "Ben Schooley", href: "/faculty/ben-schooley" },
-      { label: "Daniel Smalley", href: "/faculty/daniel-smalley" },
+      { label: 'Derek Hansen', href: '/people/faculty/derek-hansen' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
+      { label: 'Daniel Smalley', href: '/people/faculty/daniel-smalley' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Autonomous truck with LIDAR sensors on highway",
-    title: "Machine Learning / Artificial Intelligence",
+    image: '/research/machine-learning.jpg',
+    imageAlt: 'Autonomous truck with LIDAR sensors on highway',
+    title: 'Machine Learning / Artificial Intelligence',
+    titleHref: 'https://ece.byu.edu/machine-learning-artificial-intelligence',
     people: [
-      { label: "Willie Harrison", href: "/faculty/willie-harrison" },
-      { label: "D.J. Lee", href: "/faculty/dj-lee" },
-      { label: "Josh Mangelson", href: "/faculty/josh-mangelson" },
-      { label: "Cammy Peterson", href: "/faculty/cammy-peterson" },
-      { label: "Ben Schooley", href: "/faculty/ben-schooley" },
-      { label: "James Usevitch", href: "/faculty/james-usevitch" },
+      { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
+      { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
+      { label: 'Josh Mangelson', href: '/people/faculty/josh-mangelson' },
+      { label: 'Cammy Peterson', href: '/people/faculty/cammy-peterson' },
+      { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
+      { label: 'James Usevitch', href: '/people/faculty/james-usevitch' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Microfluidics lab equipment",
-    title: "Microfluidics and MEMS",
+    image: '/research/BlockY.png',
+    imageAlt: 'Microfluidics lab equipment',
+    title: 'Microfluidics and MEMS',
+    titleHref: 'https://ece.byu.edu/microfluidics-and-mems',
     people: [
-      { label: "Aaron Hawkins", href: "/faculty/aaron-hawkins" },
-      { label: "Preston Manwaring", href: "/faculty/preston-manwaring" },
-      { label: "Greg Nordin", href: "/faculty/greg-nordin" },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
+      { label: 'Greg Nordin', href: '/people/faculty/greg-nordin' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Optical engineering equipment with lenses",
-    title: "Optical Engineering",
+    image: '/research/BlockY.png',
+    imageAlt: 'Optical engineering equipment with lenses',
+    title: 'Optical Engineering',
+    titleHref: 'https://ece.byu.edu/optical-engineering',
     people: [
-      { label: "Aaron Hawkins", href: "/faculty/aaron-hawkins" },
-      { label: "Stephen Schultz", href: "/faculty/stephen-schultz" },
-      { label: "Daniel Smalley", href: "/faculty/daniel-smalley" },
-      { label: "Greg Nordin", href: "/faculty/greg-nordin" },
-      { label: "Ryan Camacho", href: "/faculty/ryan-camacho" },
+      { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
+      { label: 'Stephen Schultz', href: '/people/faculty/stephen-schultz' },
+      { label: 'Daniel Smalley', href: '/people/faculty/daniel-smalley' },
+      { label: 'Greg Nordin', href: '/people/faculty/greg-nordin' },
+      { label: 'Ryan Camacho', href: '/people/faculty/ryan-camacho' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Quantum engineering laboratory",
-    title: "Quantum Engineering",
-    people: [{ label: "Ryan Camacho", href: "/faculty/ryan-camacho" }],
+    image: '/research/quantum-engineering.jpg',
+    imageAlt: 'Quantum engineering laboratory',
+    title: 'Quantum Engineering',
+    titleHref: 'https://camacholab.byu.edu/',
+    people: [{ label: 'Ryan Camacho', href: '/people/faculty/ryan-camacho' }],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Satellite in orbit above Earth",
-    title: "Remote Sensing",
+    image: '/research/remote-sensing.jpg',
+    imageAlt: 'Satellite in orbit above Earth',
+    title: 'Remote Sensing',
+    titleHref: 'https://ece.byu.edu/remote-sensing',
     people: [
-      { label: "David Long", href: "/faculty/david-long" },
-      { label: "Brian Jeffs", href: "/faculty/brian-jeffs" },
-      { label: "Karl Warnick", href: "/faculty/karl-warnick" },
+      { label: 'David Long', href: '/people/faculty/david-long' },
+      { label: 'Brian Jeffs' },
+      { label: 'Karl Warnick', href: '/people/faculty/karl-warnick' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Underwater robotics and remote vehicles",
-    title: "Robotics/Controls",
+    image: '/research/robotics-controls.jpg',
+    imageAlt: 'Underwater robotics and remote vehicles',
+    title: 'Robotics/Controls',
+    titleHref: 'https://ece.byu.edu/robotics-controls',
     people: [
-      { label: "Randy Beard", href: "/faculty/randy-beard" },
-      { label: "D.J. Lee", href: "/faculty/dj-lee" },
-      { label: "Josh Mangelson", href: "/faculty/josh-mangelson" },
-      { label: "Cammy Peterson", href: "/faculty/cammy-peterson" },
-      { label: "James Usevitch", href: "/faculty/james-usevitch" },
+      { label: 'Randy Beard', href: '/people/faculty/randy-beard' },
+      { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
+      { label: 'Josh Mangelson', href: '/people/faculty/josh-mangelson' },
+      { label: 'Cammy Peterson', href: '/people/faculty/cammy-peterson' },
+      { label: 'James Usevitch', href: '/people/faculty/james-usevitch' },
     ],
   },
   {
-    image: "/research/BlockY.png",
-    imageAlt: "Digital signal processing visualization",
-    title: "Signal Processing and Telecommunications",
+    image: '/research/BlockY.png',
+    imageAlt: 'Digital signal processing visualization',
+    title: 'Signal Processing and Telecommunications',
+    titleHref: 'https://ece.byu.edu/signal-processing-and-telecommunications',
     people: [
-      { label: "Willie Harrison", href: "/faculty/willie-harrison" },
-      { label: "Brian Jeffs", href: "/faculty/brian-jeffs" },
-      { label: "Brian Mazzeo", href: "/faculty/brian-mazzeo" },
-      { label: "Michael Rice", href: "/faculty/michael-rice" },
-      { label: "Karl Warnick", href: "/faculty/karl-warnick" },
+      { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
+      { label: 'Brian Jeffs' },
+      { label: 'Brian Mazzeo', href: '/people/faculty/brian-mazzeo' },
+      { label: 'Michael Rice' },
+      { label: 'Karl Warnick', href: '/people/faculty/karl-warnick' },
     ],
   },
 ];
-
-
 
 // ─── Page ──────────────────────────────────────────────────────────────────
 
 export default function Research() {
   return (
     <>
-    <PageTitle title="Research"/>
+      <PageBanner title="Research" />
       {/* 1 — Hero with carousel */}
       <Hero
         images={heroImages}
@@ -189,7 +196,7 @@ export default function Research() {
         heightClass="h-[400px]"
         autoPlay
         interval={6000}
-        overlayClass="bg-black/40"
+        overlayClass="bg-black/15"
       />
 
       {/* 2 — Bold description + instructional subtext */}
@@ -206,6 +213,7 @@ export default function Research() {
             image={area.image}
             imageAlt={area.imageAlt}
             title={area.title}
+            titleHref={area.titleHref}
             items={area.people}
             textAlign="center"
             textStyle="list"

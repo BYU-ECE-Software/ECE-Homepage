@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 interface CardGridProps {
   children: ReactNode;
@@ -15,27 +15,21 @@ interface CardGridProps {
 }
 
 const colClasses: Record<number, string> = {
-  2: "grid-cols-1 sm:grid-cols-2",
-  3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
-  4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+  2: 'grid-cols-1 sm:grid-cols-2',
+  3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
+  4: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4',
 };
 
 export default function CardGrid({
   children,
   columns = 3,
   title,
-  paddingClass = "px-10 pt-4 pb-12",
+  paddingClass = 'px-10 pt-4 pb-12',
 }: CardGridProps) {
   return (
     <section className={`w-full bg-white ${paddingClass}`}>
-      {title && (
-        <h2 className="text-xl font-bold text-gray-900 text-center mb-6">
-          {title}
-        </h2>
-      )}
-      <div
-        className={`grid ${colClasses[columns] ?? colClasses[3]} gap-8 max-w-6xl mx-auto`}
-      >
+      {title && <h2 className="mb-6 text-center text-xl font-bold text-gray-900">{title}</h2>}
+      <div className={`grid ${colClasses[columns] ?? colClasses[3]} mx-auto max-w-6xl gap-8`}>
         {children}
       </div>
     </section>

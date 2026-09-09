@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { OverviewFile } from "@/types/Content";
+import fs from 'fs';
+import path from 'path';
+import type { OverviewFile } from '@/types/Content';
 
 // Strips leading whitespace from every line. Markdown treats 4+ spaces of
 // indentation as a code block, so an inline template literal indented to
@@ -10,9 +10,9 @@ import { OverviewFile } from "@/types/Content";
 // intentionally (e.g. for an actual code block).
 function dedent(text: string): string {
   return text
-    .split("\n")
-    .map((line) => line.replace(/^[ \t]+/, ""))
-    .join("\n")
+    .split('\n')
+    .map((line) => line.replace(/^[ \t]+/, ''))
+    .join('\n')
     .trim();
 }
 
@@ -24,25 +24,24 @@ function dedent(text: string): string {
 // Only the basename is used, which keeps reads scoped to that one directory
 // and prevents content configuration from traversing the project.
 export function resolveOverview(overview: string | OverviewFile): string {
-  if (typeof overview === "string") {
+  if (typeof overview === 'string') {
     return dedent(overview);
   }
 
   const absolutePath = path.join(
     process.cwd(),
-    "data",
-    "undergraduate",
-    "content",
+    'data',
+    'undergraduate',
+    'content',
     path.basename(overview.file),
   );
 
   try {
-    return fs.readFileSync(absolutePath, "utf-8");
+    return fs.readFileSync(absolutePath, 'utf-8');
   } catch {
     throw new Error(
       `Could not read overview markdown file at "${overview.file}" (resolved to "${absolutePath}"). ` +
-        `Check that the path is correct and relative to the project root.`
+        `Check that the path is correct and relative to the project root.`,
     );
   }
 }
-

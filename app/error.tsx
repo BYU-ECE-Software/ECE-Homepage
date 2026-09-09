@@ -44,7 +44,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
         <div className="flex justify-center gap-3">
           <button
             onClick={reset}
-            className="bg-byu-navy rounded-lg px-6 py-3 text-sm font-medium text-white transition hover:opacity-90 cursor-pointer"
+            className="bg-byu-navy cursor-pointer rounded-lg px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
             let the wheel decide again
           </button>

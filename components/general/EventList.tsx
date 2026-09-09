@@ -1,4 +1,4 @@
-import EventGrid from "./EventGrid";
+import EventGrid from './EventGrid';
 
 export default EventGrid;
-export type { EventItem } from "./EventCard";
+export type { EventItem } from './EventCard';

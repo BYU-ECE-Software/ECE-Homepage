@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 export interface FooterLink {
   label: string;
@@ -19,14 +19,9 @@ export interface ContactBlock {
   buttonHref: string;
 }
 
-export interface SocialLink {
-  label: string;
-  href: string;
-  icon: ReactNode;
-}
-
 export interface SubFooterProps {
   columns?: FooterColumn[];
   contactBlock?: ContactBlock;
-  socialLinks?: SocialLink[];
 }
+
+export type FooterProps = SubFooterProps;

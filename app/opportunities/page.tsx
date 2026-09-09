@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import PageTitle from "@/components/layout/PageTitle";
-import Description from "@/components/general/Description";
-import CardGrid from "@/components/general/CardGrid";
-import ResourceCard from "@/components/general/ResourceCard";
-import { opportunities } from "@/data/opportunities";
+import type { Metadata } from 'next';
+import PageBanner from '@/components/layout/PageBanner';
+import Description from '@/components/general/Description';
+import CardGrid from '@/components/general/CardGrid';
+import ResourceCard from '@/components/general/ResourceCard';
+import { opportunities } from '@/data/opportunities';
 
 export const metadata: Metadata = {
-  title: "Opportunities | Electrical and Computer Engineering",
+  title: 'Opportunities | Electrical and Computer Engineering',
   description:
-    "Scholarships, student organizations, internships, and undergraduate research open to students in Electrical Engineering, Computer Engineering, and Cybersecurity.",
+    'Scholarships, student organizations, internships, and undergraduate research open to students in Electrical Engineering, Computer Engineering, and Cybersecurity.',
 };
 
 // Landing page for department-wide opportunities. Everything linked here is
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 export default function OpportunitiesPage() {
   return (
     <>
-      <PageTitle title="Opportunities" />
+      <PageBanner title="Opportunities" />
 
       <Description
-        text="Open to students in all three majors."
-        subtext="Scholarships, clubs, internships, and research are shared across Electrical Engineering, Computer Engineering, and Cybersecurity. Start wherever fits where you are right now."
+        text="Open to students in all three majors: Electrical Engineering, Computer Engineering, and Cybersecurity."
+        
       />
 
       <CardGrid columns={2} paddingClass="px-10 pt-4 pb-16">

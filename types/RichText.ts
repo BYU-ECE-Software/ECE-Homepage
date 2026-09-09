@@ -1,4 +1,4 @@
-export type RichTextWidth = "prose" | "wide" | "full";
+export type RichTextWidth = 'prose' | 'wide' | 'full';
 
 export interface RichTextProps {
   /** Markdown source. Keep layout components such as cards and galleries outside it. */
@@ -6,6 +6,6 @@ export interface RichTextProps {
   /** Reading-width preset. */
   maxWidth?: RichTextWidth;
   /** Slightly tighter typography for summaries and card content. */
-  variant?: "article" | "compact";
+  variant?: 'article' | 'compact';
   className?: string;
 }

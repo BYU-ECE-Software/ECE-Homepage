@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { NavSection } from "@/types/Content";
-import { resolveNavLink } from "./navUtils";
-import NavLinkIcon from "./NavLinkIcon";
+import Link from 'next/link';
+import type { NavSection } from '@/types/Content';
+import { resolveNavLink } from './navUtils';
+import NavLinkIcon from './NavLinkIcon';
 
 interface SidebarProps {
   /** Section root, e.g. "/undergraduate/electrical-engineering". */
@@ -12,59 +12,58 @@ interface SidebarProps {
   currentSlug?: string;
 }
 
-const activeClasses =
-  "border-l-4 border-byu-royal bg-gray-100 font-semibold text-byu-navy";
+const activeClasses = 'bg-byu-navy text-white font-semibold';
+const inactiveClasses = 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-100';
 
 export default function Sidebar({
   basePath,
-  homeLabel = "Overview",
+  homeLabel = 'Overview',
   navigation,
   currentSlug,
 }: SidebarProps) {
   return (
-    <aside className="sticky top-8">
+    <aside
+      className="sticky max-h-[calc(100vh-var(--header-height)-2rem)] overflow-y-auto"
+      style={{ top: 'calc(var(--header-height) + 2rem)' }}
+    >
       <nav aria-label="Section navigation">
-        <div className="mb-8">
-          <ul className="space-y-1">
-            <li>
-              <Link
-                href={basePath}
-                aria-current={!currentSlug ? "page" : undefined}
-                className={`block rounded px-3 py-2 text-sm transition ${
-                  !currentSlug
-                    ? activeClasses
-                    : "font-medium text-byu-navy hover:bg-gray-50"
-                }`}
-              >
-                {homeLabel}
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {navigation.map((section) => (
-          <div key={section.title} className="mb-8">
-            <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-byu-dark-gray">
-              {section.title}
-            </h2>
+        {navigation.map((section, index) => (
+          <div key={section.title || index} className="mb-6">
+            {section.title && (
+              <h2 className="text-byu-dark-gray mb-3 px-4 text-sm font-bold tracking-wide uppercase">
+                {section.title}
+              </h2>
+            )}
 
             <ul className="space-y-1">
+              {index === 0 && (
+                <li>
+                  <Link
+                    href={basePath}
+                    aria-current={!currentSlug ? 'page' : undefined}
+                    className={`block rounded-lg px-4 py-2.5 text-sm transition ${
+                      !currentSlug ? activeClasses : inactiveClasses
+                    }`}
+                  >
+                    {homeLabel}
+                  </Link>
+                </li>
+              )}
+
               {section.items.map((item) => {
                 const { href, linkType } = resolveNavLink(basePath, item);
-                const active = linkType === "slug" && item.slug === currentSlug;
-                const external = linkType === "external";
+                const active = linkType === 'slug' && item.slug === currentSlug;
+                const external = linkType === 'external';
 
                 return (
                   <li key={item.slug}>
                     <Link
                       href={href}
-                      target={external ? "_blank" : undefined}
-                      rel={external ? "noopener noreferrer" : undefined}
-                      aria-current={active ? "page" : undefined}
-                      className={`block rounded px-3 py-2 text-sm transition ${
-                        active
-                          ? activeClasses
-                          : "text-byu-medium-gray hover:bg-gray-50 hover:text-byu-navy"
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noopener noreferrer' : undefined}
+                      aria-current={active ? 'page' : undefined}
+                      className={`block rounded-lg px-4 py-2.5 text-sm transition ${
+                        active ? activeClasses : inactiveClasses
                       }`}
                     >
                       {item.title}

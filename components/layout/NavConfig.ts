@@ -20,7 +20,7 @@ export type NavItem = NavLink | NavDropdown;
 
 // Roles are arbitrary strings — match whatever your auth system uses
 const navConfig: NavItem[] = [
-    {kind: 'link', label: 'Home', href: '/'},
+  { kind: 'link', label: 'Home', href: '/' },
   {
     kind: 'dropdown',
     label: 'People',
@@ -74,8 +74,11 @@ const navConfig: NavItem[] = [
     children: [
       { label: 'Calendar', href: '/news-and-events/calendar' },
       { label: 'News', href: '/news-and-events/news' },
-      { label: 'Faith and Engineering Lectures', href: '/news-and-events/faith-and-engineering-lectures' },
-      { label: 'Department Tours', href: '/news-and-events/department-tours' }
+      {
+        label: 'Faith and Engineering Lectures',
+        href: '/news-and-events/faith-and-engineering-lectures',
+      },
+      { label: 'Department Tours', href: '/news-and-events/department-tours' },
     ],
   },
   {
