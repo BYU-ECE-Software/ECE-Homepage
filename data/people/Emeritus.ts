@@ -12,7 +12,6 @@ export const emeritusMembers: FacStaffMember[] = [
     // phone: "422-8392",
     // office: "460B EB",
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/beard',
   },
   {
     name: 'Barry Lunt',
@@ -21,7 +20,6 @@ export const emeritusMembers: FacStaffMember[] = [
     // phone: "422-8392",
     // office: "460B EB",
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/beard',
   },
   {
     name: 'Brian Jeffs',
@@ -30,6 +28,5 @@ export const emeritusMembers: FacStaffMember[] = [
     // phone: "422-8392",
     // office: "460B EB",
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/beard',
   },
 ];

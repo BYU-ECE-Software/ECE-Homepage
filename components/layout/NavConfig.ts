@@ -52,7 +52,6 @@ const navConfig: NavItem[] = [
     kind: 'dropdown',
     label: 'Opportunities',
     children: [
-      { label: 'All Opportunities', href: '/opportunities' },
       { label: 'Student Organizations', href: '/student-organizations' },
       { label: 'Scholarships', href: '/opportunities/scholarships' },
       { label: 'Networking & Internships', href: '/opportunities/networking-internships' },

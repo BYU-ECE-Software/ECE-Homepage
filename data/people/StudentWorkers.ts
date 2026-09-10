@@ -8,7 +8,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Nathan Andersen',
@@ -17,7 +16,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '457 CB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Patrick Blood',
@@ -26,7 +24,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '457 CB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Dalan Cluff',
@@ -35,7 +32,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Anna Hooper',
@@ -44,7 +40,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Michael Kane',
@@ -53,7 +48,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Andrew King',
@@ -62,7 +56,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-",
     office: '457 CB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Kylie Lay',
@@ -71,7 +64,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-9228',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Clarissa Martell',
@@ -80,7 +72,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Willow McGlashan',
@@ -89,7 +80,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Jared Mennear',
@@ -98,7 +88,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '460I EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Delaney Richardson',
@@ -107,7 +96,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Max Sampson',
@@ -116,7 +104,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '457 CB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Kaylin Walker',
@@ -125,7 +112,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Eli Weaver',
@@ -134,7 +120,6 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Morgan Wilbert',
@@ -143,7 +128,6 @@ export const studentWorkers: FacStaffMember[] = [
     // phone: "422-4355",
     office: '335 CTB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Hanna Williams',
@@ -152,6 +136,5 @@ export const studentWorkers: FacStaffMember[] = [
     phone: '422-4012',
     office: '450 EB',
     image: '/faculty/Cosmo.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
 ];

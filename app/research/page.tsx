@@ -116,7 +116,6 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Microfluidics lab equipment',
     title: 'Microfluidics and MEMS',
-    titleHref: 'https://ece.byu.edu/microfluidics-and-mems',
     people: [
       { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
       { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
@@ -171,7 +170,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Digital signal processing visualization',
     title: 'Signal Processing and Telecommunications',
-    titleHref: 'https://ece.byu.edu/signal-processing-and-telecommunications',
+    titleHref: 'https://icelab.byu.edu/',
     people: [
       { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
       { label: 'Brian Jeffs' },
