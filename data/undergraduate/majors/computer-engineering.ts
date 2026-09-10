@@ -18,4 +18,12 @@ export const computerEngineering: MajorConfig = {
     fileNamePrefix: 'ce-flowchart',
     years: ['26-27', '25-26', '24-25', '23-24', '22-23'],
   },
+
+  hasOutcomesData: true,
+  outcomes: {
+    startingSalary: '$85.9k',
+    placementRate: '100%',
+    gradSchoolRate: '25%',
+    sourceLabel: 'BYU CpE graduates, 2022-2024',
+  },
 };

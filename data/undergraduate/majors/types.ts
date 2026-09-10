@@ -83,4 +83,22 @@ export interface MajorConfig {
   // then the landing page shows a "coming soon" placeholder instead of
   // fabricated numbers.
   hasOutcomesData?: boolean;
+
+  // Career outcome stats, sourced from the department's published figures.
+  // Required when hasOutcomesData is true.
+  outcomes?: OutcomesData;
+}
+
+export interface OutcomesData {
+  // e.g. "$86.8k"
+  startingSalary: string;
+
+  // e.g. "100%"
+  placementRate: string;
+
+  // Grad school continuation isn't published for every major.
+  gradSchoolRate?: string;
+
+  // e.g. "BYU EE graduates, 2022-2024"
+  sourceLabel: string;
 }

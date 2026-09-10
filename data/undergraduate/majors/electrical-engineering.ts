@@ -18,4 +18,12 @@ export const electricalEngineering: MajorConfig = {
     fileNamePrefix: 'ee-flowchart',
     years: ['26-27', '25-26', '24-25', '23-24', '22-23'],
   },
+
+  hasOutcomesData: true,
+  outcomes: {
+    startingSalary: '$86.8k',
+    placementRate: '100%',
+    gradSchoolRate: '38%',
+    sourceLabel: 'BYU EE graduates, 2022-2024',
+  },
 };

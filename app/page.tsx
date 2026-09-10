@@ -3,9 +3,18 @@ import PromoHero from '@/components/general/PromoHero';
 import QuickLinksGrid, { type QuickLinkItem } from '@/components/general/QuickLinksGrid';
 import NewsGrid, { type NewsItem } from '@/components/general/NewsGrid';
 import PromoCard, { type PromoItem } from '@/components/general/PromoCard';
-import { ResourceGrid, CallToAction, type ResourceItem } from '@/components/general/ContentPage';
+import { CallToAction } from '@/components/general/ContentPage';
+import TileCard, { type TileItem } from '@/components/general/TileCard';
 import { majors } from '@/data/undergraduate/majors';
 import { minors } from '@/data/undergraduate/minors';
+
+// Placeholder photography until each program has its own dedicated image.
+const placeholderImages = [
+  '/hero/1908-02 0125.webp',
+  '/hero/2201-53 0029.webp',
+  '/hero/2302-11 0446.webp',
+  '/hero/2304-13 0238.webp',
+];
 
 const quickLinks: QuickLinkItem[] = [
   { title: 'Meet with an advisor', href: '/people/advisors', icon: FaChalkboardTeacher },
@@ -17,26 +26,28 @@ const quickLinks: QuickLinkItem[] = [
 // Generated from the major and minor configs so a program's description is
 // written in exactly one place. Adding a major to data/undergraduate/majors
 // automatically lists it here.
-const degrees: ResourceItem[] = [
+const degreeEntries: Omit<TileItem, 'image'>[] = [
   ...majors.map((major) => ({
     title: major.displayName,
-    description: major.summary,
     href: `/undergraduate/${major.slug}`,
     eyebrow: 'BS',
   })),
   ...minors.map((minor) => ({
     title: minor.displayName,
-    description: minor.description,
     href: `/undergraduate/minors/${minor.slug}`,
     eyebrow: 'Minor',
   })),
   {
     title: 'Graduate Programs',
-    description: 'Pursue advanced study through MS and PhD programs in ECE and cybersecurity.',
     href: '/graduate',
     eyebrow: 'MS & PhD',
   },
 ];
+
+const degrees: TileItem[] = degreeEntries.map((entry, i) => ({
+  ...entry,
+  image: placeholderImages[i % placeholderImages.length],
+}));
 
 const news: NewsItem[] = [
   {
@@ -103,9 +114,16 @@ export default function Home() {
 
       <QuickLinksGrid items={quickLinks} />
 
-      <div className="bg-slate-50">
-        <ResourceGrid items={degrees} title="Degrees offered" columns={3} />
-      </div>
+      <section className="bg-slate-50 px-6 py-14">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-byu-navy text-3xl font-semibold">Degrees offered</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {degrees.map((degree) => (
+              <TileCard key={degree.title} {...degree} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="px-6 py-14">
         <div className="mx-auto max-w-6xl">

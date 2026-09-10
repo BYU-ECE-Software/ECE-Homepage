@@ -4,6 +4,7 @@ import SectionLayout from '@/components/general/section/SectionLayout';
 import ResourceCard from '@/components/general/ResourceCard';
 import Overview from '@/components/general/Overview';
 import OutcomesPlaceholder from '@/components/general/OutcomesPlaceholder';
+import CareerOutcomes from '@/components/general/CareerOutcomes';
 import { getMajor, getAllMajorSlugs } from '@/data/undergraduate/majors';
 import { resolveOverview } from '@/data/undergraduate/resolveOverview';
 
@@ -62,7 +63,11 @@ export default async function MajorLandingPage({ params }: Props) {
         ))}
       </div>
 
-      {!major.hasOutcomesData && <OutcomesPlaceholder />}
+      {major.hasOutcomesData && major.outcomes ? (
+        <CareerOutcomes {...major.outcomes} />
+      ) : (
+        <OutcomesPlaceholder />
+      )}
     </SectionLayout>
   );
 }

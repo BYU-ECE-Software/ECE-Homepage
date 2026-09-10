@@ -22,4 +22,12 @@ export const cybersecurity: MajorConfig = {
     // No PNG previews on file for these yet.
     hasPreviewImages: false,
   },
+
+  hasOutcomesData: true,
+  outcomes: {
+    startingSalary: '$87.8k',
+    placementRate: '85%',
+    // Grad school continuation rate isn't published for Cybersecurity.
+    sourceLabel: 'BYU Cybersecurity graduates, 2022-2024',
+  },
 };
