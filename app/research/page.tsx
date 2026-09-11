@@ -49,7 +49,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Futuristic biomedical engineering lab',
     title: 'Biomedical Engineering',
-    titleHref: 'https://ece.byu.edu/biomedical-engineering',
+    titleHref: '/research/biomedical-engineering',
     people: [
       { label: 'Steven Allen', href: '/people/faculty/steven-allen' },
       { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
@@ -91,7 +91,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/human-computer-interaction.jpg',
     imageAlt: 'Soldier using augmented reality headset',
     title: 'Human Computer Interaction',
-    titleHref: 'https://ece.byu.edu/human-computer-interaction',
+    titleHref: '/research/human-computer-interaction',
     people: [
       { label: 'Derek Hansen', href: '/people/faculty/derek-hansen' },
       { label: 'Ben Schooley', href: '/people/faculty/ben-schooley' },
@@ -102,7 +102,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/machine-learning.jpg',
     imageAlt: 'Autonomous truck with LIDAR sensors on highway',
     title: 'Machine Learning / Artificial Intelligence',
-    titleHref: 'https://ece.byu.edu/machine-learning-artificial-intelligence',
+    titleHref: '/research/machine-learning-artificial-intelligence',
     people: [
       { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
       { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
@@ -116,7 +116,6 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Microfluidics lab equipment',
     title: 'Microfluidics and MEMS',
-    titleHref: 'https://ece.byu.edu/microfluidics-and-mems',
     people: [
       { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
       { label: 'Preston Manwaring', href: '/people/faculty/preston-manwaring' },
@@ -127,7 +126,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Optical engineering equipment with lenses',
     title: 'Optical Engineering',
-    titleHref: 'https://ece.byu.edu/optical-engineering',
+    titleHref: '/research/optical-engineering',
     people: [
       { label: 'Aaron Hawkins', href: '/people/faculty/aaron-hawkins' },
       { label: 'Stephen Schultz', href: '/people/faculty/stephen-schultz' },
@@ -147,7 +146,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/remote-sensing.jpg',
     imageAlt: 'Satellite in orbit above Earth',
     title: 'Remote Sensing',
-    titleHref: 'https://ece.byu.edu/remote-sensing',
+    titleHref: '/research/remote-sensing',
     people: [
       { label: 'David Long', href: '/people/faculty/david-long' },
       { label: 'Brian Jeffs' },
@@ -158,7 +157,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/robotics-controls.jpg',
     imageAlt: 'Underwater robotics and remote vehicles',
     title: 'Robotics/Controls',
-    titleHref: 'https://ece.byu.edu/robotics-controls',
+    titleHref: '/research/robotics-controls',
     people: [
       { label: 'Randy Beard', href: '/people/faculty/randy-beard' },
       { label: 'D.J. Lee', href: '/people/faculty/d-j-lee' },
@@ -171,7 +170,7 @@ const researchAreas: ResearchArea[] = [
     image: '/research/BlockY.png',
     imageAlt: 'Digital signal processing visualization',
     title: 'Signal Processing and Telecommunications',
-    titleHref: 'https://ece.byu.edu/signal-processing-and-telecommunications',
+    titleHref: 'https://icelab.byu.edu/',
     people: [
       { label: 'Willie Harrison', href: '/people/faculty/willie-harrison' },
       { label: 'Brian Jeffs' },

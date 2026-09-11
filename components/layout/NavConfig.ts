@@ -46,26 +46,25 @@ const navConfig: NavItem[] = [
     ],
   },
   {
-    // Department-wide opportunities, shared by all three majors. Each has its
-    // own page, and they are linked from here rather than repeated inside
-    // every major's pages.
-    kind: 'dropdown',
-    label: 'Opportunities',
-    children: [
-      { label: 'All Opportunities', href: '/opportunities' },
-      { label: 'Student Organizations', href: '/student-organizations' },
-      { label: 'Scholarships', href: '/opportunities/scholarships' },
-      { label: 'Networking & Internships', href: '/opportunities/networking-internships' },
-      { label: 'Undergraduate Research', href: '/opportunities/undergraduate-research' },
-    ],
-  },
-  {
     kind: 'dropdown',
     label: 'Graduate',
     children: [
       { label: 'Current Graduate Students', href: '/graduate/current-graduate-students' },
       { label: 'Prospective Graduate Students', href: '/graduate/prospective-graduate-students' },
       { label: 'Graduate Courses', href: '/graduate/graduate-courses' },
+    ],
+  },
+  {
+    // Department-wide opportunities, shared by all three majors. Each has its
+    // own page, and they are linked from here rather than repeated inside
+    // every major's pages.
+    kind: 'dropdown',
+    label: 'Opportunities',
+    children: [
+      { label: 'Student Organizations', href: '/student-organizations' },
+      { label: 'Scholarships', href: '/opportunities/scholarships' },
+      { label: 'Networking & Internships', href: '/opportunities/networking-internships' },
+      { label: 'Undergraduate Research', href: '/opportunities/undergraduate-research' },
     ],
   },
   {

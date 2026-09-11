@@ -13,7 +13,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-4344',
     office: '460L EB',
     image: '/faculty/jim-fraser.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Allyson Gibson',
@@ -22,7 +21,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-7962',
     office: '450S EB',
     image: '/faculty/allyson-gibson.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Kaytlin Mangelson',
@@ -31,7 +29,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-4969',
     office: '460M EB',
     image: '/faculty/kaytlin-mangelson.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Audra McHoes',
@@ -40,7 +37,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-8275',
     office: '460M EB',
     image: '/faculty/audra-mchoe.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Kerrie Mennear',
@@ -49,7 +45,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-6455',
     office: '460A EB',
     image: '/faculty/kerrie-mennear.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Mark Ormsby',
@@ -58,7 +53,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-6577',
     office: '460D EB',
     image: '/faculty/mark-ormsby.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Tomoo Taguchi',
@@ -67,7 +61,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-6579',
     office: '416 CB',
     image: '/faculty/tomoo-taguchi.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Hayden Taylor',
@@ -76,7 +69,6 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-5574',
     office: '442 EB',
     image: '/faculty/hayden-taylor.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
   {
     name: 'Roman Vish',
@@ -85,6 +77,5 @@ export const staffMembers: FacStaffMember[] = [
     phone: '422-9286',
     office: '460R EB',
     image: '/faculty/roman-vish.jpg',
-    link: 'https://faculty.byu.edu/harrison',
   },
 ];

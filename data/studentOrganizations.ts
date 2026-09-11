@@ -15,9 +15,7 @@ export const studentOrganizations: ResourceCardData[] = [
     title: 'IEEE Student Branch',
     description:
       "IEEE is the world's largest professional association dedicated to advancing technological innovation and excellence for the benefit of humanity.",
-    // Internal example: this one has its own page on this site rather
-    // than linking out. See app/student-organizations/robotics-club/page.tsx.
-    href: '/student-organizations/IEEE-association',
+    href: 'https://clubs.byu.edu/link/club/18295873486205383',
     image: '/student-organizations/byu-ieee-logo.png',
     linkText: 'Visit site',
   },
