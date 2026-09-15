@@ -38,6 +38,12 @@ const positionClasses: Record<TextPosition, string> = {
   right: 'text-right items-end',
 };
 
+const statColClasses: Record<1 | 2 | 3, string> = {
+  1: 'md:grid-cols-1',
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-3',
+};
+
 export default function StatsBanner({
   heading,
   subheading,
@@ -61,7 +67,7 @@ export default function StatsBanner({
         )}
 
         <div
-          className={`grid grid-cols-1 md:grid-cols-${stats.length <= 3 ? stats.length : 3} mt-4 w-full gap-8`}
+          className={`grid grid-cols-1 ${statColClasses[(stats.length <= 3 ? stats.length : 3) as 1 | 2 | 3]} mt-4 w-full gap-8`}
         >
           {stats.map((stat) => (
             <div key={stat.value} className={`flex flex-col ${pos}`}>

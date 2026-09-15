@@ -4,10 +4,14 @@
 // consumed by data/search/index.ts. This lets the client-side search match
 // against actual page copy, not just nav labels.
 //
-// Dynamic routes (app/**/[param]/page.tsx) pull their content from data
-// modules (faculty profiles, major/minor configs) instead, since that
-// content already exists as importable data and JSX-parsing a template
-// route wouldn't produce anything meaningful per-slug.
+// Also pre-extracts lightweight search entries for faculty/major/minor
+// profiles (data/people/FacultyProfiles.ts, data/undergraduate/majors/*,
+// data/undergraduate/minors/*) via the same regex-based text extraction
+// used for pages below. This runs at build time specifically so
+// data/search/index.ts never has to import those data modules itself —
+// FacultyProfiles.ts alone is ~1900 lines of full biography/publication
+// text, and importing it into the client search bundle would ship all of
+// that prose to every visitor just to support substring search.
 //
 // Run via `npm run build` (see package.json) or `node scripts/build-search-index.mjs`.
 
@@ -142,11 +146,163 @@ function buildStaticPageEntries() {
   return entries;
 }
 
+// Max characters of body text kept per generated dynamic entry (faculty
+// biographies especially run long) — plenty for substring search and
+// snippet display, without shipping full prose to the client.
+const MAX_BODY_LENGTH = 500;
+
+// Splits a source file into its top-level `{ ... }` object literals by
+// brace-depth counting, starting from each `{` that immediately follows a
+// `:`, `[`, `,`, or `=` (i.e. an entry of an array-of-objects, or a single
+// `export const x: Type = { ... }` object export). Good enough for the
+// plain data-literal files under data/, which don't nest arbitrary code,
+// just object/array/string literals.
+function splitTopLevelObjects(source) {
+  const objects = [];
+  for (let i = 0; i < source.length; i++) {
+    if (source[i] !== '{') continue;
+    const before = source.slice(0, i).trimEnd();
+    if (!/[:[,=]$/.test(before)) continue;
+
+    let depth = 0;
+    let j = i;
+    for (; j < source.length; j++) {
+      if (source[j] === '{') depth++;
+      else if (source[j] === '}') {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+    if (depth === 0) {
+      objects.push(source.slice(i, j + 1));
+      i = j;
+    }
+  }
+  return objects;
+}
+
+// Extracts the string value of a top-level `key: '...'` / `key: "..."` /
+// key: `...` field from an object literal snippet.
+function field(objSource, key) {
+  const match = objSource.match(new RegExp(`\\b${key}\\s*:\\s*(['"\`])([\\s\\S]*?)\\1`));
+  return match ? match[2].trim() : undefined;
+}
+
+// Extracts every string in a `key: ['a', 'b']` array field, e.g. education
+// or publications lists.
+function arrayField(objSource, key) {
+  const match = objSource.match(new RegExp(`\\b${key}\\s*:\\s*\\[([\\s\\S]*?)\\]`));
+  if (!match) return [];
+  return [...match[1].matchAll(/(['"`])([\s\S]*?)\1/g)].map((m) => m[2].trim());
+}
+
+function truncate(text, max) {
+  return text.length > max ? text.slice(0, max).trim() + '…' : text;
+}
+
+// Lightweight search entries for faculty profiles: label/href from the
+// slug + name, description from the title, and a truncated bag-of-words
+// body from biography + education + publications so queries can still
+// match on research area, degree, or citation keywords.
+function buildFacultyEntries() {
+  const file = path.join(rootDir, 'data', 'people', 'FacultyProfiles.ts');
+  const source = readFileSync(file, 'utf8');
+  const entries = [];
+
+  for (const obj of splitTopLevelObjects(source)) {
+    const slug = field(obj, 'slug');
+    const name = field(obj, 'name');
+    if (!slug || !name) continue;
+
+    const bodyParts = [
+      field(obj, 'biography') ?? '',
+      ...arrayField(obj, 'education'),
+      ...arrayField(obj, 'publications'),
+    ];
+    const body = truncate(bodyParts.join(' ').replace(/\s+/g, ' ').trim(), MAX_BODY_LENGTH);
+
+    entries.push({
+      label: name,
+      href: `/people/faculty/${slug}`,
+      description: field(obj, 'title') ?? 'Faculty',
+      body,
+    });
+  }
+
+  return entries;
+}
+
+// Lightweight search entries for undergraduate majors, built from the same
+// per-major config files consumed by data/undergraduate/majors/index.ts.
+function buildMajorEntries() {
+  const dir = path.join(rootDir, 'data', 'undergraduate', 'majors');
+  const entries = [];
+
+  for (const entry of readdirSync(dir)) {
+    if (!entry.endsWith('.ts') || ['types.ts', 'index.ts', 'derive.ts'].includes(entry)) continue;
+    const source = readFileSync(path.join(dir, entry), 'utf8');
+
+    for (const obj of splitTopLevelObjects(source)) {
+      const slug = field(obj, 'slug');
+      const displayName = field(obj, 'displayName');
+      if (!slug || !displayName) continue;
+
+      const body = truncate(
+        `${field(obj, 'tagline') ?? ''} ${field(obj, 'summary') ?? ''}`.trim(),
+        MAX_BODY_LENGTH,
+      );
+
+      entries.push({
+        label: displayName,
+        href: `/undergraduate/${slug}`,
+        description: 'Undergraduate major',
+        body,
+      });
+    }
+  }
+
+  return entries;
+}
+
+// Lightweight search entries for undergraduate minors, mirroring
+// buildMajorEntries above.
+function buildMinorEntries() {
+  const dir = path.join(rootDir, 'data', 'undergraduate', 'minors');
+  const entries = [];
+
+  for (const entry of readdirSync(dir)) {
+    if (!entry.endsWith('.ts') || ['types.ts', 'index.ts'].includes(entry)) continue;
+    const source = readFileSync(path.join(dir, entry), 'utf8');
+
+    for (const obj of splitTopLevelObjects(source)) {
+      const slug = field(obj, 'slug');
+      const displayName = field(obj, 'displayName');
+      if (!slug || !displayName) continue;
+
+      const body = truncate(field(obj, 'description') ?? '', MAX_BODY_LENGTH);
+
+      entries.push({
+        label: displayName,
+        href: `/undergraduate/minors/${slug}`,
+        description: 'Undergraduate minor',
+        body,
+      });
+    }
+  }
+
+  return entries;
+}
+
 function main() {
-  const entries = buildStaticPageEntries();
+  const entries = [
+    ...buildStaticPageEntries(),
+    ...buildFacultyEntries(),
+    ...buildMajorEntries(),
+    ...buildMinorEntries(),
+  ];
   mkdirSync(path.dirname(outFile), { recursive: true });
   writeFileSync(outFile, JSON.stringify(entries, null, 2) + '\n');
-  console.log(`Wrote ${entries.length} page entries to ${path.relative(rootDir, outFile)}`);
+  console.log(`Wrote ${entries.length} entries to ${path.relative(rootDir, outFile)}`);
 }
 
 main();

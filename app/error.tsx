@@ -35,7 +35,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
           />
         </div>
 
-        <p className="mb-8 text-sm text-gray-400">
+        <p className="mb-8 text-sm text-gray-600">
           An unexpected error occurred. We have no idea what happened.
           <br />
           Honestly neither does the wheel. It&apos;s just spinning.

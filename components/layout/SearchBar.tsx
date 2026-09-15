@@ -89,6 +89,7 @@ const SearchBar = ({ variant = 'dark' }: SearchBarProps) => {
           aria-expanded={open && results.length > 0}
           aria-controls="site-search-results"
           aria-autocomplete="list"
+          aria-label="Search the site"
           placeholder="Search"
           value={query}
           onChange={(event) => {
