@@ -21,9 +21,23 @@ export interface Advisor extends FacStaffMember {
 
 export const advisementTeam: Advisor[] = [
   {
+    id: 'alisha-wall',
+    name: 'Alisha Wall',
+    role: 'Cybersecurity Undergraduate Advisor',
+    title: 'Cybersecurity Academic Advisor',
+    email: 'alisha_wall@byu.edu',
+    phone: '422-1819',
+    office: '265 CTB',
+    image: '/undergraduate/advisors/Alisha-Wall.jpeg',
+    photo: '/undergraduate/advisors/Alisha-Wall.jpeg',
+    link: 'https://ece.byu.edu/alisha-wall',
+    schedulingUrl:
+      'https://bookings.cloud.microsoft/book/CTBAdvisementAppointments@byu.onmicrosoft.com/?noframe=true&skipHeaderFooter=true&ismsaljsauthenabled=true',
+  },
+  {
     id: 'jana-featherstone',
     name: 'Jana Featherstone',
-    role: 'ECEn New Student/Freshman and Graduate Program Advisor',
+    role: 'ECEn Freshman and Graduate Advisor',
     title: 'Graduate and First-Year Academic Advisor',
     email: 'jana_featherstone@byu.edu',
     phone: '422-1160',
@@ -31,7 +45,7 @@ export const advisementTeam: Advisor[] = [
     image: '/undergraduate/advisors/Jana-Featherstone.jpeg',
     photo: '/undergraduate/advisors/Jana-Featherstone.jpeg',
     link: 'https://ece.byu.edu/jana-featherstone',
-    schedulingUrl: 'https://ece.byu.edu/jana-featherstone',
+    schedulingUrl: 'https://1styearadvisementbookings.youcanbook.me/',
   },
   {
     id: 'janalyn-mergist',
@@ -44,20 +58,7 @@ export const advisementTeam: Advisor[] = [
     image: '/undergraduate/advisors/Janalyn-Mergist.jpeg',
     photo: '/undergraduate/advisors/Janalyn-Mergist.jpeg',
     link: 'https://ece.byu.edu/janalyn-mergist',
-    schedulingUrl: 'https://ece.byu.edu/janalyn-mergist',
-  },
-  {
-    id: 'alisha-wall',
-    name: 'Alisha Wall',
-    role: 'Cybersecurity Undergraduate Advisor',
-    title: 'Cybersecurity Academic Advisor',
-    email: 'alisha_wall@byu.edu',
-    phone: '422-1819',
-    office: '265 CTB',
-    image: '/undergraduate/advisors/Alisha-Wall.jpeg',
-    photo: '/undergraduate/advisors/Alisha-Wall.jpeg',
-    link: 'https://ece.byu.edu/alisha-wall',
-    schedulingUrl: 'https://ece.byu.edu/alisha-wall',
+    schedulingUrl: 'https://advisementbookings.youcanbook.me/',
   },
 ];
 

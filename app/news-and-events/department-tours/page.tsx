@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PageBanner from '@/components/layout/PageBanner';
 
 const faqs = [
@@ -46,153 +46,51 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div
-      style={{
-        borderBottom: '1px solid #d0d7e2',
-        padding: '18px 0',
-      }}
-    >
-      <button
-        onClick={() => setOpen(!open)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 14,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0,
-          width: '100%',
-          textAlign: 'left',
-        }}
-      >
+    <div className="border-t border-slate-200 py-5">
+      <button onClick={() => setOpen(!open)} className="flex w-full items-center gap-3 text-left">
         <span
-          style={{
-            fontSize: 22,
-            color: '#002E5D',
-            fontWeight: 400,
-            lineHeight: 1,
-            transform: open ? 'rotate(45deg)' : 'none',
-            transition: 'transform 0.2s ease',
-            display: 'inline-block',
-            minWidth: 18,
-          }}
+          className={`text-byu-navy inline-block min-w-[18px] text-xl leading-none font-normal transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
         >
           +
         </span>
-        <span
-          style={{
-            fontSize: 15,
-            fontWeight: 700,
-            color: '#002E5D',
-            fontFamily: "'Open Sans', Arial, sans-serif",
-          }}
-        >
-          {question}
-        </span>
+        <span className="text-byu-navy text-[15px] font-bold">{question}</span>
       </button>
-      {open && (
-        <p
-          style={{
-            margin: '12px 0 0 32px',
-            fontSize: 14,
-            color: '#444444',
-            lineHeight: 1.65,
-            fontFamily: "'Open Sans', Arial, sans-serif",
-          }}
-        >
-          {answer}
-        </p>
-      )}
+      {open && <p className="mt-3 ml-[30px] text-sm leading-relaxed text-slate-600">{answer}</p>}
     </div>
   );
 }
 
 export default function CampusTours() {
-  useEffect(() => {
-    document.body.style.backgroundColor = '#ffffff';
-    document.body.style.margin = '0';
-    return () => {
-      document.body.style.backgroundColor = '';
-      document.body.style.margin = '';
-    };
-  }, []);
-
   const channelUrl = 'https://www.youtube.com/channel/UCj2sMA0jEfi8oYhgX6h5g5A';
   const embedUrl = 'https://www.youtube.com/embed/-c9Wj5iFsyc';
 
-  const sectionHeading: React.CSSProperties = {
-    fontSize: 26,
-    fontWeight: 700,
-    color: '#002E5D',
-    paddingBottom: 8,
-    marginBottom: 24,
-    marginTop: 0,
-    fontFamily: "'Open Sans', Arial, sans-serif",
-  };
-
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100%' }}>
+    <div className="min-h-screen w-full bg-white">
       <PageBanner title="Schedule an On Campus Tour" />
 
-      <div
-        style={{
-          fontFamily: "'Open Sans', Arial, sans-serif",
-          color: '#222222',
-          maxWidth: 900,
-          margin: '0 auto',
-          padding: '48px 24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 48,
-        }}
-      >
-        {/* Section 1: On Campus Tour */}
+      <div className="mx-auto flex max-w-3xl flex-col gap-8 px-6 py-10">
         <section>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: '#333333', marginBottom: 24 }}>
+          <p className="leading-normal text-gray-900">
             Join us for a guided tour hosted by the Department of Electrical and Computer
-            Engineering. Discover our stunning new building and exciting program through interactive
-            stops. Learn about our curricula, student clubs and programs, and research
-            opportunities. Get an in-depth look at the Electrical Engineering, Computer Engineering,
-            and Cybersecurity programs, all led by enthusiastic student guides. Have questions?
-            Check out our FAQ or visit us in person!
+            Engineering. Discover our stunning new building and exciting program through
+            interactive stops. Learn about our curricula, student clubs and programs, and research
+            opportunities. Get an in-depth look at the Electrical Engineering, Computer
+            Engineering, and Cybersecurity programs, all led by enthusiastic student guides. Have
+            questions? Check out our FAQ or visit us in person!
           </p>
 
           <a
             href="https://ecentours.youcanbook.me/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              backgroundColor: '#0047ba',
-              color: '#ffffff',
-              fontWeight: 700,
-              fontSize: 14,
-              padding: '12px 28px',
-              borderRadius: 3,
-              textDecoration: 'none',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-            }}
+            className="bg-byu-royal mt-6 inline-block rounded px-7 py-3 text-sm font-bold tracking-wide text-white uppercase transition hover:opacity-90"
           >
             Reserve Now
           </a>
 
-          {/* FAQ */}
-          <h3
-            style={{
-              fontSize: 18,
-              fontWeight: 700,
-              color: '#002E5D',
-              marginTop: 40,
-              marginBottom: 4,
-              fontFamily: "'Open Sans', Arial, sans-serif",
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-            }}
-          >
+          <h2 className="text-byu-navy mt-10 mb-1 text-lg font-bold tracking-wide uppercase">
             FAQ
-          </h3>
+          </h2>
           <div>
             {faqs.map((faq) => (
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
@@ -200,33 +98,16 @@ export default function CampusTours() {
           </div>
         </section>
 
-        {/* Section 2: Virtual Tours */}
         <section>
-          <h2 style={sectionHeading}>Virtual Tour</h2>
+          <h2 className="text-byu-navy mb-6 text-2xl font-bold">Virtual Tour</h2>
 
-          <div
-            style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              overflow: 'hidden',
-              borderRadius: 4,
-              boxShadow: '0 2px 12px rgba(0,46,93,0.15)',
-            }}
-          >
+          <div className="relative h-0 overflow-hidden rounded-md pb-[56.25%] shadow-lg">
             <iframe
               src={embedUrl}
               title="BYU ECE Department Virtual Tour"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 0,
-              }}
+              className="absolute top-0 left-0 h-full w-full border-0"
             />
           </div>
 
@@ -234,15 +115,7 @@ export default function CampusTours() {
             href={channelUrl}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: 'inline-block',
-              marginTop: 16,
-              color: '#002E5D',
-              fontWeight: 600,
-              fontSize: 15,
-              textDecoration: 'underline',
-              letterSpacing: '0.01em',
-            }}
+            className="text-byu-navy mt-4 inline-block text-[15px] font-semibold underline"
           >
             Electrical and Computer Engineering YouTube Channel
           </a>
