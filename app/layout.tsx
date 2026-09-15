@@ -1,6 +1,6 @@
 import './globals.css';
 import type { ReactNode } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import { contactBlock, subfooterColumns } from '@/components/layout/SubFooterConfig';
@@ -8,6 +8,11 @@ import { contactBlock, subfooterColumns } from '@/components/layout/SubFooterCon
 export const metadata: Metadata = {
   title: 'Electrical and Computer Engineering',
   description: 'Template for all things ECE websites',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {

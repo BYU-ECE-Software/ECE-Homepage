@@ -1,7 +1,4 @@
 import navConfig from '@/components/layout/NavConfig';
-import { facultyProfiles } from '@/data/people/FacultyProfiles';
-import { majors } from '@/data/undergraduate/majors';
-import { minors } from '@/data/undergraduate/minors';
 import generatedPageIndex from '@/data/search/pageIndex.generated.json';
 
 export interface SearchEntry {
@@ -24,56 +21,36 @@ const navEntries: SearchEntry[] = navConfig.flatMap((item) =>
     : item.children.map((child) => ({ label: child.label, href: child.href, description: item.label })),
 );
 
-const facultyEntries: SearchEntry[] = facultyProfiles.map((person) => ({
-  label: person.name,
-  href: `/people/faculty/${person.slug}`,
-  description: person.title ?? 'Faculty',
-  body: person.biography,
-}));
+// Two shapes share pageIndex.generated.json (see scripts/build-search-index.mjs):
+// static pages (`href`/`title`/`body`, extracted from app/**/page.tsx) and
+// dynamic-route entries — faculty, majors, minors — pre-extracted at build
+// time from their data modules (`label`/`href`/`description`/`body`) so this
+// module never has to import those modules itself. FacultyProfiles.ts alone
+// is ~1900 lines of full biography/publication text; importing it here would
+// ship all of that prose into the client search bundle just to support
+// substring search.
+type GeneratedEntry =
+  | { href: string; title: string | null; body: string }
+  | { label: string; href: string; description: string; body: string };
 
-const majorEntries: SearchEntry[] = majors.map((major) => ({
-  label: major.displayName,
-  href: `/undergraduate/${major.slug}`,
-  description: 'Undergraduate major',
-  body: `${major.tagline} ${major.summary}`,
-}));
-
-const minorEntries: SearchEntry[] = minors.map((minor) => ({
-  label: minor.displayName,
-  href: `/undergraduate/minors/${minor.slug}`,
-  description: 'Undergraduate minor',
-  body: minor.description,
-}));
-
-// Body text extracted from every static app/**/page.tsx at build time (see
-// scripts/build-search-index.mjs). Dynamic routes (faculty, major, minor
-// pages) are covered by the entries above instead, since their content
-// already lives in the data modules those are built from.
-//
-// Attach generated body text to matching nav entries, and add an entry for
-// any indexed static page that isn't already reachable from the nav.
 const navHrefs = new Set(navEntries.map((entry) => entry.href));
-const staticPageEntries: SearchEntry[] = [];
-for (const { href, title, body } of generatedPageIndex as {
-  href: string;
-  title: string | null;
-  body: string;
-}[]) {
-  const navEntry = navEntries.find((entry) => entry.href === href);
+const generatedEntries: SearchEntry[] = [];
+for (const entry of generatedPageIndex as GeneratedEntry[]) {
+  const navEntry = navEntries.find((e) => e.href === entry.href);
   if (navEntry) {
-    navEntry.body = body;
-  } else if (!navHrefs.has(href)) {
-    staticPageEntries.push({ label: title ?? href, href, body });
+    navEntry.body = entry.body;
+    continue;
   }
+  if (navHrefs.has(entry.href)) continue;
+
+  generatedEntries.push(
+    'label' in entry
+      ? entry
+      : { label: entry.title ?? entry.href, href: entry.href, body: entry.body },
+  );
 }
 
-export const searchIndex: SearchEntry[] = [
-  ...navEntries,
-  ...facultyEntries,
-  ...majorEntries,
-  ...minorEntries,
-  ...staticPageEntries,
-];
+export const searchIndex: SearchEntry[] = [...navEntries, ...generatedEntries];
 
 export interface SearchResult extends SearchEntry {
   /**
@@ -105,19 +82,41 @@ function buildSnippet(text: string, q: string): SearchResult['snippet'] {
   return { text: excerpt, matchStart, matchEnd: matchStart + q.length };
 }
 
+// Higher is better. Ranks an exact/prefix label match above an incidental
+// mid-word or body match, so e.g. searching "Beard" surfaces the faculty
+// member named Beard before a page whose body copy merely mentions him.
+const RANK = {
+  labelExact: 5,
+  labelPrefix: 4,
+  labelIncludes: 3,
+  descriptionIncludes: 2,
+  bodyIncludes: 1,
+};
+
+function rank(entry: SearchEntry, q: string): number {
+  const label = entry.label.toLowerCase();
+  if (label === q) return RANK.labelExact;
+  if (label.startsWith(q)) return RANK.labelPrefix;
+  if (label.includes(q)) return RANK.labelIncludes;
+  if (entry.description?.toLowerCase().includes(q)) return RANK.descriptionIncludes;
+  if (entry.body?.toLowerCase().includes(q)) return RANK.bodyIncludes;
+  return 0;
+}
+
 export function searchSite(query: string, limit = 8): SearchResult[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
 
-  const results: SearchResult[] = [];
+  const scored: { entry: SearchEntry; score: number }[] = [];
   for (const entry of searchIndex) {
-    if (entry.label.toLowerCase().includes(q) || entry.description?.toLowerCase().includes(q)) {
-      results.push(entry);
-    } else if (entry.body?.toLowerCase().includes(q)) {
-      results.push({ ...entry, snippet: buildSnippet(entry.body, q) });
-    }
-    if (results.length >= limit) break;
+    const score = rank(entry, q);
+    if (score > 0) scored.push({ entry, score });
   }
 
-  return results;
+  scored.sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, limit).map(({ entry, score }) => {
+    if (score !== RANK.bodyIncludes || !entry.body) return entry;
+    return { ...entry, snippet: buildSnippet(entry.body, q) };
+  });
 }

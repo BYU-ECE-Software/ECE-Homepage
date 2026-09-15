@@ -14,39 +14,39 @@ export default function NotFound() {
         {/* Short fake trace */}
         <div className="mb-6 space-y-1 text-xs text-gray-500">
           <p>
-            <span className="text-gray-300">#0</span>{' '}
-            <span className="text-blue-400">0x00000404</span> in{' '}
+            <span className="text-gray-500">#0</span>{' '}
+            <span className="text-blue-600">0x00000404</span> in{' '}
             <span className="text-gray-700">page_render()</span>{' '}
-            <span className="text-gray-400">(the-page-you-wanted/page.tsx:1)</span>
+            <span className="text-gray-600">(the-page-you-wanted/page.tsx:1)</span>
           </p>
           <p>
-            <span className="text-gray-300">#1</span>{' '}
-            <span className="text-blue-400">0xDEADBEEF</span> in{' '}
+            <span className="text-gray-500">#1</span>{' '}
+            <span className="text-blue-600">0xDEADBEEF</span> in{' '}
             <span className="text-gray-700">reality.check()</span>{' '}
-            <span className="text-gray-400">(universe/physics.ts:404)</span>
+            <span className="text-gray-600">(universe/physics.ts:404)</span>
           </p>
           <p>
-            <span className="text-gray-300">#2</span>{' '}
-            <span className="text-blue-400">0x????????</span> in{' '}
+            <span className="text-gray-500">#2</span>{' '}
+            <span className="text-blue-600">0x????????</span> in{' '}
             <span className="text-gray-700">???</span>{' '}
-            <span className="text-gray-400">(???:???)</span>
+            <span className="text-gray-600">(???:???)</span>
           </p>
         </div>
 
         {/* Crash analysis */}
         <div className="mb-8 rounded border border-red-200 bg-red-50 p-4 text-xs leading-relaxed text-gray-600">
           <p className="mb-2 font-bold text-red-500">Crash analysis:</p>
-          <ul className="list-disc space-y-1 pl-4 text-gray-500">
+          <ul className="list-disc space-y-1 pl-4 text-gray-600">
             <li>
-              The page was never created <span className="text-gray-400">(skill issue)</span>
+              The page was never created <span className="text-gray-600">(skill issue)</span>
             </li>
             <li>
               You mistyped the URL{' '}
-              <span className="text-gray-400">(we&apos;ve all been there)</span>
+              <span className="text-gray-600">(we&apos;ve all been there)</span>
             </li>
             <li>
               Cosmic ray bit flip{' '}
-              <span className="text-gray-400">(unlikely but not ruled out)</span>
+              <span className="text-gray-600">(unlikely but not ruled out)</span>
             </li>
           </ul>
         </div>
