@@ -7,6 +7,7 @@ import { CallToAction } from '@/components/general/ContentPage';
 import TileCard, { type TileItem } from '@/components/general/TileCard';
 import { majors } from '@/data/undergraduate/majors';
 import { minors } from '@/data/undergraduate/minors';
+import { stories } from '@/data/news';
 
 // Placeholder photography until each program has its own dedicated image.
 const placeholderImages = [
@@ -49,32 +50,13 @@ const degrees: TileItem[] = degreeEntries.map((entry, i) => ({
   image: placeholderImages[i % placeholderImages.length],
 }));
 
-const news: NewsItem[] = [
-  {
-    title: 'BYU engineering students design wearable technology for search and rescue rats',
-    description:
-      'A capstone team improved a localization backpack for HeroRATs working in disaster response.',
-    date: 'May 21, 2026',
-    author: 'Sharman Gill',
-    href: 'https://news.byu.edu/',
-  },
-  {
-    title: 'BYU student named Honor Graduate as top U.S. Marine Corps officer candidate',
-    description:
-      'A BYU student received national recognition after completing the Marine Corps officer candidate program.',
-    date: 'May 19, 2026',
-    author: 'Ellie Larsen',
-    href: 'https://news.byu.edu/',
-  },
-  {
-    title: 'When GPS fails, HeroRATs and BYU engineers step in',
-    description:
-      'Electrical and computer engineering students helped make survivor localization easier after earthquakes.',
-    date: 'May 14, 2026',
-    author: 'Allyson Gibson',
-    href: '/news-and-events/news',
-  },
-];
+const news: NewsItem[] = stories.slice(0, 3).map((story) => ({
+  title: story.title,
+  description: story.description,
+  date: story.date,
+  author: story.author,
+  href: `/news-and-events/news/${story.slug}`,
+}));
 
 const promos: PromoItem[] = [
   {

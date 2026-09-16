@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run build:search-index && cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
-    "build": "npm run build:search-index && next build",
+    "dev": "npm run build:search-index && npm run build:calendar-events && cross-env NODE_OPTIONS=--max-old-space-size=8192 next dev",
+    "build": "npm run build:search-index && npm run build:calendar-events && next build",
     "build:search-index": "node scripts/build-search-index.mjs",
+    "build:calendar-events": "node scripts/build-calendar-events.mjs",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
