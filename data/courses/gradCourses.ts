@@ -1127,7 +1127,6 @@ export const courses: Course[] = [
 export const sectionMeta: Record<string, { label: string; description?: string }> = {
   regular: {
     label: 'Regular offerings',
-    description: 'Courses offered on a recurring semester schedule.',
   },
   'special-topics': {
     label: 'Special topics',

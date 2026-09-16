@@ -36,7 +36,7 @@ export function CourseGrid({ courses, activeSemesters, sectionDescription }: Cou
   return (
     <div>
       {sectionDescription && <p className="mb-4 text-sm text-slate-500">{sectionDescription}</p>}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200 bg-white">
         {courses.map((course) => (
           <CourseCard key={course.id} course={course} activeSemesters={activeSemesters} />
         ))}
