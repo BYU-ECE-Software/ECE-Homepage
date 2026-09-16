@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
 import { courses, sectionMeta } from '@/data/courses/gradCourses';
-import type { CourseSection, Semester, YearCycle } from '@/types/Course';
+import type { CourseSection, Semester } from '@/types/Course';
 import { SectionTabs } from '@/components/general/SectionTabs';
 import { SemesterFilter } from '@/components/general/SemesterFilter';
 import { CourseGrid } from '@/components/general/CourseGrid';
@@ -18,7 +18,6 @@ function sectionFromHash(): CourseSection | null {
 export default function GraduateCoursesPage() {
   const [activeSection, setActiveSection] = useState<CourseSection>('regular');
   const [activeSemesters, setActiveSemesters] = useState<Semester[]>([]);
-  const [activeCycle, setActiveCycle] = useState<YearCycle | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
   // URL hash -> active section, on load and on any hashchange (deep links,
@@ -36,7 +35,6 @@ export default function GraduateCoursesPage() {
   const handleSectionChange = (section: CourseSection) => {
     setActiveSection(section);
     setActiveSemesters([]);
-    setActiveCycle(null);
     setSearchQuery('');
     // replaceState (not location.hash =) so switching tabs doesn't spam
     // browser history or re-trigger the hashchange listener above.
@@ -54,13 +52,6 @@ export default function GraduateCoursesPage() {
     return counts;
   }, []);
 
-  // Whether ANY course in the current section has non-"every" cycles
-  const showCycleFilter = useMemo(() => {
-    return courses
-      .filter((c) => c.section === activeSection)
-      .some((c) => c.semesters.some((o) => o.cycle !== 'every'));
-  }, [activeSection]);
-
   // Filtered courses for current section
   const filteredCourses = useMemo(() => {
     return courses.filter((course) => {
@@ -76,12 +67,9 @@ export default function GraduateCoursesPage() {
         activeSemesters.length === 0 ||
         course.semesters.some((o) => activeSemesters.includes(o.semester));
 
-      const matchesCycle =
-        activeCycle === null || course.semesters.some((o) => o.cycle === activeCycle);
-
-      return matchesSearch && matchesSemester && matchesCycle;
-    });
-  }, [activeSection, activeSemesters, activeCycle, searchQuery]);
+      return matchesSearch && matchesSemester;
+    }).sort((a, b) => a.title.localeCompare(b.title));
+  }, [activeSection, activeSemesters, searchQuery]);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -98,12 +86,8 @@ export default function GraduateCoursesPage() {
           <SemesterFilter
             active={activeSemesters}
             onChange={setActiveSemesters}
-            activeCycle={activeCycle}
-            onCycleChange={setActiveCycle}
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
-            resultCount={filteredCourses.length}
-            showCycleFilter={showCycleFilter}
           />
         </div>
 

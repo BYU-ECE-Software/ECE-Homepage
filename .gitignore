@@ -37,3 +37,6 @@ next-env.d.ts
 
 # generated at build/dev time by scripts/build-search-index.mjs
 /data/search/pageIndex.generated.json
+
+# generated at build/dev time by scripts/build-calendar-events.mjs
+/data/events/events.generated.json

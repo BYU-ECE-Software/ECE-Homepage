@@ -83,7 +83,7 @@ export default function NewStudentsPage() {
 
       <div className="mx-auto max-w-3xl px-6 pb-10">
         <h2 className="text-byu-navy mt-14 mb-1 text-lg font-bold tracking-wide uppercase">
-          Getting Started
+          Getting Started in ECE
         </h2>
         <div>
           <Toggle heading="How do I submit my transcripts to BYU?">
