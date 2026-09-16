@@ -41,8 +41,13 @@ export default function NetworkingInternshipsPage() {
       />
 
       <CardGrid columns={2} paddingClass="px-10 pt-4 pb-16">
-        {resources.map((item) => (
-          <ResourceCard key={item.title} {...item} />
+        {resources.map((item, index) => (
+          <ResourceCard
+            key={item.title}
+            {...item}
+            imageClassName="h-72"
+            imagePosition={index === 0 ? 'center 30%' : undefined}
+          />
         ))}
       </CardGrid>
     </>

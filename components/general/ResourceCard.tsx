@@ -21,15 +21,24 @@ export default function ResourceCard({
   description,
   href,
   image,
+  imageClassName = 'h-48',
+  imagePosition,
   linkText,
-}: ResourceCardData) {
+}: ResourceCardData & { imageClassName?: string; imagePosition?: string }) {
   const opensNewTab = isExternal(href) || isFileDownload(href);
 
   const body = (
     <>
       {image && (
-        <div className="relative h-48 bg-gray-200">
-          <Image src={image} alt="" fill unoptimized className="object-cover" />
+        <div className={`relative bg-gray-200 ${imageClassName}`}>
+          <Image
+            src={image}
+            alt=""
+            fill
+            unoptimized
+            className="object-cover"
+            style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          />
         </div>
       )}
 
