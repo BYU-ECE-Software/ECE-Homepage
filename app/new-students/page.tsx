@@ -2,28 +2,45 @@
 
 import { useState } from 'react';
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 import PageBanner from '@/components/layout/PageBanner';
 
-const qAndA: { question: string; answer: string }[] = [
+const qAndA: { question: string; answer: string; image?: { src: string; alt: string } }[] = [
   {
     question: 'What is the difference between electrical engineering and mechanical engineering?',
     answer:
       'Electrical engineering focuses on electricity, electronics, and systems such as circuits, signals, computers, and communication technologies, while mechanical engineering focuses on physical systems like machines, structures, energy, and motion. In simple terms, mechanical engineers design and build the physical components of a system, whereas electrical engineers give devices their "brain" by designing the electrical systems and using sensors, data, and programming to control, automate, and add intelligence to how those systems operate.',
+    image: {
+      src: '/images/new-students/drone-mountains.jpg',
+      alt: 'The drone with the professional camera takes pictures of the misty mountains at sunset',
+    },
   },
   {
     question: 'What is the difference between computer engineering and computer science?',
     answer:
       'Computer engineering focuses on the design and integration of computer hardware—along with networking and system-level connections—and the software that runs closely with it, including processors, embedded systems, and low-level/system software. Computer science, on the other hand, focuses more on software, algorithms, programming languages, and data processing at a higher level of abstraction. In simple terms, computer engineers work on both hardware and the software that directly controls and connects systems, while computer scientists primarily focus on creating software systems and computational methods.',
+    image: {
+      src: '/images/new-students/students-computers.jpg',
+      alt: 'Students on computers',
+    },
   },
   {
     question: 'What kind of jobs can I get with a degree in electrical or computer engineering?',
     answer:
       'Because electrical and computer engineers help design both the "brains" and the systems behind modern technology, their skills are in high demand. They can lead to diverse and well-paying career paths. With a degree in electrical engineering you can perform core engineering roles (control systems, power systems, radio frequency, electrical and electronics-focused), specialized tech & computing roles (hardware, embedded systems, robotics and networks), multi-disciplinary roles (aerospace, automotive, biomedical and renewable energy) as well as management and business roles (like project management, sales, tech or patent law) and more! A degree in computer engineering prepares you for roles in hardware and semi-conductor (silicon/ASIC, firmware, verification and testing), software and systems (embedded systems, cloud infrastructure and programming) and advanced tech and interdisciplinary engineering (robotics and AI).',
+    image: {
+      src: '/images/new-students/project-natick.jpg',
+      alt: "Microsoft's Project Natick",
+    },
   },
   {
     question: 'Why should women choose engineering as a profession?',
     answer:
       "Engineering skills are transferable and are in high demand. Engineering professionals enjoy a wide range of career paths which makes it easier to transition across industries or move into leadership roles. As an engineer, you'll solve real-world problems in creative ways and enjoy unparalleled job stability and high earning potential as engineering is one of the highest-paying undergraduate fields. Women in engineering gain the opportunity to drive inclusive innovation—ensuring that technology, healthcare devices, and infrastructure are designed safely and effectively for everyone and you'll leave a tangible, positive impact on society.",
+    image: {
+      src: '/images/new-students/kayla-lyman.jpg',
+      alt: 'Kayla Lyman',
+    },
   },
 ];
 
@@ -59,22 +76,31 @@ function Toggle({ heading, children }: { heading: string; children: ReactNode })
 export default function NewStudentsPage() {
   return (
     <div className="min-h-screen w-full bg-white">
-      <PageBanner title="Welcome to Electrical and Computer Engineering" />
+      <PageBanner
+        title="Welcome to Electrical and Computer Engineering"
+        description="We are happy to have you in our department!"
+        backgroundImage="/images/new-students/hero.jpg"
+      />
 
-      <div className="mx-auto max-w-3xl px-6 py-10 text-center">
-        <p className="text-lg font-semibold text-gray-900">
-          We are happy to have you in our department!
-        </p>
-      </div>
-
-      <div className="mx-auto max-w-5xl px-6 pb-4">
+      <div className="mx-auto max-w-6xl px-6 pt-10 pb-4">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {qAndA.map((item) => (
             <section
               key={item.question}
               className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
             >
-              <h2 className="text-byu-navy text-lg font-bold">{item.question}</h2>
+              <div className="flex items-start gap-4">
+                {item.image && (
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    width={72}
+                    height={72}
+                    className="h-18 w-18 shrink-0 rounded-full object-cover"
+                  />
+                )}
+                <h2 className="text-byu-navy text-lg font-bold">{item.question}</h2>
+              </div>
               <p className="mt-2 leading-relaxed text-gray-900">{item.answer}</p>
             </section>
           ))}
