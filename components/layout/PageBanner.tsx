@@ -18,7 +18,7 @@ interface PageBannerProps {
 export default function PageBanner({ title, tagline, description, backgroundImage }: PageBannerProps) {
   return (
     <section
-      className={`relative flex items-center overflow-hidden bg-cover bg-center text-white ${backgroundImage ? 'min-h-64 py-10' : 'min-h-32 py-6'}`}
+      className={`relative flex items-center overflow-hidden bg-cover bg-center text-white ${backgroundImage ? 'min-h-96 py-14' : 'min-h-32 py-6'}`}
       style={
         backgroundImage
           ? { backgroundImage: `url('${backgroundImage}')` }
