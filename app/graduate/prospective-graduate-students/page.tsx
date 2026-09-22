@@ -54,7 +54,6 @@ export default function ProspectiveGraduateStudents() {
     <>
       <PageIntro
         title="Prospective graduate students"
-        description="Explore advanced degrees, prepare a strong application, and connect your interests with faculty research."
       />
       <div className="px-6 py-12">
         <RichText content={overview} className="mx-auto" />

@@ -14,7 +14,7 @@ export const contactBlock: ContactBlock = {
 
 export const subfooterColumns: FooterColumn[] = [
   {
-    heading: 'Scholarship & Employment',
+    heading: 'Department Resources',
     links: [
       {
         label: 'Career Services for ECE',
@@ -23,6 +23,7 @@ export const subfooterColumns: FooterColumn[] = [
       { label: 'Department Scholarships', href: '/opportunities/scholarships' },
       { label: 'Handshake', href: 'https://careers.byu.edu/handshake-login' },
       { label: 'Part-Time Student Employment', href: 'https://hrs.byu.edu/student-employees' },
+      { label: 'ECE Intranet', href: 'https://eceintranet.byu.edu/' },
     ],
   },
   {

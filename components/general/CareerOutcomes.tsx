@@ -20,7 +20,7 @@ export default function CareerOutcomes({
   return (
     <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] mt-10 grid min-h-52 w-screen place-items-center bg-sky-50 px-6 py-12">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className={`grid gap-6 ${stats.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
           {stats.map((stat) => (
             <div key={stat.desc} className="text-center">
               <p className="text-byu-navy text-4xl font-bold">{stat.value}</p>

@@ -49,9 +49,7 @@ export default async function MajorLandingPage({ params }: Props) {
         { label: major.displayName },
       ]}
     >
-      <h1 className="text-byu-dark-gray text-3xl font-semibold">{page.title}</h1>
-
-      <p className="text-byu-medium-gray mt-4">{page.description}</p>
+      <p className="text-black">{page.description}</p>
 
       <Overview content={resolveOverview(page.overview)} />
 

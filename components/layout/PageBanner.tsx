@@ -31,7 +31,7 @@ export default function PageBanner({ title, tagline, description, backgroundImag
       {backgroundImage && <div className="absolute inset-0 bg-[#6c7580]/70" aria-hidden="true" />}
       <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center gap-2 px-6 text-center">
         <div className="flex flex-wrap items-baseline justify-center gap-x-3">
-          <p className="text-xl font-semibold tracking-wide uppercase md:text-2xl">{title}</p>
+          <p className="text-2xl font-semibold tracking-wide uppercase md:text-3xl">{title}</p>
 
           {tagline && (
             <>
