@@ -44,8 +44,6 @@ export default async function MajorLandingPage({ params }: Props) {
     <SectionLayout
       title={major.displayName}
       tagline={major.tagline}
-      basePath={`/undergraduate/${major.slug}`}
-      navigation={major.navigation}
       breadcrumbs={[
         { label: 'Undergraduate', href: '/undergraduate/prospective-students' },
         { label: major.displayName },

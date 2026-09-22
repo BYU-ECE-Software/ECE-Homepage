@@ -90,15 +90,14 @@ export interface MajorConfig {
 }
 
 export interface OutcomesData {
-  // e.g. "$86.8k"
   startingSalary: string;
+  startingSalaryDesc: string;
 
-  // e.g. "100%"
   placementRate: string;
+  placementRateDesc: string;
 
-  // Grad school continuation isn't published for every major.
   gradSchoolRate?: string;
+  gradSchoolRateDesc?: string;
 
-  // e.g. "BYU EE graduates, 2022-2024"
   sourceLabel: string;
 }

@@ -52,9 +52,6 @@ export default async function MajorSubsectionPage({ params }: Props) {
     <SectionLayout
       title={major.displayName}
       tagline={major.tagline}
-      basePath={`/undergraduate/${major.slug}`}
-      navigation={major.navigation}
-      currentSlug={slug}
       breadcrumbs={[
         { label: 'Undergraduate', href: '/undergraduate/prospective-students' },
         { label: major.displayName, href: `/undergraduate/${major.slug}` },

@@ -14,7 +14,7 @@ export default function NavLinkIcon({ linkType }: NavLinkIconProps) {
     return null;
   }
 
-  const iconClass = 'ml-1 inline h-3 w-3 -translate-y-px';
+  const iconClass = 'inline h-3 w-3 shrink-0 -translate-y-px opacity-60';
 
   if (linkType === 'internal') {
     return (

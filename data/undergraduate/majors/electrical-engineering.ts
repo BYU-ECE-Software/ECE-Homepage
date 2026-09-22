@@ -22,8 +22,11 @@ export const electricalEngineering: MajorConfig = {
   hasOutcomesData: true,
   outcomes: {
     startingSalary: '$86.8k',
+    startingSalaryDesc: 'BYU EE average starting salary (2022–2024)',
     placementRate: '100%',
+    placementRateDesc: 'Job-seeking BYU EE graduates employed within 6 months (2022–2024)',
     gradSchoolRate: '38%',
-    sourceLabel: 'BYU EE graduates, 2022-2024',
+    gradSchoolRateDesc: 'BYU EE undergrads continue to graduate school',
+    sourceLabel: 'BYU EE graduates, 2022–2024',
   },
 };

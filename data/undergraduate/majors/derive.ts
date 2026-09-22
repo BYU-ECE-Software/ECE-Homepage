@@ -67,9 +67,9 @@ export function buildMajorPages(major: MajorConfig): Record<string, PageContent>
         'to students in all three majors \u2014 see [Opportunities](/opportunities).',
       cards: [
         {
-          title: 'Degree Requirements',
+          title: 'Current Degree Requirements',
           description:
-            'The official catalog listing of required courses, credit hours, and program milestones.',
+            "The official catalog of required courses, credit hours, and program milestones.",
           href: major.degreeRequirementsUrl,
           linkText: 'View in catalog',
         },

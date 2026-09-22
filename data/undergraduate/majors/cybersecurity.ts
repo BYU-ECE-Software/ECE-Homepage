@@ -26,8 +26,9 @@ export const cybersecurity: MajorConfig = {
   hasOutcomesData: true,
   outcomes: {
     startingSalary: '$87.8k',
+    startingSalaryDesc: 'BYU Cybersecurity average starting salary (2022–2024)',
     placementRate: '85%',
-    // Grad school continuation rate isn't published for Cybersecurity.
-    sourceLabel: 'BYU Cybersecurity graduates, 2022-2024',
+    placementRateDesc: 'Job-seeking BYU Cybersecurity graduates employed within 6 months (2022–2024)',
+    sourceLabel: 'BYU Cybersecurity graduates, 2022–2024',
   },
 };

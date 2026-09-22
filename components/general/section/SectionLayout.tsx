@@ -1,8 +1,5 @@
 import Link from 'next/link';
-import Sidebar from './Sidebar';
-import MobileNav from './MobileNav';
 import PageBanner from '@/components/layout/PageBanner';
-import type { NavSection } from '@/types/Content';
 
 export interface Breadcrumb {
   label: string;
@@ -15,35 +12,18 @@ interface SectionLayoutProps {
   title: string;
   /** Shown beside the title in the banner. */
   tagline?: string;
-  /** Section root, e.g. "/undergraduate/electrical-engineering". */
-  basePath: string;
-  /** Label for the sidebar link back to the section root. */
-  homeLabel?: string;
-  navigation: NavSection[];
-  /** Slug of the page currently being viewed; omit on the section root. */
-  currentSlug?: string;
   breadcrumbs?: Breadcrumb[];
   children: React.ReactNode;
 }
 
-/**
- * Shared layout for any section of the site made up of a banner, a
- * persistent sidebar, and a content column — currently the three majors
- * and the Opportunities section. Keeping one layout means navigation
- * behaviour, active states, and mobile handling stay identical everywhere.
- */
 export default function SectionLayout({
   title,
   tagline,
-  basePath,
-  homeLabel,
-  navigation,
-  currentSlug,
   breadcrumbs,
   children,
 }: SectionLayoutProps) {
   return (
-    <div className="bg-white">
+    <div className="overflow-x-hidden bg-white">
       <PageBanner title={title} tagline={tagline} />
 
       <div className="mx-auto max-w-7xl px-6 py-12">
@@ -72,27 +52,7 @@ export default function SectionLayout({
           </nav>
         )}
 
-        <div className="mb-6 lg:hidden">
-          <MobileNav
-            basePath={basePath}
-            homeLabel={homeLabel}
-            navigation={navigation}
-            currentSlug={currentSlug}
-          />
-        </div>
-
-        <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
-          <div className="hidden self-start lg:block">
-            <Sidebar
-              basePath={basePath}
-              homeLabel={homeLabel}
-              navigation={navigation}
-              currentSlug={currentSlug}
-            />
-          </div>
-
-          <div>{children}</div>
-        </div>
+        <div>{children}</div>
       </div>
     </div>
   );

@@ -22,8 +22,11 @@ export const computerEngineering: MajorConfig = {
   hasOutcomesData: true,
   outcomes: {
     startingSalary: '$85.9k',
+    startingSalaryDesc: 'BYU CE average starting salary (2022–2024)',
     placementRate: '100%',
+    placementRateDesc: 'Job-seeking BYU CE graduates employed within 6 months (2022–2024)',
     gradSchoolRate: '25%',
-    sourceLabel: 'BYU CpE graduates, 2022-2024',
+    gradSchoolRateDesc: 'BYU CE undergrads continue to graduate school',
+    sourceLabel: 'BYU CE graduates, 2022–2024',
   },
 };

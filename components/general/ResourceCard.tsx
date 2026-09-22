@@ -45,7 +45,25 @@ export default function ResourceCard({
       <div className="p-6">
         <h3 className="text-byu-navy text-lg font-semibold">
           {title}
-          {opensNewTab && <span className="sr-only"> (opens in a new tab)</span>}
+          {opensNewTab && (
+            <>
+              <svg
+                className="ml-1.5 inline h-3.5 w-3.5 -translate-y-px opacity-60"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              <span className="sr-only"> (opens in a new tab)</span>
+            </>
+          )}
         </h3>
 
         <p className="text-byu-medium-gray mt-2 text-sm">{description}</p>

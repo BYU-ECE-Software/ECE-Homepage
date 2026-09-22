@@ -12,8 +12,11 @@ interface SidebarProps {
   currentSlug?: string;
 }
 
-const activeClasses = 'bg-byu-navy text-white font-semibold';
-const inactiveClasses = 'text-byu-medium-gray hover:text-byu-navy hover:bg-gray-100';
+const linkBase =
+  'flex items-center gap-2 rounded-md py-2.5 pr-3 pl-4 text-sm transition-all duration-200';
+const activeClasses = 'bg-byu-navy/5 text-byu-navy font-semibold';
+const inactiveClasses =
+  'text-byu-medium-gray hover:bg-byu-navy/5 hover:text-byu-navy hover:pl-5 font-medium';
 
 export default function Sidebar({
   basePath,
@@ -28,22 +31,20 @@ export default function Sidebar({
     >
       <nav aria-label="Section navigation">
         {navigation.map((section, index) => (
-          <div key={section.title || index} className="mb-6">
+          <div key={section.title || index} className={index > 0 ? 'mt-6' : undefined}>
             {section.title && (
-              <h2 className="text-byu-dark-gray mb-3 px-4 text-sm font-bold tracking-wide uppercase">
+              <h2 className="text-byu-medium-gray mb-2 px-4 text-xs font-bold tracking-widest uppercase">
                 {section.title}
               </h2>
             )}
 
-            <ul className="space-y-1">
+            <ul className="space-y-0.5">
               {index === 0 && (
                 <li>
                   <Link
                     href={basePath}
                     aria-current={!currentSlug ? 'page' : undefined}
-                    className={`block rounded-lg px-4 py-2.5 text-sm transition ${
-                      !currentSlug ? activeClasses : inactiveClasses
-                    }`}
+                    className={`${linkBase} ${!currentSlug ? activeClasses : inactiveClasses}`}
                   >
                     {homeLabel}
                   </Link>
@@ -62,11 +63,9 @@ export default function Sidebar({
                       target={external ? '_blank' : undefined}
                       rel={external ? 'noopener noreferrer' : undefined}
                       aria-current={active ? 'page' : undefined}
-                      className={`block rounded-lg px-4 py-2.5 text-sm transition ${
-                        active ? activeClasses : inactiveClasses
-                      }`}
+                      className={`${linkBase} ${active ? activeClasses : inactiveClasses}`}
                     >
-                      {item.title}
+                      <span className="flex-1">{item.title}</span>
                       <NavLinkIcon linkType={linkType} />
                     </Link>
                   </li>
