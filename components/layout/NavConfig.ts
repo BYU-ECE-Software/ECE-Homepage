@@ -97,7 +97,7 @@ const navConfig: NavItem[] = [
   // },
   {
     kind: 'link',
-    label: 'EPIcenter',
+    label: 'EPICenter',
     href: '/epicenter',
   },
 ];

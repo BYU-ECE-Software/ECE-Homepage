@@ -161,8 +161,7 @@ function ProgramComparison() {
           >
             talk with an academic advisor
           </Link>
-          . Advisors help students move between these majors regularly, so picking one now is not a
-          permanent decision.
+          .
         </p>
       </div>
     </section>

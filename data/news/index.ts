@@ -20,6 +20,8 @@ export const stories: NewsStory[] = [
     date: 'May 21, 2026',
     category: 'Intellect',
     author: 'Sharman Gill',
+    image: '/hero/1908-02 0125.webp',
+    imageAlt: 'BYU engineering students design wearable technology for search and rescue rats',
     content:
       'A capstone team improved a backpack localization device used by trained HeroRATs during search and rescue operations.',
   },
@@ -31,6 +33,8 @@ export const stories: NewsStory[] = [
     date: 'May 19, 2026',
     category: 'Character',
     author: 'Ellie Larsen',
+    image: '/hero/2201-53 0029.webp',
+    imageAlt: 'BYU student named Honor Graduate as top U.S. Marine Corps officer candidate',
     content:
       'A BYU student earned the highest national distinction in the Marine Corps officer candidate program.',
   },

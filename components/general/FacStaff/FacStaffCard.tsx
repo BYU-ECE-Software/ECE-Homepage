@@ -58,7 +58,7 @@ export default function FacStaffCard({
           {PhotoAndName}
         </Link>
       ) : (
-        <div className="group flex cursor-default flex-col items-center">{PhotoAndName}</div>
+        <div className="flex flex-col items-center">{PhotoAndName}</div>
       )}
 
       <div className="mt-1.5 flex flex-col items-center gap-0.5">
