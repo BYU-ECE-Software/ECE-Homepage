@@ -99,7 +99,7 @@ const departmentLinks: ResourceItem[] = [
   },
   { title: 'Cadence Software', description: 'Access to Cadence design software.', href: '/cadence' },
   { title: 'Contact Us', description: 'Get in touch with the department.', href: '/contact' },
-  { title: 'EPICenter', description: 'Engineering and Physical Sciences maker space.', href: '/epicenter' },
+  { title: 'EPICenter', description: 'Engineering and Physical Sciences maker space.', href: 'https://eceshop.byu.edu/home' },
 ];
 
 const toolsLinks: ResourceItem[] = [

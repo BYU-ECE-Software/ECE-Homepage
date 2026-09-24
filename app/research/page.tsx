@@ -67,6 +67,13 @@ const researchAreas: ResearchArea[] = [
   },
   {
     image: '/research/BlockY.png',
+    imageAlt: 'Cybersecurity research lab',
+    title: 'Cybersecurity',
+    titleHref: 'https://csrl.byu.edu/',
+    people: [],
+  },
+  {
+    image: '/research/BlockY.png',
     imageAlt: 'Digital chip on a glowing blue circuit',
     title: 'Digital Circuits & FPGAs',
     titleHref: 'https://ccl.byu.edu/',

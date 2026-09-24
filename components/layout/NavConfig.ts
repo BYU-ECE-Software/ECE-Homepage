@@ -43,6 +43,7 @@ const navConfig: NavItem[] = [
       { label: 'Computer Engineering', href: '/undergraduate/computer-engineering' },
       { label: 'Cybersecurity', href: '/undergraduate/cybersecurity' },
       { label: 'Cybersecurity Minor', href: '/undergraduate/minors/cybersecurity' },
+      { label: 'Student Resources', href: '/undergraduate/student-resources' },
     ],
   },
   {
@@ -98,7 +99,7 @@ const navConfig: NavItem[] = [
   {
     kind: 'link',
     label: 'EPICenter',
-    href: '/epicenter',
+    href: 'https://eceshop.byu.edu/home',
   },
 ];
 

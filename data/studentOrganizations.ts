@@ -53,9 +53,9 @@ export const studentOrganizations: ResourceCardData[] = [
   {
     title: 'Cybersecurity Student Association (CSA)',
     description:
-      'The BYU Cybersecurity Students Academic Association (CSA) is an official student club that provides a relaxed and fun way for cybersecurity enthusiasts to learn and socialize.',
-    href: 'https://example.com/cybersecurity-club',
-    linkText: 'Visit site',
+      'An official student club open to all students interested in cybersecurity, regardless of major or experience level. Features monthly guest speakers, CTF contests, and the annual CSA Cybersecurity Student Conference.',
+    href: 'https://clubs.byu.edu/link/club/18295873486205398',
+    linkText: 'Join club',
   },
   {
     title: 'Aeronautics Club',
@@ -81,8 +81,22 @@ export const studentOrganizations: ResourceCardData[] = [
   {
     title: 'Women in CyberSecurity (WiCyS)',
     description:
-      'WiCyS started in 2013 by Dr. Ambareen Siraj through a National Science Foundation grant awarded to Tennessee Tech University.',
-    href: 'https://example.byu.edu/',
+      'The BYU WiCyS chapter works to decrease the gender disparity in cybersecurity and provide educational and networking support through the national WiCyS community.',
+    href: 'https://clubs.byu.edu/link/club/18295873486207441',
+    linkText: 'Join club',
+  },
+  {
+    title: 'Network Engineering Association (NEA)',
+    description:
+      'Supports students who seek to strengthen their network engineering skills by preparing for certifications, building home labs, hardening real-world networks, and participating in competitions.',
+    href: 'https://clubs.byu.edu/link/club/18295873486205964',
+    linkText: 'Join club',
+  },
+  {
+    title: 'CTF Training Group',
+    description:
+      'Weekly training in Capture the Flag competitions covering web exploitation, cryptography, forensics, steganography, OSINT, binary exploitation, and reverse engineering.',
+    href: 'https://github.com/JustinApplegate/ctf-training',
     linkText: 'Learn more',
   },
   {

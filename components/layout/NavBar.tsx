@@ -19,6 +19,8 @@ type NavBarProps = {
 const hasAccess = (requiredRoles: string[] | undefined, userRoles: string[]): boolean =>
   !requiredRoles || requiredRoles.some((r) => userRoles.includes(r));
 
+const isExternal = (href: string) => /^https?:\/\//.test(href);
+
 // Trailing slashes are on (see next.config.ts), so normalise before comparing
 const normalise = (path: string): string =>
   path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
@@ -82,12 +84,14 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
   const renderMobileItem = (item: NavItem, index: number) => {
     if (item.kind === 'link') {
-      const active = linkMatches(item.href, pathname);
+      const external = isExternal(item.href);
+      const active = !external && linkMatches(item.href, pathname);
       return (
         <Link
           key={item.href}
           href={item.href}
           onClick={() => setMobileOpen(false)}
+          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           aria-current={active ? 'page' : undefined}
           className={`px-6 py-4 text-left hover:bg-[#FAFAFA] ${
             active ? 'border-byu-navy border-l-4 bg-[#FAFAFA] font-semibold' : ''
@@ -152,12 +156,14 @@ const NavBar = ({ navPadLeft = 128, mobileOpen, setMobileOpen, userRoles = [] }:
 
   const renderDesktopItem = (item: NavItem, index: number) => {
     if (item.kind === 'link') {
-      const active = linkMatches(item.href, pathname);
+      const external = isExternal(item.href);
+      const active = !external && linkMatches(item.href, pathname);
       return (
         <Link
           key={item.href}
           href={item.href}
           onClick={closeAll}
+          {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           aria-current={active ? 'page' : undefined}
           className={`nav-link-hover px-3 py-4 whitespace-nowrap hover:bg-[#FAFAFA] md:px-4 lg:px-8 ${
             active ? 'nav-link-active font-semibold' : ''

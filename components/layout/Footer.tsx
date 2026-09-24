@@ -146,6 +146,16 @@ const Footer = ({ columns = [], contactBlock }: FooterProps) => {
                 Accessibility
               </a>
             </li>
+            <li>
+              <a
+                href="https://privacy.byu.edu/cookie-prefs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-white hover:underline"
+              >
+                Cookie Preferences
+              </a>
+            </li>
           </ul>
         </div>
       </div>

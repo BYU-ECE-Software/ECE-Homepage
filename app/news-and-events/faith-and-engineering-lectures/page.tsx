@@ -25,7 +25,7 @@ const lectures = [
   {
     title: `Dr. Brian Jeffs: "God's Handiwork Seen Through an Engineer's Eyes"`,
     date: '3/12/26',
-    videoUrl: null, // video URL unavailable at time of build
+    videoUrl: 'https://www.youtube.com/watch?v=LoC48ExdN-I',
   },
 ];
 
@@ -53,9 +53,19 @@ function LectureCard({
 
       {expanded && videoUrl && (
         <div className="mt-4 overflow-hidden rounded-lg shadow-md">
-          <video controls className="block w-full" src={videoUrl}>
-            Your browser does not support the video tag.
-          </video>
+          {videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be') ? (
+            <iframe
+              className="aspect-video w-full"
+              src={`https://www.youtube.com/embed/${videoUrl.match(/(?:v=|youtu\.be\/)([^&]+)/)?.[1]}`}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <video controls className="block w-full" src={videoUrl}>
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
       )}
 
